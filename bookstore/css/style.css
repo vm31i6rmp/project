@@ -1,0 +1,231 @@
+body {
+  font-family: "Arial", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  font-size: 0.875rem;
+  color: #2a2a2a;
+}
+
+header {
+  background: no-repeat center/cover url(../img/mainvisual.jpg);
+  height: 100vh;
+  position: relative;
+  margin-bottom: 80px;
+}
+header h1.logo {
+  background: no-repeat center/contain url(../img/logo.svg);
+  height: 40px;
+  width: 120px;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto 80px;
+  padding: 0 5%;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section-content {
+  text-align: center;
+  line-height: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.magazine-flexbox {
+  display: flex;
+  justify-content: space-between;
+}
+.magazine-flexbox .magazine-flexitem {
+  width: 49%;
+  position: relative;
+  color: #fff;
+}
+.magazine-flexbox .magazine-flexitem img {
+  max-width: 100%;
+}
+.magazine-flexbox .magazine-flexitem-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  max-width: 290px;
+  width: 100%;
+  padding: 15px 0;
+}
+.magazine-flexbox .magazine-flexitem-text-ttl {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 1.6rem;
+}
+.magazine-flexbox .magazine-flexitem-text-cnt {
+  text-align: center;
+  font-weight: bold;
+  line-height: 1.5rem;
+}
+
+#fashion {
+  background: no-repeat center/cover url(../img/fashion.jpg);
+  height: 520px;
+  max-width: 100%;
+  padding: 60px 10% 0;
+  margin-bottom: 80px;
+}
+
+.btn-readmore {
+  display: block;
+  width: 130px;
+  height: 40px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 40px;
+  border: solid 1px #000;
+  font-size: 0.75rem;
+  text-decoration: none;
+  color: #000;
+  margin-top: 40px;
+  transition: 0.5s;
+}
+
+.btn-readmore:hover {
+  opacity: 0.7;
+}
+
+.catalog-antique {
+  width: 100vw;
+  background-color: #F5F5F5;
+}
+.catalog-antique .flexbox {
+  display: flex;
+  justify-content: space-between;
+  padding: 6% 5%;
+}
+.catalog-antique .flexbox-item {
+  width: 49%;
+}
+.catalog-antique .flexbox-item img {
+  width: 100%;
+}
+.catalog-antique .flexbox-item-ttl {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.catalog-antique .flexbox-item-cnt {
+  line-height: 1.3rem;
+}
+.catalog-antique .flexbox-item-cnt div {
+  margin-bottom: 40px;
+}
+.catalog-antique .flexbox-item .btn-readmore {
+  margin-top: 80px;
+}
+
+.flexbox:nth-child(2) {
+  flex-direction: row-reverse;
+}
+
+footer {
+  background-color: #333333;
+  width: 100vw;
+  height: 360px;
+  color: #fff;
+  box-sizing: border-box;
+}
+footer.flexbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5%;
+}
+footer.flexbox .flexbox-item {
+  width: 33%;
+}
+footer.flexbox .flexbox-item-1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+footer.flexbox .flexbox-item-1 a {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  background-color: #1D1D1D;
+  padding: 1% 3%;
+}
+footer.flexbox .flexbox-item-ttl {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+footer.flexbox .flexbox-item-cnt {
+  font-size: 0.9em;
+  line-height: 2em;
+}
+footer.flexbox .flexbox-item-cnt-list {
+  list-style: "- " inside;
+}
+
+small {
+  display: block;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  font-size: 0.7rem;
+}
+
+@media screen and (max-width: 896px) {
+  .magazine-flexbox {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .magazine-flexbox .magazine-flexitem {
+    width: 100%;
+    margin-top: 25px;
+  }
+  .catalog-antique {
+    width: 100vw;
+    background-color: #F5F5F5;
+  }
+  .catalog-antique .flexbox {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .catalog-antique .flexbox-item {
+    width: 100%;
+    padding: 5%;
+  }
+  .catalog-antique .flexbox-item div:nth-child(3) {
+    margin-bottom: 0;
+  }
+  .catalog-antique .flexbox-item .btn-readmore {
+    margin-top: 80px;
+  }
+  .catalog-antique .flexbox:nth-child(1) {
+    padding-bottom: 0;
+  }
+  .catalog-antique .flexbox:nth-child(2) {
+    flex-wrap: wrap-reverse;
+  }
+  footer {
+    font-size: 0.8em;
+  }
+  footer.flexbox {
+    display: flex;
+    flex-direction: column;
+    height: 450px;
+  }
+  footer.flexbox .flexbox-item {
+    width: 100%;
+  }
+  footer.flexbox .flexbox-item-1 {
+    text-align: center;
+  }
+}
