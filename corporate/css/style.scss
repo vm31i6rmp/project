@@ -1,0 +1,485 @@
+@charset "UTF-8";
+
+body {
+  color: #121212;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+a{
+  color: inherit;
+  text-decoration: none;
+}
+ul, ol{
+  list-style: none;
+}
+header{
+  width: 300px;
+  height: 100%;
+  position: fixed;
+
+}
+.hp__logo{
+  width: 200px;
+  margin: 40px auto;
+  img{
+    max-width: 100%;
+  }
+  .ham{
+    display: none;
+  }
+}
+.nav{
+  margin-left: 40px;
+  font-size: 0.9rem;
+  .nav-1{
+    margin-bottom: 80px;
+  }
+  li{
+    margin-bottom: 20px;
+  }
+}
+.container{
+  margin-left: 300px;
+}
+.wrapper{
+  max-width: 900px;
+  padding: 80px 20px;
+  margin: 0 auto;
+}
+#video{
+  width: 100%;
+  height: 100vh;
+  .bg-video{
+    background-color: #333;
+    width: 1920px;
+    height: 1080px;
+    color: #999;
+    font-size: 150px;
+    text-align: center;
+    line-height: 1080px;
+    position: fixed;
+    top: -220px;
+    z-index: -1;
+    div{
+      transform: translateX(-250px);
+    }
+  }
+}
+.section-ttl{
+  font-size: 1.75rem;
+  text-align: center;
+  display: flex;  //この指定によって、擬似要素::beforeと::afterもflexboxになる
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+  &--white{
+    color: #fff;
+  }
+}
+.section-ttl::before, .section-ttl::after{
+  // display: block; 親要素のflex指定によってflexboxになってるから
+  content: "";
+  border-top: 1px solid;
+  width: 28%;  //内容がないので、幅を指定しないとborderが出ない
+}
+
+#project{
+  background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.8));
+  color: #fff;
+}
+.project-list{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .project-item{
+    width: 47%;
+    margin-bottom: 50px;
+    &:nth-child(3), &:nth-child(4){
+      margin-bottom: 0;
+    }
+    a{
+      display: block;
+      position: relative;
+      border: solid 1px #fff;
+      img{
+        max-width: 100%;
+      }
+      div{
+        position: absolute;
+        bottom: 0;
+        z-index: 2;
+        width: 100%;
+        height: 100px;
+        background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,1));
+        p{
+          font-size: 0.8rem;
+          position: absolute;
+          bottom: 5px;
+          left: 5px;
+        }
+      }
+    }
+    // a::after{
+    //   content: "";
+    //   box-shadow: 0 -30px 15px -1px #2e2e2e inset;
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   right: 0;
+    //   bottom: 0;
+    // }
+  }
+}
+
+#feature{
+  background-color: transparent;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.8);
+  padding-bottom: 80px;
+}
+.feature-list{
+  display: flex;
+  justify-content: space-between;
+  .feature-item{
+    width: 30%;
+    font-size: 0.875rem;
+    text-align: center;
+    a{
+      display: block;
+      position: relative;
+      width: 100%;
+      border: solid 1px #fff;
+      border-radius: 50%;
+      color: #fff;
+      padding: calc(50% - 5px) 0;  //paddingでは、ブロックの幅に対するパーセント値
+      overflow: hidden;
+      &::after{
+        display: block;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        position: absolute;
+        top: 0;
+        left: -100%;
+        opacity: 0.3;
+        transition: 0.5s;
+      }
+      &:hover::after{
+        left: 0;
+      }
+    }
+    p{
+      margin-top: 18px;
+      &:nth-child(2){  //1個目のp要素だが、li要素の中では二番目の要素
+        font-weight: bold;
+        font-size: 1.15em;
+      }
+    }
+  }
+}
+
+#flow{
+  background-color: #fff;
+  .wrapper{
+    padding-bottom: 0;
+  }
+  p{
+    margin-bottom: 60px;
+  }
+}
+.flow__flowlist{
+  display: flex;
+  justify-content: space-between;
+  .flow__flowlist-left{
+    .flow__flowlist-left__item{
+      position: relative;
+      width: 200px;
+      height: 80px;
+      background-color: #414141;
+      line-height: 80px;
+      text-align: center;
+      color: #fff;
+      margin-bottom: 60px;
+      &::before{
+        display: block;
+        content: "";
+        border-top: solid 30px #414141;
+        border-left: solid 100px transparent;
+        border-right: solid 100px transparent;
+        position: absolute;
+        top: 80px;
+        z-index: 2;
+      }
+      &::after{
+        display: block;
+        content: "";
+        width: 50px;
+        height: 60px;
+        background-color: #FFDD00;
+        position: absolute;
+        top: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      &:last-child::after{
+        display: none;
+      }
+    }
+  }
+  .flow__flowlist-right{
+    margin-left: 10%;
+    dt{
+      font-size: 1.25rem;
+      border-bottom: solid 1px #000;
+      margin-bottom: 10px;
+      padding-bottom: 12px;
+      position: relative;
+      span{
+        width: 36px;
+        height: 36px;
+        color: #fff;
+        background-color: #414141;
+        font-size: 0.95rem;
+        text-align: center;
+        line-height: 36px;
+        position: absolute;
+        left: -45px;
+        top: -5px;
+        border-radius: 50%;
+      }
+    }
+    dd{
+      margin-bottom: 50px;
+      line-height: 1.5rem;
+    }
+  }
+}
+#contact{
+  background-color: #fff;
+  padding-bottom: 80px;
+}
+.contact-list{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+  .contact-item{
+    width: 30%;
+    a{
+      display: block;
+      width: 100%;
+      border: solid 1px #333;
+      font-size: 0.875rem;
+      text-align: center;
+      position: relative;
+      padding: 50px 0;
+      transition: 0.1s;
+      img{
+        margin-bottom: 5px;
+      }
+      p{
+        margin-top: 5px;
+      }
+      &::after{
+        display: block;
+        content: "";
+        border-top: 20px solid transparent;
+        border-right: 20px solid #121212;
+        position: absolute;
+        right: 5px;
+        bottom: 5px;
+      }
+      &:hover{
+        outline: solid 3px #121212;  //box本体に影響を与えない
+      }
+    }
+  }
+}
+footer{
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  ul{
+    display: flex;
+    justify-content: center;
+    font-size: 0.9rem;
+    padding: 45px 0;
+    li{
+      padding: 0 20px;
+      line-height: 20px;
+      border-right: solid 1px #fff;
+      &:last-child{
+        border-right: none;
+      }
+    }
+  }
+  p{
+    font-size: 0.7rem;
+    padding: 20px 0;
+  }
+}
+.btn__pagetop{
+  width: 50px;
+  height: 50px;
+  border: solid 1px #fff;
+  border-radius: 50%;
+  position: fixed;
+  right: 20px;
+  bottom: 30px;
+  background-color: #222;
+  z-index: 100;
+  transition: 0.5s;
+  &:hover{
+    cursor: pointer;
+  }
+  &::after{
+    display: block;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-right: solid 8px transparent;
+    border-left: solid 8px transparent;
+    border-bottom: solid 8px #fff;
+  }
+}
+@media screen and (max-width: 980px){
+  header{
+    width: 100%;
+    height: 72px;
+    padding: 0;
+    z-index: 10;
+    background-color: #fff;
+    .hp__logo{
+      width: 180px;
+      margin: 0;
+      position: absolute;
+      left: 18px;
+      top: 10px;
+      display: flex;
+      justify-content: space-between;
+      background-color: #fff;
+    }
+    .ham{
+      width: 30px;
+      height: 30px;
+      // background-color: lightblue;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 100;
+      &:hover{
+        cursor: pointer;
+      }
+      &.active{
+        div:nth-child(2){
+          display: none;
+        }
+        div:nth-child(1){
+          transform: rotate(405deg) translateY(1px);
+          background-color: #fff;
+        }
+        div:nth-child(3){
+          transform: rotate(-405deg) translateY(-1px);
+          background-color: #fff;
+        }
+      }
+      div{
+        width: 30px;
+        height: 2px;
+        background-color: #000;
+        transition: 0.5s;
+        &:nth-child(2){
+          margin: 8px 0;
+        }
+      }
+    }
+    .nav{
+      transform: translateX(-100%);
+      transition: 0.5s;
+      position: relative;
+      height: 100vh;
+      width: 30vw;
+      z-index: 100;  //position: staticの時は無効
+      margin: 0;
+      background-color: #fff;
+      padding: 40px 0 0 30px;
+      li{
+        margin-bottom: 25px;
+      }
+      &.active{
+        transform: translateX(0);
+      }
+    }
+    .cover{
+      display: none;
+      &:hover{
+        cursor: pointer;
+      }
+      &.active{
+        display: block;
+        content: "";
+        width: 100vw;
+        height: 1000vh;
+        position: fixed;
+        background-color: rgba($color: #333, $alpha: 0.8);
+        z-index: 99;
+      }
+    }
+  }
+  .container{
+    margin-left: 0;
+    #video {
+      height: 80vh;
+    }
+    .project-list{
+      .project-item{
+        width: 97%;
+        margin-bottom: 30px;
+      }
+    }
+    .flow__flowlist{
+      flex-direction: column;
+      .flow__flowlist-left{
+        width: 100%;
+        .flow__flowlist-left__item{
+          width: 100%;
+          &::before{
+            border-left-width: calc(50vw - 55px / 2);  //border-widthには、パーセント指定はできない
+            border-right-width: calc(50vw - 55px / 2);
+          }
+        }
+      }
+      .flow__flowlist-right{
+        margin-left: 5%;
+      }
+    }
+    #contact{
+      padding-bottom: 0;
+    }
+    .contact-list{
+      flex-direction: column;
+      margin: 30px auto;
+      align-items: center;
+      .contact-item{
+        width: 60%;
+        height: 190px;
+        margin-bottom: 20px;
+      }
+    }
+    footer{
+      margin-top: 0;
+      ul{
+        display: flex;
+        flex-wrap: wrap;
+        li{
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
