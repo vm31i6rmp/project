@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>模写中級編_インテリアサイト</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="shortcut icon" href="./img/favicon.ico">
+</head>
+<body>
+  <!-- ここからは header です -->
+  <header>
+    <!-- z-indexは同じ階層にのみ有効 -->
+    <!-- .hamと.navと.maskを同じ階層にする -->
+    <div class="hp-title">
+      <a href="index.html">
+        <img src="./img/logo.svg" alt="Furniture Design">
+      </a>
+    </div>
+    <div class="ham">
+      <div class="ham__bar ham__bar-1"></div>
+      <div class="ham__bar ham__bar-2"></div>
+    </div>
+    <nav class="hp-nav">
+      <ul class="hp-nav-list">
+        <li class="hp-nav-item">
+          <a href="products1.html">PRODUCTS</a>
+        </li>
+        <li class="hp-nav-item">
+          <a href="about.html">ABOUT</a>
+        </li>
+        <li class="hp-nav-item">
+          <a href="company.html">COMPANY</a>
+        </li>
+        <li class="hp-nav-item" id="contact">
+          <a href="mailto:xxxxx@xxx.xxx.com?subject=お問い合わせ">CONTACT</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="mask"></div>
+  </header>
+  <!-- ここからは main です -->
+  <main>
+    <div class="wrapper">
+      <section class="item">
+        <h1 class="section-title">プロダクトタイトル</h1>
+        <div id="item">
+          <div class="item-img">
+            <img src="./img/item6.jpg" alt="item6">
+          </div>
+          <div class="item-cnt">
+            <div class="item-cnt-text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキストテキストテキストテキストテキストテキスト</div>
+            <div class="item-cnt-text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキストテキストテキストテキストテキストテキスト</div>
+            <div class="item-cnt-price">¥99,999 +tax</div>
+            <dl class="item-cnt-info">
+              <dt class="item-cnt-info-ttl">SIZE：</dt>
+              <dd class="item-cnt-info-cnt">W999 × D999 × H999</dd>
+              <dt class="item-cnt-info-ttl">COLOR：</dt>
+              <dd class="item-cnt-info-cnt">テキスト</dd>
+              <dt class="item-cnt-info-ttl">MATERIAL：</dt>
+              <dd class="item-cnt-info-cnt">テキストテキストテキスト</dd>
+            </dl>
+          </div>
+        </div>
+      </section>
+      <a href="products1.html" class="view-more">Back To Products</a>
+    </div>
+  </main>
+  <!-- ここからは footer です -->
+  <footer>
+    <ul class="sns-list">
+      <li class="sns-item"><a href="#">INSTAGRAM</a></li>
+      <li class="sns-item"><a href="#">TWITTER</a></li>
+      <li class="sns-item"><a href="#">FACEBOOK</a></li>
+    </ul>
+    <div class="copyright">&copy; Furniture Design</div>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>
