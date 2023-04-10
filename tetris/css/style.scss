@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+.container{
+  display: flex;
+}
+
+.grid{
+  width: 200px;
+  height: 400px;
+  background-color: tomato;
+  display: flex;
+  flex-wrap: wrap;
+  div{
+    width: 20px;
+    height: 20px;
+    // background-color: red;
+  }
+}
+
+.tetromino{
+  background-color: blue;
+}
+
+.mini-grid{
+  width: 80px;
+  height: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: yellow;
+  margin-left: 40px;
+  div{
+    width: 20px;
+    height: 20px;
+  }
+}

@@ -20,12 +20,12 @@ window.addEventListener('load', () => {
       })
       .then(data => {
         console.log(data);
-        const temperature = data.main.temp;
+        const temperature = Math.floor(data.main.temp * 10) / 10;
         const timezone = data.sys.country + " / " + data.name;
         const description = data.weather[0].description;
         const iconID = data.weather[0].icon;
         const iconURL =  `http://openweathermap.org/img/wn/${iconID}@2x.png`;
-        const sunrise = new Date(data.sys.sunrise * 1000);
+        const sunrise = new Date(data.sys.sunrise * 1000);  //このAPIは秒単位で時間を取得したので、ミリ秒に変換
         const sunset = new Date(data.sys.sunset * 1000);
         locationTimezone.textContent = timezone;
         temperatureDegree.textContent = temperature;
@@ -38,7 +38,7 @@ window.addEventListener('load', () => {
         degreeSection.addEventListener('click', () => {
           if(degreeSectionSpan.textContent === "°C"){
             degreeSectionSpan.textContent = "°F";
-            temperatureDegree.textContent = Math.floor(fahrenheit * 100) / 100;
+            temperatureDegree.textContent = Math.floor(fahrenheit * 10) / 10;
           }else{
             degreeSectionSpan.textContent = "°C";
             temperatureDegree.textContent = temperature;
