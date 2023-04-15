@@ -3,245 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alata&family=Archivo+Black&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
   <title>Tetris</title>
 </head>
 <body>
-  <h3>Score:<span id="score">0</span></h3>
-  <button id="start-btn">Start/Pause</button>
-  <div class="container">
-    <!-- メインエリア -->
-    <div class="grid">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div class="taken"></div>
-      <div class="taken"></div>
-      <div class="taken"></div>
-      <div class="taken"></div>
-      <div class="taken"></div>
-      <div class="taken"></div>
-      <div class="taken"></div>
-      <div class="taken"></div>
-      <div class="taken"></div>
-      <div class="taken"></div>
-    </div>
-    <!-- メインエリア -->
-    <div class="mini-grid">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+  <h1 class="site-ttl">T E T R I S</h1>
+  <div class="wrapper">
+    <canvas id="canvas"></canvas>
+    <div class="container">
+      <div class="next">
+        <h3 class="next-txt">NEXT</h3>
+        <canvas id="next-canvas"></canvas>
+      </div>
+      <h3>Level：<span id="level">1</span></h3>
+      <h3>Score：<span id="score">0</span></h3>
+      <h3>Line：<span id="line">0</span></h3>
+      <div class="btn-container">
+        <div>
+          <button class="btn" id="pause-btn">
+            <img src="img/pause.png" width="20" height="20" alt="" name="pause-btn">
+            <p id="pause-btn-txt">Pause</p>
+          </button>
+        </div>
+        <div>
+          <button class="btn" id="restart-btn">
+            <img src="img/replay.png" width="30" height="30" alt="">
+            <p>Replay</p>
+          </button>
+        </div>
+        <div>
+          <button class="btn" id="hint-btn">
+            <img src="img/hint.png" width="20" height="20" alt="">
+            <p>Hint</p>
+          </button>
+        </div>
+      </div>
+      <div class="keyboard">
+        <div class="keyboard-container-1">
+          <button class="keyboard-btn" id="keyboard-btn-up">
+            <img src="img/rotate.png" width="20" height="20" alt="">
+            <p>Rotate</p>
+          </button>
+        </div>
+        <div class="keyboard-container">
+          <button class="keyboard-btn" id="keyboard-btn-left">
+            <p>←</p>
+          </button>
+          <button class="keyboard-btn" id="keyboard-btn-down">
+            <p>↓</p>
+          </button>
+          <button class="keyboard-btn" id="keyboard-btn-right">
+            <p>→</p>
+          </button>
+        </div>
+        <button class="keyboard-btn" id="keyboard-btn-space">
+          <p>↓↓</p>
+        </button>
+      </div>
     </div>
   </div>
   <script src="main.js"></script>
