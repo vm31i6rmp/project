@@ -1,0 +1,131 @@
+@charset "UTF-8";
+
+body{
+  font-family: 'Alata', sans-serif;
+  font-family: 'Archivo Black', sans-serif;
+  font-family: 'Oswald', sans-serif;
+}
+h3{
+  font-family: 'Alata', sans-serif;
+  font-size: 30px;
+  line-height: 1.5;
+  color: #555;
+}
+
+.site-ttl{
+  font-family: 'Archivo Black', sans-serif;
+  text-align: center;
+  font-weight: 400;
+  font-size: 50px;
+  margin: 20px 0 30px;
+}
+
+.wrapper{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  .container{
+    margin-left: 20px;
+  }
+}
+
+#next-canvas{
+  padding: 10px;
+  margin: 10px 0;
+  // background-color: #333;
+}
+.btn-container{
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0 15px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #999;
+}
+.btn{
+  // border: none;
+  border: 1px solid #bbb;
+  background-color: #fff;
+  border-radius: 10px;
+  width: 45px;
+  height: 45px;
+  box-shadow: 0 3px #999;
+  display: block;
+  box-sizing: content-box;
+  padding: 0;
+  position: relative;
+  &:hover{
+    cursor: pointer;
+  }
+  &:active{
+    box-shadow: none;
+    transform: translateY(3px);
+  }
+  img{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  p{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 8pt;
+    font-family: 'Alata', sans-serif;
+  }
+}
+.keyboard{
+  width: 150px;
+  p{
+    font-family: 'Alata', sans-serif;
+  }
+}
+.keyboard-container-1{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+.keyboard-container{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.keyboard-btn{
+  border: 1px solid #bbb;
+  background-color: #fff;
+  border-radius: 10px;
+  width: 45px;
+  height: 45px;
+  box-shadow: 0 3px #999;
+  display: block;
+  box-sizing: content-box;
+  padding: 0;
+  position: relative;
+  &:hover{
+    cursor: pointer;
+  }
+  &:active{
+    box-shadow: none;
+    transform: translateY(3px);
+  }
+}
+#keyboard-btn-up{
+  position: relative;
+  img{
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  p{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 8px;
+  }
+}
+#keyboard-btn-space{
+  width: 148px;
+}
