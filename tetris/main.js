@@ -216,6 +216,7 @@ function init() {
   LEVEL.innerHTML = 1;
   LINE.innerHTML = 0;
   SCORE.innerHTML = 0;
+  dropSpeed = 1000;
 }
 
 // 一つの block を描画

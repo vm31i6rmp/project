@@ -1,6 +1,4 @@
 body {
-  font-family: "Alata", sans-serif;
-  font-family: "Archivo Black", sans-serif;
   font-family: "Oswald", sans-serif;
 }
 
@@ -39,19 +37,21 @@ h3 {
   margin: 10px 0 15px;
   padding-bottom: 20px;
   border-bottom: 1px solid #999;
+  width: 150px;
 }
 
 .btn {
-  border: 1px solid #bbb;
-  background-color: #fff;
+  border: 1px solid #ccc;
+  background-color: #999;
   border-radius: 10px;
   width: 45px;
   height: 45px;
-  box-shadow: 0 3px #999;
+  box-shadow: 0 3px #ccc;
   display: block;
   box-sizing: content-box;
   padding: 0;
   position: relative;
+  color: #fff;
 }
 .btn:hover {
   cursor: pointer;
@@ -62,24 +62,26 @@ h3 {
 }
 .btn img {
   position: absolute;
-  top: 40%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 .btn p {
   position: absolute;
-  top: 60%;
+  top: 62%;
   left: 50%;
   transform: translateX(-50%);
   font-size: 8pt;
-  font-family: "Alata", sans-serif;
+  font-family: "Kosugi Maru", sans-serif;
+  font-weight: bold;
 }
 
 .keyboard {
   width: 150px;
 }
 .keyboard p {
-  font-family: "Alata", sans-serif;
+  font-family: "Kosugi Maru", sans-serif;
+  font-weight: bold;
 }
 
 .keyboard-container-1 {
@@ -116,12 +118,6 @@ h3 {
 
 #keyboard-btn-up {
   position: relative;
-}
-#keyboard-btn-up img {
-  position: absolute;
-  top: 15%;
-  left: 50%;
-  transform: translateX(-50%);
 }
 #keyboard-btn-up p {
   position: absolute;
