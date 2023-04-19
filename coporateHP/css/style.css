@@ -68,11 +68,12 @@ body {
   height: 80px;
   background-color: rgba(255, 255, 255, 0.2);
   opacity: 0;
-  transition: 0.5s;
+  transition: 1s;
 }
 .header-nav ul li a:hover::after {
   top: 0;
   opacity: 1;
+  transition: 0.5s;
 }
 .header #ham-btn {
   display: none;
@@ -144,6 +145,9 @@ body {
 .footer .copyright {
   text-align: center;
   line-height: 40px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 300;
+  font-size: 0.8rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -186,6 +190,9 @@ body {
     border: solid 1px #fff;
     text-align: center;
     transition: 0.5s;
+  }
+  .header-nav ul li a::after {
+    content: initial;
   }
   .header-nav ul li a:hover {
     background-color: rgba(255, 255, 255, 0.3);

@@ -73,12 +73,13 @@ $header-height: 80px;
             height: $header-height;
             background-color: rgba(256,256,256,.2);
             opacity: 0;
-            transition: .5s;
+            transition: 1s;
           }
           &:hover{
             &::after{
               top: 0;
               opacity: 1;
+              transition: .5s;
             }
           }
         }
@@ -163,6 +164,9 @@ $header-height: 80px;
   .copyright{
     text-align: center;
     line-height: 40px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    font-size: 0.8rem;
   }
 }
 
@@ -210,6 +214,9 @@ $header-height: 80px;
             border: solid 1px #fff;
             text-align: center;
             transition: .5s;
+            &::after{
+              content: initial; // PCの::afterを解除する
+            }
             &:hover{
               background-color: rgba(256,256,256,.3);
             }
