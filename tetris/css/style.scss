@@ -135,3 +135,64 @@ h3{
 #keyboard-btn-space{
   width: 148px;
 }
+
+@media screen and (max-width: 768px) {
+  body{
+    padding: 3vw;
+  }
+  #canvas{
+    width: 65vw;
+  }
+  .wrapper{
+    .container{
+      margin-left: 2vw;
+    }
+  }
+  #next-canvas{
+    width: 20vw;
+  }
+  h3{
+    font-size: 4vw;
+    line-height: 1.6;
+  }
+  .btn-container{
+    display: block;
+    width: 25vw;
+    padding-bottom: 5px;
+    margin: 10px 0 15px;
+  }
+  .btn{
+    width: 25vw;
+    height: 8vw;
+    margin-bottom: 3vw;
+    img{
+      top: 50%;
+      left: 12%;
+      transform: translate(0,-50%);
+    }
+    p{
+      top: 50%;
+      left: 50%;
+      transform: translate(0,-50%);
+      font-size: 8pt;
+      font-family: 'Kosugi Maru', sans-serif;
+      font-weight: bold;
+    }
+  }
+  .keyboard{
+    width: 25vw;
+  }
+  .keyboard-btn{
+    width: 7.2vw;
+    height: 7.2vw;
+  }
+  .keyboard-container{
+    margin-bottom: 3vw;
+  }
+  .keyboard-container-1{
+    margin-bottom: 3vw;
+  }
+  #keyboard-btn-space{
+    width: 25vw;
+  }
+}
