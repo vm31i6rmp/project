@@ -58,7 +58,7 @@ h3{
   position: relative;
   color: #fff;
   &:hover{
-    cursor: pointer;
+    cursor: pointer !important;
   }
   &:active{
     box-shadow: none;
