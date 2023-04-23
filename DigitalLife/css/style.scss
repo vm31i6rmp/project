@@ -1,5 +1,7 @@
 @charset "utf-8";
-
+html{
+  font-size: 16px;
+}
 a{
   text-decoration: none;
   color: #fff;
@@ -248,7 +250,7 @@ $header-height: 80px;
       right: 10px;
       bottom: 60px;
       animation: float 4.5s 0.3s infinite linear;
-      font-size: 1.1rem;
+      font-size: 1rem;
       line-height: 1.4;
       letter-spacing: 1px;
       &::after{
