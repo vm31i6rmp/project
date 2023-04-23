@@ -1,42 +1,55 @@
 // ハンバーグメニュー
 const navMenu = document.querySelector(".header-nav");
 const hamBtn = document.querySelector("#ham-btn");
-// const cover = document.querySelector("#cover");
+const circleContainer = document.querySelector(".circle-btn-container");
 hamBtn.addEventListener("click", () => {
   hamBtn.classList.toggle("open");
   navMenu.classList.toggle("open");
-  // cover.classList.toggle("open");
+  circleContainer.classList.toggle("open");
 });
 navMenu.addEventListener("click", () => {
   hamBtn.classList.remove("open");
   navMenu.classList.remove("open");
-  // cover.classList.remove("open");
+  circleContainer.classList.remove("open");
 })
-// cover.addEventListener("click", () => {
-//   hamBtn.classList.remove("open");
-//   navMenu.classList.remove("open");
-//   cover.classList.remove("open");
-// })
 
-// スムーズにスクロール
-let indexLink = document.querySelectorAll("a[href^='#']");
-document.addEventListener("load", () => {
-  for(i=0; i<indexLink; i++) {
-    if(indexLink[i].hash) {
-      const nowOffset = window.pageYOffset;
-      const targetElement = document.querySelector(indexLink[i].hash);
-      const targetOffset = targetElement.getBoundingClientRect().top;
-      const offset = nowOffset + targetOffset;
-      indexLink[i].addEventListener("click", (e) => {
-        e.preventDefault();
-        window.scrollTo({
-          top: offset,
-          behavior: "smooth",
-        });
-      });
-    }
+// 一番上に戻る
+const BackToTopBtn = document.querySelector(".circle-btn-top");
+BackToTopBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
+
+const fv = document.querySelector(".fv");
+// const fvHeight = fv.getBoundingClientRect().bottom;
+window.addEventListener("scroll", () => {
+  if(window.pageYOffset > 160){
+    BackToTopBtn.classList.add("black");
+  } else {
+    BackToTopBtn.classList.remove("black");
   }
 });
+
+// スムーズにスクロール
+var indexLink = document.querySelectorAll('a[href^="#"]');
+  for (let i=0; i<indexLink.length; i++){
+    indexLink[i].addEventListener('click', (e) => {
+      e.preventDefault();
+      let href = indexLink[i].getAttribute('href');
+      let targetElement = document.getElementById(href.replace('#', ''));
+      const nowOffset = window.pageYOffset;
+      const targetOffset = targetElement.getBoundingClientRect().top;
+      const gap = 80;
+      const offset = nowOffset + targetOffset - gap;
+      window.scrollTo({
+        top: offset,
+        behavior: 'smooth',
+      });
+    });
+  }
 
 // スクロールすると固定メニューが出る
 // const header = document.querySelector(".header");

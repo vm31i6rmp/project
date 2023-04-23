@@ -12,6 +12,7 @@
   <title>Digital Life｜未経験からITエンジニアへ</title>
 </head>
 <body>
+  <!-- ここからは header です -->
   <header class="header">
     <h1 class="header-ttl">
       <a href="index.html">
@@ -23,10 +24,10 @@
     </h1>
     <nav class="header-nav">
       <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#service">Service</a></li>
-        <li><a href="#company">Company</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">企業理念<br class="br-pc"><p>Vision</p></a></li>
+        <li><a href="#business">事業分野<br class="br-pc"><p>Business</p></a></li>
+        <li><a href="#company">企業情報<br class="br-pc"><p>Company</p></a></li>
+        <li><a href="#contact">お問合せ<br class="br-pc"><p>Contact</p></a></li>
       </ul>
     </nav>
     <div id="ham-btn">
@@ -38,16 +39,86 @@
     </div>
     <!-- <div id="cover"></div> -->
   </header>
+  <!-- ここまでは header です -->
   <main>
+    <!-- ここからは first view です -->
     <section class="fv">
       <div class="fv-inner">
         <h2 class="fv-slogan">未経験から<br class="br-sp">エンジニアへ</h2>
-        <h3 class="fv-txt">「 IT 」×「 想像力 」×「 個性 」<br>
+        <h3 class="fv-txt"><span style="margin-left: -10px;">「IT」×「想像力」×「個性」</span><br>
           クリエイティブなスキルは<br class="br-sp">人の未来を輝かせる。</h3>
       </div>
+      <div class="circle-btn-container">
+        <a href="" class="circle-btn circle-btn-strength">
+          <div class="circle-btn-txt">
+            私たち<br>の強み
+            <p class="en">Our Strength</p>
+          </div>
+        </a>
+        <a href="#contact" class="circle-btn circle-btn-contact">
+          <div class="circle-btn-txt">
+            <div class="img-mail"></div>
+            お問合せ
+            <p class="en">Contact</p>
+          </div>
+        </a>
+        <a class="circle-btn circle-btn-top">
+          <div class="circle-btn-txt">
+            <div class="top-arrow"></div>
+            TOP
+          </div>
+        </a>
+      </div>
     </section>
-    <section id="about">
-
+    <!-- ここまでは first view です -->
+    <section id="business" class="section">
+      <div class="section-ttl">主要事業</div>
+    </section>
+    <section id="" class="section">
+      <div class="section-ttl">会社概要</div>
+    </section>
+    <section id="contact" class="section">
+      <div class="section-ttl">お問合せ</div>
+      <form class="form-wrapper" action="" name="contact-form" method="post">
+        <div class="form-q form-q1">
+          <p>お問合せ内容</p>
+          <label><input type="checkbox" name="form-q1">資料請求</label>
+          <label><input type="checkbox" name="form-q1">お電話でのご相談を希望</label>
+          <label><input type="checkbox" name="form-q1">申し込み</label>
+        </div>
+        <div class="form-q">
+          <label>
+            <p>担当者名</p>
+            <input type="text">
+          </label>
+        </div>
+        <div class="form-q">
+          <label>
+            <p>電話番号</p>
+            <input type="tel">
+          </label>
+        </div>
+        <div class="form-q">
+          <label>
+            <p>メールアドレス</p>
+            <input type="email">
+          </label>
+        </div>
+        <div class="form-q">
+          <label>
+            <p>その他</p>
+            <textarea name="contact-other" cols="30" rows="10"></textarea>
+          </label>
+        </div>
+        <div class="btn-submit">
+          <a href="">
+            <div>
+              <span>入力内容を送信する</span><br>
+              <span class="en">Submit</span>
+            </div>
+          </a>
+        </div>
+      </form>
     </section>
   </main>
   <footer class="footer">

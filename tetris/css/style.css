@@ -168,7 +168,7 @@ h3 {
     top: 50%;
     left: 50%;
     transform: translate(0, -50%);
-    font-size: 8pt;
+    font-size: 3vw;
     font-family: "Kosugi Maru", sans-serif;
     font-weight: bold;
   }
