@@ -233,9 +233,12 @@ body {
   right: 10px;
   bottom: 60px;
   animation: float 4.5s 0.3s infinite linear;
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.4;
   letter-spacing: 1px;
+}
+.fv .circle-btn-container .circle-btn-contact .circle-btn-txt {
+  width: 120px;
 }
 .fv .circle-btn-container .circle-btn-contact::after {
   display: block;
