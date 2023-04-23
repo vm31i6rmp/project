@@ -202,7 +202,7 @@ body {
   right: 160px;
   bottom: 80px;
   animation: float 4s infinite linear;
-  font-size: 2rem;
+  font-size: 1.9rem;
   letter-spacing: 2px;
   line-height: 1.4;
 }
@@ -229,7 +229,7 @@ body {
   right: 10px;
   bottom: 60px;
   animation: float 4.5s 0.3s infinite linear;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.4;
   letter-spacing: 1px;
 }
