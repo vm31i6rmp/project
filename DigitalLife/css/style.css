@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   font-size: 16px;
 }
@@ -19,6 +20,7 @@ body {
   font-family: "Noto Serif JP", serif;
 }
 
+/* ヘッダー */
 .header {
   position: fixed;
   left: 0;
@@ -135,6 +137,7 @@ body {
   transform: translateY(-1px) rotate(495deg);
 }
 
+/* ファーストビュー */
 .fv {
   height: 100vh;
   background: no-repeat center/cover url(../img/fv.jpg);
@@ -179,8 +182,8 @@ body {
   color: #fff;
 }
 .fv .circle-btn-container .circle-btn-txt .img-mail {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   margin: 0 auto;
   text-align: center;
   background: no-repeat center/contain url(../img/contact.png);
@@ -233,9 +236,8 @@ body {
   right: 10px;
   bottom: 60px;
   animation: float 4.5s 0.3s infinite linear;
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.4;
-  letter-spacing: 1px;
 }
 .fv .circle-btn-container .circle-btn-contact .circle-btn-txt {
   width: 120px;
@@ -252,6 +254,10 @@ body {
 }
 .fv .circle-btn-container .circle-btn-contact:hover::after {
   transform: scale(100%);
+}
+.fv .circle-btn-container .circle-btn-contact .en {
+  font-size: 16px;
+  letter-spacing: 1px;
 }
 .fv .circle-btn-container .circle-btn-top {
   width: 80px;
@@ -345,9 +351,13 @@ body {
     transform: translate(-0.5714285714px, 1.4285714286px);
   }
 }
+/* コンタクトフォーム */
 .form-wrapper {
-  max-width: 700px;
+  max-width: 500px;
   margin: 100px auto 0;
+  color: #333;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 300;
 }
 .form-wrapper .form-q {
   margin-bottom: 25px;
@@ -355,56 +365,148 @@ body {
 .form-wrapper .form-q p {
   margin-bottom: 5px;
 }
-.form-wrapper .form-q1 label {
+.form-wrapper .form-q1 div {
+  background-color: #eee;
+  padding: 0 0 0 10px;
+}
+.form-wrapper .form-q1 div label {
   display: inline-block;
-  margin: 10px 20px 0 0;
+  margin: 5px 10px 5px 0;
 }
 .form-wrapper input[type=text], .form-wrapper input[type=tel], .form-wrapper input[type=email] {
+  display: block;
+  box-sizing: border-box;
   width: 100%;
-  height: 30px;
+  height: 40px;
+  border: none;
+  background-color: #eee;
+  padding: 0 10px;
+  font-size: 1.1rem;
+  font-weight: 300;
+  margin-top: 10px;
+  font-family: "Noto Sans JP", "Mallanna", sans-serif;
+}
+.form-wrapper input[type=text]:focus, .form-wrapper input[type=tel]:focus, .form-wrapper input[type=email]:focus {
+  outline: none;
 }
 .form-wrapper textarea {
   width: 100%;
-  height: 170px;
+  height: 150px;
+  display: block;
+  box-sizing: border-box;
+  border: none;
+  background-color: #eee;
+  padding: 10px;
+  font-size: 1.1rem;
+  font-weight: 300;
+  margin-top: 10px;
+  font-family: "Noto Sans JP", "Mallanna", sans-serif;
+}
+.form-wrapper textarea:focus {
+  outline: none;
+}
+.form-wrapper button {
+  border: none;
+  display: block;
+  padding: 0;
 }
 .form-wrapper .btn-submit {
   width: 260px;
-  height: 60px;
+  height: 70px;
   border-radius: 10px;
   margin: 40px auto 0;
   text-align: center;
   margin-bottom: 100px;
   box-shadow: 0 0 3px #999;
-}
-.form-wrapper .btn-submit a {
-  display: block;
-  width: 260px;
-  height: 60px;
-  border-radius: 10px;
-  color: #fff;
   background: linear-gradient(90deg, #CBA6AD, #485FA4);
-  font-weight: 600;
-  position: relative;
-  letter-spacing: 1.4px;
-  font-size: 1.1rem;
   transition: 0.5s;
-  z-index: -1;
 }
-.form-wrapper .btn-submit a:hover {
+.form-wrapper .btn-submit:hover {
+  cursor: pointer;
   opacity: 0.7;
 }
-.form-wrapper .btn-submit a div {
-  width: 260px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.form-wrapper .btn-submit div {
+  border-radius: 10px;
+  font-weight: 600;
+  letter-spacing: 1.4px;
+  line-height: 1.1;
+  font-size: 1.1rem;
+  transition: 0.5s;
+  color: #fff;
 }
-.form-wrapper .btn-submit a div .en {
+.form-wrapper .btn-submit div .en {
   font-family: "Mallanna", sans-serif;
   font-size: 0.9rem;
 }
+.form-wrapper input[type=radio] {
+  display: none;
+}
+.form-wrapper input[type=radio] + span {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  padding: 8px 8px 10px 34px;
+  border-radius: 8px;
+}
+.form-wrapper input[type=radio] + span::before,
+.form-wrapper input[type=radio] + span::after {
+  position: absolute;
+  content: "";
+  display: block;
+  border-radius: 50%;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  box-sizing: border-box;
+}
+.form-wrapper input[type=radio] + span::before {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border: 2px solid #999999;
+  left: 9px;
+}
+.form-wrapper input[type=radio] + span::after {
+  width: 10px;
+  height: 10px;
+  background: #999999;
+  left: 14px;
+  opacity: 0;
+  transition: ease 0.2s;
+}
+.form-wrapper input:hover + span {
+  background: #ddd;
+}
+.form-wrapper input[type=radio]:checked + span::before {
+  border: 2px solid #6596FA;
+}
+.form-wrapper input[type=radio]:checked + span::after {
+  background: #6596FA;
+  opacity: 1;
+}
+.form-wrapper .required {
+  position: relative;
+}
+.form-wrapper .required::after {
+  display: inline-block;
+  content: "必須";
+  width: 30px;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  margin-left: 8px;
+  font-size: 0.7rem;
+  background-color: tomato;
+  color: #fff;
+  text-align: center;
+  padding: 3px;
+  border-radius: 3px;
+  font-weight: 500;
+}
 
+/* フッター */
 .footer {
   height: 40px;
 }
@@ -416,6 +518,7 @@ body {
   font-size: 0.8rem;
 }
 
+/* レスポンシブ */
 @media screen and (max-width: 800px) {
   .br-pc {
     display: none;
@@ -424,7 +527,6 @@ body {
     display: block;
   }
   .header {
-    background-color: transparent;
     padding: 3vw 6vw 0 6vw;
   }
   .header-ttl a .header-ttl-txt {
@@ -506,7 +608,7 @@ body {
     height: 130px;
     right: 40px;
     bottom: 60px;
-    font-size: 0.9rem;
+    font-size: 0.6rem;
   }
   .fv .circle-btn-container .circle-btn-contact::after {
     width: 130px;
@@ -515,6 +617,9 @@ body {
   .fv .circle-btn-container .circle-btn-contact .img-mail {
     width: 40px;
     height: 40px;
+  }
+  .fv .circle-btn-container .circle-btn-contact .en {
+    font-size: 12px;
   }
   .fv .circle-btn-container .circle-btn-top {
     width: 70px;
@@ -528,10 +633,13 @@ body {
     height: 70px;
   }
   .form-wrapper {
-    max-width: 92vw;
+    max-width: 80vw;
   }
-  .form-wrapper .form-q1 label {
+  .form-wrapper .form-q1 div {
+    padding: 10px 0 10px 10px;
+  }
+  .form-wrapper .form-q1 div label {
     display: block;
-    margin: 25px 0;
+    margin: 5px 0;
   }
 }/*# sourceMappingURL=style.css.map */

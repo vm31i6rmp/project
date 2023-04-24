@@ -21,7 +21,7 @@ body{
   font-family: 'Noto Serif JP', serif;
   // font-family: 'Sofia Sans Condensed', sans-serif;
 }
-
+/* ヘッダー */
 $header-height: 80px;
 .header{
   position: fixed;
@@ -154,6 +154,7 @@ $header-height: 80px;
   //   display: none;
   // }
 }
+/* ファーストビュー */
 .fv{
   height: 100vh;
   background: no-repeat center/cover url(../img/fv.jpg);
@@ -194,8 +195,8 @@ $header-height: 80px;
         transition: .2s .2s;
         color: #fff;
         .img-mail{
-          width: 60px;
-          height: 60px;
+          width: 70px;
+          height: 70px;
           margin: 0 auto;
           text-align: center;
           background: no-repeat center/contain url(../img/contact.png);
@@ -250,9 +251,8 @@ $header-height: 80px;
       right: 10px;
       bottom: 60px;
       animation: float 4.5s 0.3s infinite linear;
-      font-size: 1.1rem;
+      font-size: 1rem;
       line-height: 1.4;
-      letter-spacing: 1px;
       .circle-btn-txt{
         width: 120px;
       }
@@ -268,6 +268,10 @@ $header-height: 80px;
       }
       &:hover::after{
         transform: scale(100%);
+      }
+      .en{
+        font-size: 16px;
+        letter-spacing: 1px;
       }
     }
     .circle-btn-top{
@@ -364,9 +368,13 @@ $floatR: 2px;
     transform: translate(calc(($floatR - ($floatR / 1.4)) * -1), calc($floatR / 1.4));
   }
 }
+/* コンタクトフォーム */
 .form-wrapper{
-  max-width: 700px;
+  max-width: 500px;
   margin: 100px auto 0;
+  color: #333;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 300;
   .form-q{
     margin-bottom: 25px;
     p{
@@ -374,57 +382,149 @@ $floatR: 2px;
     }
   }
   .form-q1{
-    label{
-      display: inline-block;
-      margin: 10px 20px 0 0;
+    div{
+      background-color: #eee;
+      padding: 0 0 0 10px;
+      label{
+        display: inline-block;
+        margin: 5px 10px 5px 0;
+      }
     }
   }
   input[type="text"],input[type="tel"],input[type="email"]{
+    display: block;
+    box-sizing: border-box;
     width: 100%;
-    height: 30px;
+    height: 40px;
+    border: none;
+    background-color: #eee;
+    padding: 0 10px;
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-top: 10px;
+    font-family: 'Noto Sans JP', 'Mallanna', sans-serif;
+    &:focus{
+      outline: none;
+    }
   }
   textarea{
     width: 100%;
-    height: 170px;
+    height: 150px;
+    display: block;
+    box-sizing: border-box;
+    border: none;
+    background-color: #eee;
+    padding: 10px;
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-top: 10px;
+    font-family: 'Noto Sans JP', 'Mallanna', sans-serif;
+    &:focus{
+      outline: none;
+    }
+  }
+  button{
+    border: none;
+    display: block;
+    padding: 0;
   }
   .btn-submit{
     width: 260px;
-    height: 60px;
+    height: 70px;
     border-radius: 10px;
     margin: 40px auto 0;
     text-align: center;
     margin-bottom: 100px;
     box-shadow: 0 0 3px #999;
-    a{
-      display: block;
-      width: 260px;
-      height: 60px;
+    background: linear-gradient(90deg, #CBA6AD, #485FA4);
+    transition: .5s;
+    &:hover{
+      cursor: pointer;
+      opacity: .7;
+    }
+    div{
       border-radius: 10px;
-      color: #fff;
-      background: linear-gradient(90deg, #CBA6AD, #485FA4);
       font-weight: 600;
-      position: relative;
       letter-spacing: 1.4px;
+      line-height: 1.1;
       font-size: 1.1rem;
       transition: .5s;
-      z-index: -1;
-      &:hover{
-        opacity: .7;
-      }
-      div{
-        width: 260px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        .en{
-          font-family: 'Mallanna', sans-serif;
-          font-size: 0.9rem;
-        }
+      color: #fff;
+      .en{
+        font-family: 'Mallanna', sans-serif;
+        font-size: 0.9rem;
       }
     }
   }
+  input[type="radio"]{
+    display: none;
+  }
+  input[type="radio"]+span{
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    padding: 8px 8px 10px 34px;
+    border-radius: 8px;
+  }
+  input[type="radio"]+span::before,
+  input[type="radio"]+span::after{
+    position: absolute;
+    content: "";
+    display: block;
+    border-radius: 50%;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    box-sizing: border-box;
+  }
+  input[type="radio"]+span::before{
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border: 2px solid #999999;
+    left: 9px;
+  }
+  input[type="radio"]+span::after{
+    width: 10px;
+    height: 10px;
+    background: #999999;
+    left: 14px;
+    opacity: 0;
+    transition: ease .2s;
+  }
+  input:hover+span{
+    background: #ddd;
+  }
+  input[type="radio"]:checked+span::before{
+    border: 2px solid #6596FA;
+  }
+  input[type="radio"]:checked+span::after{
+    background: #6596FA;
+    opacity: 1;
+  }
+  .required{
+    position: relative;
+    &::after{
+      display: inline-block;
+      content: "必須";
+      width: 30px;
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      transform: translateY(-50%);
+      margin-left: 8px;
+      font-size: 0.7rem;
+      background-color: tomato;
+      color: #fff;
+      text-align: center;
+      padding: 3px;
+      border-radius: 3px;
+      font-weight: 500;
+    }
+  }
 }
+/* フッター */
 .footer{
   height: 40px;
   .copyright{
@@ -436,7 +536,10 @@ $floatR: 2px;
   }
 }
 
-// レスポンシブ
+
+
+
+/* レスポンシブ */
 @media screen and (max-width: 800px) {
   .br{
     &-pc{
@@ -448,7 +551,7 @@ $floatR: 2px;
   }
 
   .header{
-    background-color: transparent;
+    // background-color: transparent;
     padding: 3vw 6vw 0 6vw;
     &-ttl{
       a{
@@ -505,18 +608,6 @@ $floatR: 2px;
         }
       }
     }
-    // #cover{
-    //   &.open{
-    //     display: block;
-    //     position: fixed;
-    //     z-index: 90;
-    //     top: 0;
-    //     bottom: 0;
-    //     left: 0;
-    //     background-color: rgba(0,0,0,0.2);
-    //     width: 60vw;
-    //   }
-    // }
   }
   .fv{
     &-slogan{
@@ -550,7 +641,7 @@ $floatR: 2px;
         height: 130px;
         right: 40px;
         bottom: 60px;
-        font-size: 0.9rem;
+        font-size: 0.6rem;
         &::after{
           width: 130px;
           height: 130px;
@@ -558,6 +649,9 @@ $floatR: 2px;
         .img-mail{
           width: 40px;
           height: 40px;
+        }
+        .en{
+          font-size: 12px;
         }
       }
       .circle-btn-top{
@@ -574,11 +668,14 @@ $floatR: 2px;
     }
   }
   .form-wrapper{
-    max-width: 92vw;
+    max-width: 80vw;
     .form-q1{
-      label{
-        display: block;
-        margin: 25px 0;
+      div{
+        padding: 10px 0 10px 10px;
+        label{
+          display: block;
+          margin: 5px 0;
+        }
       }
     }
   }

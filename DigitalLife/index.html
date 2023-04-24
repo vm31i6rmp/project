@@ -24,10 +24,10 @@
     </h1>
     <nav class="header-nav">
       <ul>
-        <li><a href="#about">企業理念<br class="br-pc"><p>Vision</p></a></li>
+        <li><a href="#vision">企業理念<br class="br-pc"><p>Vision</p></a></li>
         <li><a href="#business">事業分野<br class="br-pc"><p>Business</p></a></li>
         <li><a href="#company">企業情報<br class="br-pc"><p>Company</p></a></li>
-        <li><a href="#contact">お問合せ<br class="br-pc"><p>Contact</p></a></li>
+        <li><a href="#recruit">採用情報<br class="br-pc"><p>Recruit</p></a></li>
       </ul>
     </nav>
     <div id="ham-btn">
@@ -40,7 +40,7 @@
     <!-- <div id="cover"></div> -->
   </header>
   <!-- ここまでは header です -->
-  <main>
+  <main style="z-index: 1;">
     <!-- ここからは first view です -->
     <section class="fv">
       <div class="fv-inner">
@@ -49,7 +49,7 @@
           クリエイティブなスキルは<br class="br-sp">人の未来を輝かせる。</h3>
       </div>
       <div class="circle-btn-container">
-        <a href="" class="circle-btn circle-btn-strength">
+        <a href="#strength" class="circle-btn circle-btn-strength">
           <div class="circle-btn-txt">
             私たち<br>の強み
             <p class="en">Our Strength</p>
@@ -58,7 +58,7 @@
         <a href="#contact" class="circle-btn circle-btn-contact">
           <div class="circle-btn-txt">
             <div class="img-mail"></div>
-            お問合せ
+            お問い合わせ
             <p class="en">Contact</p>
           </div>
         </a>
@@ -71,55 +71,124 @@
       </div>
     </section>
     <!-- ここまでは first view です -->
+    <section id="strength" class="section">
+      <h3 class="section-ttl">私たちの強み</h3>
+      <ul class="strength-list">
+        <li class="strength-item">
+          <div class="strength-item-ttl">技術力の高さ</div>
+          <div class="strength-item-txt">
+            私たちは最新の技術を熟知しており、常に最新の開発手法を導入しています。これにより、高品質で革新的なソリューションを提供することができます。
+          </div>
+        </li>
+        <li class="strength-item">
+          <div class="strength-item-ttl">顧客満足度の高さ</div>
+          <div class="strength-item-txt">私たちは常にお客様のニーズに応えるために努力しています。お客様とのコミュニケーションを大切にし、プロジェクトの進行状況や修正内容を適切に共有することで、お客様に満足いただける成果物を提供しています。</div>
+        </li>
+        <li class="strength-item">
+          <div class="strength-item-ttl">迅速かつ柔軟な対応力</div>
+          <div class="strength-item-txt">私たちは、お客様の要望に迅速かつ柔軟に対応することができます。変更や追加要望があった場合でも、迅速に対応し、品質を犠牲にすることなくスケジュールを守ることができます。</div>
+        </li>
+        <li class="strength-item">
+          <div class="strength-item-ttl">経験豊富なチーム</div>
+          <div class="strength-item-txt">私たちは、経験豊富なエンジニアが集まったチームでプロジェクトに取り組んでいます。多種多様なプロジェクトに対応してきた実績があり、高品質で効率的な開発が可能です。</div>
+        </li>
+        <li class="strength-item">
+          <div class="strength-item-ttl">堅牢な品質管理体制</div>
+          <div class="strength-item-txt">私たちは、品質管理にも力を入れています。ソフトウェア開発ライフサイクル全体にわたり、テストやレビューなどの品質管理プロセスを徹底して実施しています。これにより、高品質なソリューションを提供することができます。</div>
+        </li>
+      </ul>
+    </section>
     <section id="business" class="section">
-      <div class="section-ttl">主要事業</div>
+      <h3 class="section-ttl">事業分野</h3>
+      <ul class="business-list">
+        <li class="business-item">
+          <div class="business-item-ttl">Webアプリケーション開発</div>
+          <div class="business-item-txt"></div>
+        </li>
+        <li class="business-item">
+          <div class="business-item-ttl">スマートフォンアプリケーション開発</div>
+          <div class="business-item-txt"></div>
+        </li>
+        <li class="business-item">
+          <div class="business-item-ttl">システムインテグレーション</div>
+          <div class="business-item-txt"></div>
+        </li>
+        <li class="business-item">
+          <div class="business-item-ttl">クラウドソリューション</div>
+          <div class="business-item-txt"></div>
+        </li>
+      </ul>
     </section>
-    <section id="" class="section">
-      <div class="section-ttl">会社概要</div>
+    <section id="recruit" class="section">
+      <h3 class="section-ttl">採用情報</h3>
+      <div>「働く×学ぶ」<br>
+        で人の未来を創造します。
+      </div>
+      <div>
+        「未経験だから」というハードルを乗り越えられる<br>
+        環境と教育がここにあります。<br>
+        学ぶ場と働く環境を提供する独自の<br>
+        育成プラットフォームを実現。<br>
+        今を生きるために様々なスキルを<br>
+        養うための講師があなたの成長をサポートします。<br>
+        私たちは挑戦する人を応援し、<br>
+        一緒に未来を創造していきます。
+      </div>
     </section>
-    <section id="contact" class="section">
+    <!-- ここからは form です -->
+    <!-- <section id="contact" class="section">
       <div class="section-ttl">お問合せ</div>
       <form class="form-wrapper" action="" name="contact-form" method="post">
         <div class="form-q form-q1">
-          <p>お問合せ内容</p>
-          <label><input type="checkbox" name="form-q1">資料請求</label>
-          <label><input type="checkbox" name="form-q1">お電話でのご相談を希望</label>
-          <label><input type="checkbox" name="form-q1">申し込み</label>
+          <p>お問合せ種類</p>
+          <div>
+            <label>
+              <input type="radio" name="form-q1">
+              <span>資料請求</span>
+            </label>
+            <label>
+              <input type="radio" name="form-q1">
+              <span>お電話でのご相談を希望</span>
+            </label>
+            <label>
+              <input type="radio" name="form-q1">
+              <span>申し込み</span>
+            </label>
+          </div>
         </div>
         <div class="form-q">
           <label>
-            <p>担当者名</p>
-            <input type="text">
+            <span class="required">お名前</span>
+            <input type="text" required>
           </label>
         </div>
         <div class="form-q">
           <label>
-            <p>電話番号</p>
-            <input type="tel">
+            <span class="required">電話番号</span>
+            <input type="tel" required>
           </label>
         </div>
         <div class="form-q">
           <label>
-            <p>メールアドレス</p>
-            <input type="email">
+            <span class="required">メールアドレス</span>
+            <input type="email" required>
           </label>
         </div>
         <div class="form-q">
           <label>
-            <p>その他</p>
-            <textarea name="contact-other" cols="30" rows="10"></textarea>
+            <span class="required">お問い合わせ内容</span>
+            <textarea name="contact-other" cols="30" rows="10" required></textarea>
           </label>
         </div>
-        <div class="btn-submit">
-          <a href="">
-            <div>
-              <span>入力内容を送信する</span><br>
-              <span class="en">Submit</span>
-            </div>
-          </a>
-        </div>
+        <button class="btn-submit">
+          <div>
+            <span>入力内容を送信する</span><br>
+            <span class="en">Submit</span>
+          </div>
+        </button>
       </form>
-    </section>
+    </section> -->
+    <!-- ここまでは form です -->
   </main>
   <footer class="footer">
     <div class="copyright">&copy; Digital Life 2023</div>
@@ -127,3 +196,14 @@
   <script src="main.js"></script>
 </body>
 </html>
+
+<!--企業理念
+技術力の追求：私たちは、常に最新技術を習得することで、顧客ニーズに応える高品質なソリューションを提供し続けます。
+
+顧客第一主義：私たちは、お客様のビジネス課題を理解し、最適なソリューションを提供することで、お客様のビジネスパートナーとして信頼される存在を目指します。
+
+チームワーク：私たちは、チーム一丸となって、目的を共有し、協力し、挑戦的なプロジェクトに取り組みます。
+
+社会貢献：私たちは、企業として社会に貢献することを使命とし、環境に配慮し、地域社会との協力に努めます。
+
+進化と挑戦：私たちは、常に新しいことに挑戦し、成長し続けることで、世界のIT産業をリードする企業であり続けます。 -->
