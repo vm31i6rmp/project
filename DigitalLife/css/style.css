@@ -575,6 +575,10 @@ body {
   padding: 30px;
   box-sizing: border-box;
 }
+#recruit .recruit-cnt-txt span {
+  font-size: 1.6rem;
+  letter-spacing: 1.5px;
+}
 #recruit .recruit-cnt-txt-inner div {
   margin-bottom: 12px;
 }
@@ -1049,6 +1053,11 @@ body {
   #recruit .recruit-cnt-txt {
     width: 100%;
     font-size: 0.9rem;
+    letter-spacing: 0.9px;
+  }
+  #recruit .recruit-cnt-txt span {
+    font-size: 1.5rem;
+    letter-spacing: 1.2px;
   }
   #recruit .recruit-cnt-img {
     width: 100%;
