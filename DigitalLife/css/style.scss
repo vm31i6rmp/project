@@ -6,6 +6,9 @@ a{
   text-decoration: none;
   color: #fff;
 }
+ul{
+  list-style: none;
+}
 .br{
   &-pc{
     display: block;
@@ -21,6 +24,10 @@ body{
   font-family: 'Noto Serif JP', serif;
   // font-family: 'Sofia Sans Condensed', sans-serif;
 }
+.lightup{
+  background:linear-gradient(transparent 60%, #ff6 60%);
+}
+
 /* ヘッダー */
 $header-height: 80px;
 .header{
@@ -34,6 +41,12 @@ $header-height: 80px;
   justify-content: space-between;
   padding: 0 10px 0 30px;
   color: #fff;
+  z-index: 100;
+  transition: 0.5s 0.5s;
+  &.fixed{
+    background-color: rgba(0,0,0,0.8);
+    transition: 0.5s 0.5s;
+  }
   &-ttl{
     a{
       display: flex;
@@ -150,15 +163,13 @@ $header-height: 80px;
       }
     }
   }
-  // #cover{
-  //   display: none;
-  // }
 }
 /* ファーストビュー */
 .fv{
   height: 100vh;
   background: no-repeat center/cover url(../img/fv.jpg);
   color: #fff;
+  margin-bottom: 80px;
   &-inner{
     margin-left: 40px;
   }
@@ -368,6 +379,338 @@ $floatR: 2px;
     transform: translate(calc(($floatR - ($floatR / 1.4)) * -1), calc($floatR / 1.4));
   }
 }
+/* セクション全体 */
+.section{
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto 80px;
+  box-sizing: border-box;
+  &-ttl{
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 30px 0;
+    letter-spacing: 5px;
+  }
+}
+/* 私たちの強み（ホーム） */
+$strength-item-height: 200px;
+$strength-item-height-responsive: 250px;
+#strength{
+  max-width: 100%;
+  counter-reset: num 0;
+  padding: 0;
+  .strength{
+    &-item{
+      display: flex;
+      height: $strength-item-height;
+      font-family: 'Noto Sans JP', sans-serif;
+      position: relative;
+      margin-bottom: 60px;
+      &-ttl{
+        width: 30%;
+        height: $strength-item-height;
+        color: #fff;
+        background-image: linear-gradient(rgba(20,20,20,0.6),rgba(100,100,100,0.3)), url(../img/fv.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        font-size: 2.8rem;
+        font-weight: 500;
+        letter-spacing: 6px;
+        line-height: 1.2;
+        margin: 0 20px 0 0;
+        z-index: 2;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        &::before{
+          display: block;
+          content: counter(num);
+          position: absolute;
+          top: -5%;
+          left: 50%;
+          color: rgba(256,256,256,0.2);
+          font-size: 10rem;
+          font-weight: 900;
+          counter-increment: num 1;
+        }
+      }
+      &-txt{
+        width: 55%;
+        height: $strength-item-height;
+        letter-spacing: 1px;
+        line-height: 1.6;
+        font-size: 1.2rem;
+        font-weight: 300;
+        position: absolute;
+        top: 50%;
+        left: 32%;
+        transform: translateY(-40%);
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        div{
+          display: block;
+          content: "";
+          position: absolute;
+          top: 3%;
+          left: -25%;
+          width: 68vw;
+          height: $strength-item-height;
+          background: linear-gradient(90deg, rgba($color:#CBA6AD,$alpha:0.6), rgba($color:#485FA4,$alpha:0.6));
+          z-index: -1;
+          &::after{
+            display: block;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 100%;
+            width: 0;
+            height: 0;
+            border-top: solid rgba($color:#485FA4,$alpha:0.6) $strength-item-height;
+            border-right: solid transparent 8vw;
+            z-index: -1;
+          }
+        }
+      }
+      &-reverse{
+        flex-direction: row-reverse;
+        .strength-item-ttl{
+          margin: 0 0 0 20px;
+        }
+        .strength-item-txt{
+          left: initial;
+          right: 31%;
+          div{
+            left: inherit;
+            &::after{
+              left: inherit;
+              right: 100%;
+              border-top-color: rgba($color:#CBA6AD,$alpha:0.6);
+              border-right: none;
+              border-left: solid transparent 8vw;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/* 事業分野（ホーム） */
+#business{
+  .business{
+    &-list{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    &-item{
+      width: 50%;
+      height: 200px;
+      position: relative;
+      background-size: cover;
+      &:nth-child(1){
+        background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.8)), url(../img/business1.png);
+      }
+      &:nth-child(2){
+        background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.8)), url(../img/business2.png);
+      }
+      &:nth-child(3){
+        background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.8)), url(../img/business3.png);
+      }
+      &:nth-child(4){
+        background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.8)), url(../img/business4.png);
+      }
+      a{
+        display: block;
+        width: 100%;
+        height: 100%;
+        transition: 0.5s;
+        position: relative;
+        &::before{
+          display: block;
+          content: "—";
+          font-family: 'Mallanna', sans-serif;
+          position: absolute;
+          letter-spacing: 2px;
+          top: 70%;
+          left: 50%;
+          transform: translateX(-50%) scale(0);
+          transition: 0.2s;
+        }
+        &::after{
+          display: block;
+          content: "";
+          width: 100%;
+          height: 100%;
+          transition: 0.5s;
+        }
+        &:hover::before{
+          content: "> click <";
+          transform: translateX(-50%) scale(100%);
+          transition: 0.3s 0.3s;
+        }
+        &:hover::after{
+          background-color: rgba($color: #777, $alpha: 0.3);
+        }
+      }
+      &-ttl{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+        font-size: 1.8rem;
+        width: 100%;
+        font-family: 'Noto Sans JP', sans-serif;
+        font-weight: 700;
+        line-height: 1.4;
+        color: #fff;
+      }
+    }
+  }
+}
+/* 採用情報（ホーム） */
+#recruit{
+  margin-bottom: 0;
+  position: relative;
+  .recruit{
+    &-cnt{
+      display: flex;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 300;
+      height: 400px;
+      &-txt{
+        width: 50%;
+        background: linear-gradient(135deg, rgba($color:#CBA6AD,$alpha:0.6), rgba($color:#485FA4,$alpha:0.6));
+        line-height: 1.5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+        box-sizing: border-box;
+        &-inner{
+          div{
+            margin-bottom: 12px;
+          }
+        }
+      }
+      &-img{
+        width: 50%;
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .circle-btn{
+        transition: 1s .3s;
+        border: solid 1px #666;
+        background-color: rgba(250,250,250,.7);
+        border-radius: 50%;
+        text-align: center;
+        &-txt{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 2;
+          transition: .2s .2s;
+          color: #333;
+          font-family: 'Noto Serif JP', serif;
+          .img-mail{
+            width: 70px;
+            height: 70px;
+            margin: 0 auto;
+            text-align: center;
+            background: no-repeat center/contain url(../img/contact-black.png);
+            transition: .2s .2s;
+          }
+          .en{
+            font-family: 'Mallanna', sans-serif;
+            font-size: 14px;
+          }
+        }
+        &:hover{
+          cursor: pointer;
+          .circle-btn-txt{
+            color: #fff;
+            .img-mail{
+              background-image: url(../img/contact.png);
+            }
+          }
+        }
+      }
+      .circle-btn-contact{
+        width: 180px;
+        height: 180px;
+        position: absolute;
+        right: 15%;
+        bottom: 20%;
+        overflow: hidden;
+        animation: float 4.5s 0.3s infinite linear;
+        font-size: 1rem;
+        line-height: 1.4;
+        .circle-btn-txt{
+          width: 120px;
+        }
+        &::after{
+          display: block;
+          content: "";
+          width: 180px;
+          height: 180px;
+          border-radius: 50%;
+          background-color: rgba(0,0,0,.6);
+          transform: scale(0);
+          transition: 0.5s;
+        }
+        &:hover::after{
+          transform: scale(100%);
+        }
+        .en{
+          font-size: 16px;
+          letter-spacing: 1px;
+        }
+      }
+      .circle-btn-recruit{
+        width: 120px;
+        height: 120px;
+        position: absolute;
+        right: 6%;
+        bottom: 40%;
+        overflow: hidden;
+        animation: float 3.5s 1s infinite linear;
+        font-size: 1.1rem;
+        line-height: 1.4;
+        .circle-btn-txt{
+          width: 120px;
+          span{
+            font-size: 14px;
+          }
+        }
+        &::after{
+          display: block;
+          content: "";
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+          background-color: rgba(0,0,0,.6);
+          transform: scale(0);
+          transition: 0.5s;
+        }
+        &:hover::after{
+          transform: scale(100%);
+        }
+        .en{
+          font-size: 13px;
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+}
 /* コンタクトフォーム */
 .form-wrapper{
   max-width: 500px;
@@ -549,7 +892,6 @@ $floatR: 2px;
       display: block;
     }
   }
-
   .header{
     // background-color: transparent;
     padding: 3vw 6vw 0 6vw;
@@ -610,6 +952,7 @@ $floatR: 2px;
     }
   }
   .fv{
+    margin-bottom: 40px;
     &-slogan{
       font-size: 10vw;
       line-height: 1.5;
@@ -663,6 +1006,135 @@ $floatR: 2px;
         &::after{
           width: 70px;
           height: 70px;
+        }
+        &.black{
+          right: 3vw;
+        }
+      }
+    }
+  }
+  .section{
+    padding: 0 4vw;
+    &-ttl{
+      font-size: 8vw;
+    }
+  }
+  #strength{
+    margin-bottom: 160px;
+    .strength{
+      &-item{
+        margin-bottom: 90px;
+        &-ttl{
+          height: $strength-item-height-responsive;
+          font-size: 6vw;
+          line-height: 1.3;
+          &::before{
+            font-size: 20vw;
+            top: 50%;
+            transform: translateY(-60%);
+          }
+        }
+        &-txt{
+          font-size: 1rem;
+          line-height: 1.5;
+          letter-spacing: 1.3px;
+          margin-top: 50px;
+          div{
+            top: 10%;
+            right: 0;
+            width: 80vw;
+            transform: translateY(-20%);
+            height: calc($strength-item-height-responsive + 20px);
+            &::after{
+              border-top: none;
+              border-right: none;
+            }
+          }
+        }
+        &-reverse{
+          flex-direction: row-reverse;
+          .strength-item-ttl{
+            margin: 0 0 0 20px;
+          }
+          .strength-item-txt{
+            left: initial;
+            right: 32%;
+            div{
+              left: inherit;
+              right: -30%;
+              width: 90vw;
+              &::after{
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  #business{
+    .business{
+      &-item{
+        width: 98%;
+        &-ttl{
+          font-size: 1.6rem;
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+  #recruit{
+    .recruit{
+      &-cnt{
+        display: block;
+        height: auto;
+        &-txt{
+          width: 100%;
+          font-size: 0.9rem;
+        }
+        &-img{
+          width: 100%;
+          height: 300px;
+        }
+        .circle-btn-contact{
+          width: 130px;
+          height: 130px;
+          right: calc(3vw + 35px);
+          bottom: 55px;
+          font-size: 0.6rem;
+          &::after{
+            width: 130px;
+            height: 130px;
+          }
+          .img-mail{
+            width: 40px;
+            height: 40px;
+          }
+          .en{
+            font-size: 12px;
+          }
+        }
+        .circle-btn-recruit{
+          width: 100px;
+          height: 100px;
+          right: calc(3vw + 140px);
+          bottom: 4%;
+          font-size: 0.9rem;
+          line-height: 1.4;
+          .circle-btn-txt{
+            width: 120px;
+            span{
+              font-size: 10px;
+            }
+          }
+          &::after{
+            width: 100px;
+            height: 100px;
+          }
+          .en{
+            font-size: 10px;
+            letter-spacing: 1px;
+          }
         }
       }
     }

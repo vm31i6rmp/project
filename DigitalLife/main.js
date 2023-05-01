@@ -24,12 +24,21 @@ BackToTopBtn.addEventListener("click", (e) => {
 });
 
 const fv = document.querySelector(".fv");
-// const fvHeight = fv.getBoundingClientRect().bottom;
+const fvHeight = fv.getBoundingClientRect().bottom;
 window.addEventListener("scroll", () => {
-  if(window.pageYOffset > 160){
+  if(window.pageYOffset > 150){
     BackToTopBtn.classList.add("black");
   } else {
     BackToTopBtn.classList.remove("black");
+  }
+});
+
+const header = document.querySelector(".header");
+window.addEventListener("scroll", () => {
+  if(window.pageYOffset >= fvHeight) {
+    header.classList.add("fixed");
+  } else if(window.pageYOffset < fvHeight) {
+    header.classList.remove("fixed");
   }
 });
 
@@ -42,7 +51,7 @@ var indexLink = document.querySelectorAll('a[href^="#"]');
       let targetElement = document.getElementById(href.replace('#', ''));
       const nowOffset = window.pageYOffset;
       const targetOffset = targetElement.getBoundingClientRect().top;
-      const gap = 80;
+      const gap = 100;
       const offset = nowOffset + targetOffset - gap;
       window.scrollTo({
         top: offset,
