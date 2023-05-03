@@ -24,9 +24,9 @@ BackToTopBtn.addEventListener("click", (e) => {
 });
 
 const fv = document.querySelector(".fv");
-const fvHeight = fv.getBoundingClientRect().bottom;
 window.addEventListener("scroll", () => {
-  if(window.pageYOffset > 150){
+  const fvHeight = fv.getBoundingClientRect().top;
+  if(fvHeight < -150){
     BackToTopBtn.classList.add("black");
   } else {
     BackToTopBtn.classList.remove("black");
@@ -35,12 +35,14 @@ window.addEventListener("scroll", () => {
 
 const header = document.querySelector(".header");
 window.addEventListener("scroll", () => {
-  if(window.pageYOffset >= fvHeight) {
+  const fvHeight = fv.getBoundingClientRect().bottom; //スクロールするごとに位置取得
+  if(0 >= fvHeight) {
     header.classList.add("fixed");
-  } else if(window.pageYOffset < fvHeight) {
+  } else if(0 < fvHeight) {
     header.classList.remove("fixed");
   }
 });
+
 
 // スムーズにスクロール
 var indexLink = document.querySelectorAll('a[href^="#"]');

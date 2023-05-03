@@ -32,6 +32,7 @@ body{
 $header-height: 80px;
 .header{
   position: fixed;
+  top: 0;
   left: 0;
   right: 0;
   height: $header-height;
@@ -115,7 +116,6 @@ $header-height: 80px;
   #ham-btn{
     display: none;
     position: fixed;
-    top: 3vw;
     right: 3vw;
     width: 80px;
     height: 80px;
@@ -161,6 +161,12 @@ $header-height: 80px;
           }
         }
       }
+    }
+  }
+  &-page{
+    background-color: transparent;
+    a{
+      color: #333;
     }
   }
 }
@@ -715,6 +721,10 @@ $strength-item-height-responsive: 250px;
     }
   }
 }
+/* 企業理念（ページ） */
+#vision{
+  margin-top: 100px;
+}
 /* コンタクトフォーム */
 .form-wrapper{
   max-width: 500px;
@@ -873,13 +883,14 @@ $strength-item-height-responsive: 250px;
 }
 /* フッター */
 .footer{
-  height: 40px;
+  height: 80px;
   .copyright{
     font-family: 'Mallanna', sans-serif;
     text-align: center;
-    line-height: 40px;
+    line-height: 80px;
     font-weight: 300;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    color: #555;
   }
 }
 
@@ -897,12 +908,11 @@ $strength-item-height-responsive: 250px;
     }
   }
   .header{
-    // background-color: transparent;
-    padding: 3vw 6vw 0 6vw;
+    padding: 0 6vw;
     &-ttl{
       a{
         .header-ttl-txt{
-          font-size: 8vw;
+          font-size: 2.3rem;
         }
       }
     }
@@ -1033,8 +1043,9 @@ $strength-item-height-responsive: 250px;
           font-size: 6vw;
           line-height: 1.3;
           &::before{
-            font-size: 20vw;
+            font-size: 22vw;
             top: 50%;
+            left: 45%;
             transform: translateY(-60%);
           }
         }
@@ -1108,19 +1119,19 @@ $strength-item-height-responsive: 250px;
         .circle-btn-contact{
           width: 130px;
           height: 130px;
-          right: calc(3vw + 35px);
+          right: calc(3vw + 30px);
           bottom: 55px;
-          font-size: 0.6rem;
+          font-size: 0.9rem;
           &::after{
             width: 130px;
             height: 130px;
           }
           .img-mail{
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
           }
           .en{
-            font-size: 12px;
+            font-size: 14px;
           }
         }
         .circle-btn-recruit{

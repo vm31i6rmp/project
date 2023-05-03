@@ -31,6 +31,7 @@ body {
 /* ヘッダー */
 .header {
   position: fixed;
+  top: 0;
   left: 0;
   right: 0;
   height: 80px;
@@ -109,7 +110,6 @@ body {
 .header #ham-btn {
   display: none;
   position: fixed;
-  top: 3vw;
   right: 3vw;
   width: 80px;
   height: 80px;
@@ -149,6 +149,12 @@ body {
 }
 .header #ham-btn.open .ham-btn-inner div:nth-child(3) {
   transform: translateY(-1px) rotate(495deg);
+}
+.header-page {
+  background-color: transparent;
+}
+.header-page a {
+  color: #333;
 }
 
 /* ファーストビュー */
@@ -695,6 +701,11 @@ body {
   letter-spacing: 1px;
 }
 
+/* 企業理念（ページ） */
+#vision {
+  margin-top: 100px;
+}
+
 /* コンタクトフォーム */
 .form-wrapper {
   max-width: 500px;
@@ -852,14 +863,15 @@ body {
 
 /* フッター */
 .footer {
-  height: 40px;
+  height: 80px;
 }
 .footer .copyright {
   font-family: "Mallanna", sans-serif;
   text-align: center;
-  line-height: 40px;
+  line-height: 80px;
   font-weight: 300;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+  color: #555;
 }
 
 /* レスポンシブ */
@@ -871,10 +883,10 @@ body {
     display: block;
   }
   .header {
-    padding: 3vw 6vw 0 6vw;
+    padding: 0 6vw;
   }
   .header-ttl a .header-ttl-txt {
-    font-size: 8vw;
+    font-size: 2.3rem;
   }
   .header-nav {
     position: fixed;
@@ -1000,8 +1012,9 @@ body {
     line-height: 1.3;
   }
   #strength .strength-item-ttl::before {
-    font-size: 20vw;
+    font-size: 22vw;
     top: 50%;
+    left: 45%;
     transform: translateY(-60%);
   }
   #strength .strength-item-txt {
@@ -1066,20 +1079,20 @@ body {
   #recruit .recruit-cnt .circle-btn-contact {
     width: 130px;
     height: 130px;
-    right: calc(3vw + 35px);
+    right: calc(3vw + 30px);
     bottom: 55px;
-    font-size: 0.6rem;
+    font-size: 0.9rem;
   }
   #recruit .recruit-cnt .circle-btn-contact::after {
     width: 130px;
     height: 130px;
   }
   #recruit .recruit-cnt .circle-btn-contact .img-mail {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
   }
   #recruit .recruit-cnt .circle-btn-contact .en {
-    font-size: 12px;
+    font-size: 14px;
   }
   #recruit .recruit-cnt .circle-btn-recruit {
     width: 100px;
