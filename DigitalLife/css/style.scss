@@ -75,11 +75,12 @@ $header-height: 80px;
       font-size: 1rem;
       letter-spacing: 2px;
       li{
-        margin: 0 20px;
+        padding: 0 20px;
         line-height: 1;
         a{
           display: block;
           position: relative;
+          box-sizing: border-box;
           height: $header-height;
           padding-top: 22px;
           &::after{
@@ -167,6 +168,19 @@ $header-height: 80px;
     background-color: transparent;
     a{
       color: #333;
+    }
+    .header-nav{
+      ul{
+        li{
+          a{
+            &::after{
+              background-color: rgba(0,0,0,0);
+              background: linear-gradient(135deg, rgba($color:#CBA6AD,$alpha:0.4), rgba($color:#485FA4,$alpha:0.4));
+              z-index: -1;
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -391,11 +405,26 @@ $floatR: 2px;
   width: 100%;
   margin: 0 auto 80px;
   box-sizing: border-box;
+  &-page{
+    max-width: 100%;
+  }
   &-ttl{
     text-align: center;
     font-size: 2.5rem;
     margin: 30px 0;
     letter-spacing: 5px;
+    &-page{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 120px;
+      color: #fff;
+      background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.3)),url(../img/fv.jpg);
+      background-position: center;
+      background-size: cover;
+      letter-spacing: 10px;
+      margin-top: 0;
+    }
   }
 }
 /* 私たちの強み（ホーム） */
@@ -723,7 +752,13 @@ $strength-item-height-responsive: 250px;
 }
 /* 企業理念（ページ） */
 #vision{
-  margin-top: 100px;
+  margin-top: 80px;
+  .vision{
+    &-cnt{
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+  }
 }
 /* コンタクトフォーム */
 .form-wrapper{
@@ -912,7 +947,7 @@ $strength-item-height-responsive: 250px;
     &-ttl{
       a{
         .header-ttl-txt{
-          font-size: 2.3rem;
+          font-size: 2rem;
         }
       }
     }
@@ -934,7 +969,7 @@ $strength-item-height-responsive: 250px;
           margin: 10px auto;
           a{
             display: block;
-            height: 40px;
+            height: 60px;
             width: 150px;
             color: #fff;
             border: solid 1px #fff;
@@ -1030,7 +1065,10 @@ $strength-item-height-responsive: 250px;
   .section{
     padding: 0 4vw;
     &-ttl{
-      font-size: 8vw;
+      font-size: 2.4rem;
+    }
+    &-page{
+      padding: 0;
     }
   }
   #strength{
@@ -1043,7 +1081,7 @@ $strength-item-height-responsive: 250px;
           font-size: 6vw;
           line-height: 1.3;
           &::before{
-            font-size: 22vw;
+            font-size: 70pt;
             top: 50%;
             left: 45%;
             transform: translateY(-60%);
@@ -1156,6 +1194,13 @@ $strength-item-height-responsive: 250px;
             letter-spacing: 1px;
           }
         }
+      }
+    }
+  }
+  #vision{
+    .vision{
+      &-cnt{
+        padding: 0 4vw;
       }
     }
   }
