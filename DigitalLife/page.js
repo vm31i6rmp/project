@@ -14,14 +14,14 @@ navMenu.addEventListener("click", () => {
 })
 
 // 一番上に戻る
-// const BackToTopBtn = document.querySelector(".circle-btn-top");
-// BackToTopBtn.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   window.scrollTo({
-//     top: 0,
-//     behavior: "smooth",
-//   });
-// });
+const BackToTopBtn = document.querySelector(".circle-btn-top");
+BackToTopBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
 
 const header = document.querySelector(".header");
 window.addEventListener("scroll", () => {
