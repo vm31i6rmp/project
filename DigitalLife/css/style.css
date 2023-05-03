@@ -1036,12 +1036,12 @@ body {
   }
   #strength .strength-item-ttl {
     height: 250px;
-    font-size: 6vw;
+    font-size: 40px;
     line-height: 1.3;
   }
   #strength .strength-item-ttl::before {
-    font-size: 70pt;
-    top: 50%;
+    font-size: 100px;
+    top: 40%;
     left: 45%;
     transform: translateY(-60%);
   }
