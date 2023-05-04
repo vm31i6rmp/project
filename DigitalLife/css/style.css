@@ -1004,6 +1004,12 @@ body {
 #company .company-cnt dl dd {
   width: 65%;
 }
+#company .company-cnt dl dd .map {
+  max-width: 100%;
+}
+#company .company-cnt dl dd .map iframe {
+  width: 100%;
+}
 
 /* 採用情報（ページ） */
 #recruit-page {
