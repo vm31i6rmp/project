@@ -963,12 +963,61 @@ $strength-item-height-responsive: 250px;
   }
 }
 /* 事業分野（ページ） */
-#business{
+#business-page{
   margin-top: 80px;
-  // .business{
-  //   &-cnt{
-  //   }
-  // }
+  .business-page{
+    &-cnt{
+      &-item{
+        display: flex;
+        height: 300px;
+        &-ttl{
+          width: 40%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #35659D;
+          color: #fff;
+          font-family: 'Noto Sans JP', sans-serif;
+          font-size: 3vw;
+          letter-spacing: 6px;
+          line-height: 1.8;
+        }
+        &-img{
+          width: 60%;
+        }
+        &:nth-child(1){
+          .business-page-cnt-item-img{
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../img/business1.png);
+            background-size: cover;
+          }
+        }
+        &:nth-child(2){
+          .business-page-cnt-item-img{
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../img/business2.png);
+            background-size: cover;
+          }
+        }
+        &:nth-child(3){
+          .business-page-cnt-item-img{
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../img/business3.png);
+            background-size: cover;
+          }
+        }
+        &:nth-child(4){
+          .business-page-cnt-item-img{
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../img/business4.png);
+            background-size: cover;
+          }
+        }
+        &-reverse{
+          flex-direction: row-reverse;
+          .business-page-cnt-item-ttl{
+            background-color: #B486AA;
+          }
+        }
+      }
+    }
+  }
 }
 /* 会社概要（ページ） */
 #company{
@@ -1105,159 +1154,161 @@ $strength-item-height-responsive: 250px;
   }
 }
 /* コンタクトフォーム */
-.form-wrapper{
-  max-width: 500px;
-  margin: 100px auto 0;
-  color: #333;
-  font-family: 'Noto Sans JP', sans-serif;
-  font-weight: 300;
-  .form-q{
-    margin-bottom: 25px;
-    p{
-      margin-bottom: 5px;
-    }
-  }
-  .form-q1{
-    div{
-      background-color: #eee;
-      padding: 0 0 0 10px;
-      label{
-        display: inline-block;
-        margin: 5px 10px 5px 0;
-      }
-    }
-  }
-  input[type="text"],input[type="tel"],input[type="email"]{
-    display: block;
-    box-sizing: border-box;
-    width: 100%;
-    height: 40px;
-    border: none;
-    background-color: #eee;
-    padding: 0 10px;
-    font-size: 1.1rem;
-    font-weight: 300;
-    margin-top: 10px;
-    font-family: 'Noto Sans JP', 'Mallanna', sans-serif;
-    &:focus{
-      outline: none;
-    }
-  }
-  textarea{
-    width: 100%;
-    height: 150px;
-    display: block;
-    box-sizing: border-box;
-    border: none;
-    background-color: #eee;
-    padding: 10px;
-    font-size: 1.1rem;
-    font-weight: 300;
-    margin-top: 10px;
-    font-family: 'Noto Sans JP', 'Mallanna', sans-serif;
-    &:focus{
-      outline: none;
-    }
-  }
-  button{
-    border: none;
-    display: block;
-    padding: 0;
-  }
-  .btn-submit{
-    width: 260px;
-    height: 70px;
-    border-radius: 10px;
+#contact{
+  margin-top: 80px;
+  .form-wrapper{
+    max-width: 500px;
     margin: 40px auto 0;
-    text-align: center;
-    margin-bottom: 100px;
-    box-shadow: 0 0 3px #999;
-    background: linear-gradient(90deg, #CBA6AD, #485FA4);
-    transition: .5s;
-    &:hover{
-      cursor: pointer;
-      opacity: .7;
-    }
-    div{
-      border-radius: 10px;
-      font-weight: 600;
-      text-indent: 1.4px;
-      letter-spacing: 1.4px;
-      line-height: 1.1;
-      font-size: 1.1rem;
-      transition: .5s;
-      color: #fff;
-      .en{
-        font-family: 'Mallanna', sans-serif;
-        font-size: 0.9rem;
+    color: #333;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    .form-q{
+      margin-bottom: 25px;
+      p{
+        margin-bottom: 5px;
       }
     }
-  }
-  input[type="radio"]{
-    display: none;
-  }
-  input[type="radio"]+span{
-    position: relative;
-    display: inline-block;
-    vertical-align: middle;
-    cursor: pointer;
-    padding: 8px 8px 10px 34px;
-    border-radius: 8px;
-  }
-  input[type="radio"]+span::before,
-  input[type="radio"]+span::after{
-    position: absolute;
-    content: "";
-    display: block;
-    border-radius: 50%;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    box-sizing: border-box;
-  }
-  input[type="radio"]+span::before{
-    width: 20px;
-    height: 20px;
-    background: #fff;
-    border: 2px solid #999999;
-    left: 9px;
-  }
-  input[type="radio"]+span::after{
-    width: 10px;
-    height: 10px;
-    background: #999999;
-    left: 14px;
-    opacity: 0;
-    transition: ease .2s;
-  }
-  input:hover+span{
-    background: #ddd;
-  }
-  input[type="radio"]:checked+span::before{
-    border: 2px solid #6596FA;
-  }
-  input[type="radio"]:checked+span::after{
-    background: #6596FA;
-    opacity: 1;
-  }
-  .required{
-    position: relative;
-    &::after{
-      display: inline-block;
-      content: "必須";
-      width: 30px;
-      position: absolute;
-      top: 50%;
-      left: 100%;
-      transform: translateY(-50%);
-      margin-left: 8px;
-      font-size: 0.7rem;
-      background-color: tomato;
-      color: #fff;
+    .form-q1{
+      div{
+        background-color: #eee;
+        padding: 0 0 0 10px;
+        label{
+          display: inline-block;
+          margin: 5px 10px 5px 0;
+        }
+      }
+    }
+    input[type="text"],input[type="tel"],input[type="email"]{
+      display: block;
+      box-sizing: border-box;
+      width: 100%;
+      height: 40px;
+      border: none;
+      background-color: #eee;
+      padding: 0 10px;
+      font-size: 1.1rem;
+      font-weight: 300;
+      margin-top: 10px;
+      font-family: 'Noto Sans JP', 'Mallanna', sans-serif;
+      &:focus{
+        outline: none;
+      }
+    }
+    textarea{
+      width: 100%;
+      height: 150px;
+      display: block;
+      box-sizing: border-box;
+      border: none;
+      background-color: #eee;
+      padding: 10px;
+      font-size: 1.1rem;
+      font-weight: 300;
+      margin-top: 10px;
+      font-family: 'Noto Sans JP', 'Mallanna', sans-serif;
+      &:focus{
+        outline: none;
+      }
+    }
+    button{
+      border: none;
+      display: block;
+      padding: 0;
+    }
+    .btn-submit{
+      width: 260px;
+      height: 70px;
+      border-radius: 10px;
+      margin: 40px auto 0;
       text-align: center;
-      padding: 3px;
-      border-radius: 3px;
-      font-weight: 500;
+      box-shadow: 0 0 3px #999;
+      background: linear-gradient(90deg, #CBA6AD, #485FA4);
+      transition: .5s;
+      &:hover{
+        cursor: pointer;
+        opacity: .7;
+      }
+      div{
+        border-radius: 10px;
+        font-weight: 600;
+        text-indent: 1.4px;
+        letter-spacing: 1.4px;
+        line-height: 1.1;
+        font-size: 1.1rem;
+        transition: .5s;
+        color: #fff;
+        .en{
+          font-family: 'Mallanna', sans-serif;
+          font-size: 0.9rem;
+        }
+      }
+    }
+    input[type="radio"]{
+      display: none;
+    }
+    input[type="radio"]+span{
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      cursor: pointer;
+      padding: 8px 8px 10px 34px;
+      border-radius: 8px;
+    }
+    input[type="radio"]+span::before,
+    input[type="radio"]+span::after{
+      position: absolute;
+      content: "";
+      display: block;
+      border-radius: 50%;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      box-sizing: border-box;
+    }
+    input[type="radio"]+span::before{
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      border: 2px solid #999999;
+      left: 9px;
+    }
+    input[type="radio"]+span::after{
+      width: 10px;
+      height: 10px;
+      background: #999999;
+      left: 14px;
+      opacity: 0;
+      transition: ease .2s;
+    }
+    input:hover+span{
+      background: #ddd;
+    }
+    input[type="radio"]:checked+span::before{
+      border: 2px solid #6596FA;
+    }
+    input[type="radio"]:checked+span::after{
+      background: #6596FA;
+      opacity: 1;
+    }
+    .required{
+      position: relative;
+      &::after{
+        display: inline-block;
+        content: "必須";
+        width: 30px;
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        transform: translateY(-50%);
+        margin-left: 8px;
+        font-size: 0.7rem;
+        background-color: tomato;
+        color: #fff;
+        text-align: center;
+        padding: 3px;
+        border-radius: 3px;
+        font-weight: 500;
+      }
     }
   }
 }
@@ -1654,14 +1705,33 @@ $strength-item-height-responsive: 250px;
       }
     }
   }
-  .form-wrapper{
-    max-width: 80vw;
-    .form-q1{
-      div{
-        padding: 10px 0 10px 10px;
-        label{
-          display: block;
-          margin: 5px 0;
+  #business-page{
+    .business-page{
+      &-cnt{
+        &-item{
+          display: flex;
+          height: 200px;
+          &-ttl{
+            font-size: 3vw;
+            letter-spacing: 2px;
+          }
+        }
+      }
+    }
+  }
+  #contact{
+    .section-ttl-page{
+      letter-spacing: 4px;
+    }
+    .form-wrapper{
+      max-width: 80vw;
+      .form-q1{
+        div{
+          padding: 10px 0 10px 10px;
+          label{
+            display: block;
+            margin: 5px 0;
+          }
         }
       }
     }

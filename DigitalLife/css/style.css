@@ -932,8 +932,49 @@ body {
 }
 
 /* 事業分野（ページ） */
-#business {
+#business-page {
   margin-top: 80px;
+}
+#business-page .business-page-cnt-item {
+  display: flex;
+  height: 300px;
+}
+#business-page .business-page-cnt-item-ttl {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #35659D;
+  color: #fff;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 3vw;
+  letter-spacing: 6px;
+  line-height: 1.8;
+}
+#business-page .business-page-cnt-item-img {
+  width: 60%;
+}
+#business-page .business-page-cnt-item:nth-child(1) .business-page-cnt-item-img {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/business1.png);
+  background-size: cover;
+}
+#business-page .business-page-cnt-item:nth-child(2) .business-page-cnt-item-img {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/business2.png);
+  background-size: cover;
+}
+#business-page .business-page-cnt-item:nth-child(3) .business-page-cnt-item-img {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/business3.png);
+  background-size: cover;
+}
+#business-page .business-page-cnt-item:nth-child(4) .business-page-cnt-item-img {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/business4.png);
+  background-size: cover;
+}
+#business-page .business-page-cnt-item-reverse {
+  flex-direction: row-reverse;
+}
+#business-page .business-page-cnt-item-reverse .business-page-cnt-item-ttl {
+  background-color: #B486AA;
 }
 
 /* 会社概要（ページ） */
@@ -1069,28 +1110,31 @@ body {
 }
 
 /* コンタクトフォーム */
-.form-wrapper {
+#contact {
+  margin-top: 80px;
+}
+#contact .form-wrapper {
   max-width: 500px;
-  margin: 100px auto 0;
+  margin: 40px auto 0;
   color: #333;
   font-family: "Noto Sans JP", sans-serif;
   font-weight: 300;
 }
-.form-wrapper .form-q {
+#contact .form-wrapper .form-q {
   margin-bottom: 25px;
 }
-.form-wrapper .form-q p {
+#contact .form-wrapper .form-q p {
   margin-bottom: 5px;
 }
-.form-wrapper .form-q1 div {
+#contact .form-wrapper .form-q1 div {
   background-color: #eee;
   padding: 0 0 0 10px;
 }
-.form-wrapper .form-q1 div label {
+#contact .form-wrapper .form-q1 div label {
   display: inline-block;
   margin: 5px 10px 5px 0;
 }
-.form-wrapper input[type=text], .form-wrapper input[type=tel], .form-wrapper input[type=email] {
+#contact .form-wrapper input[type=text], #contact .form-wrapper input[type=tel], #contact .form-wrapper input[type=email] {
   display: block;
   box-sizing: border-box;
   width: 100%;
@@ -1103,10 +1147,10 @@ body {
   margin-top: 10px;
   font-family: "Noto Sans JP", "Mallanna", sans-serif;
 }
-.form-wrapper input[type=text]:focus, .form-wrapper input[type=tel]:focus, .form-wrapper input[type=email]:focus {
+#contact .form-wrapper input[type=text]:focus, #contact .form-wrapper input[type=tel]:focus, #contact .form-wrapper input[type=email]:focus {
   outline: none;
 }
-.form-wrapper textarea {
+#contact .form-wrapper textarea {
   width: 100%;
   height: 150px;
   display: block;
@@ -1119,30 +1163,29 @@ body {
   margin-top: 10px;
   font-family: "Noto Sans JP", "Mallanna", sans-serif;
 }
-.form-wrapper textarea:focus {
+#contact .form-wrapper textarea:focus {
   outline: none;
 }
-.form-wrapper button {
+#contact .form-wrapper button {
   border: none;
   display: block;
   padding: 0;
 }
-.form-wrapper .btn-submit {
+#contact .form-wrapper .btn-submit {
   width: 260px;
   height: 70px;
   border-radius: 10px;
   margin: 40px auto 0;
   text-align: center;
-  margin-bottom: 100px;
   box-shadow: 0 0 3px #999;
   background: linear-gradient(90deg, #CBA6AD, #485FA4);
   transition: 0.5s;
 }
-.form-wrapper .btn-submit:hover {
+#contact .form-wrapper .btn-submit:hover {
   cursor: pointer;
   opacity: 0.7;
 }
-.form-wrapper .btn-submit div {
+#contact .form-wrapper .btn-submit div {
   border-radius: 10px;
   font-weight: 600;
   text-indent: 1.4px;
@@ -1152,14 +1195,14 @@ body {
   transition: 0.5s;
   color: #fff;
 }
-.form-wrapper .btn-submit div .en {
+#contact .form-wrapper .btn-submit div .en {
   font-family: "Mallanna", sans-serif;
   font-size: 0.9rem;
 }
-.form-wrapper input[type=radio] {
+#contact .form-wrapper input[type=radio] {
   display: none;
 }
-.form-wrapper input[type=radio] + span {
+#contact .form-wrapper input[type=radio] + span {
   position: relative;
   display: inline-block;
   vertical-align: middle;
@@ -1167,8 +1210,8 @@ body {
   padding: 8px 8px 10px 34px;
   border-radius: 8px;
 }
-.form-wrapper input[type=radio] + span::before,
-.form-wrapper input[type=radio] + span::after {
+#contact .form-wrapper input[type=radio] + span::before,
+#contact .form-wrapper input[type=radio] + span::after {
   position: absolute;
   content: "";
   display: block;
@@ -1178,14 +1221,14 @@ body {
   margin: auto;
   box-sizing: border-box;
 }
-.form-wrapper input[type=radio] + span::before {
+#contact .form-wrapper input[type=radio] + span::before {
   width: 20px;
   height: 20px;
   background: #fff;
   border: 2px solid #999999;
   left: 9px;
 }
-.form-wrapper input[type=radio] + span::after {
+#contact .form-wrapper input[type=radio] + span::after {
   width: 10px;
   height: 10px;
   background: #999999;
@@ -1193,20 +1236,20 @@ body {
   opacity: 0;
   transition: ease 0.2s;
 }
-.form-wrapper input:hover + span {
+#contact .form-wrapper input:hover + span {
   background: #ddd;
 }
-.form-wrapper input[type=radio]:checked + span::before {
+#contact .form-wrapper input[type=radio]:checked + span::before {
   border: 2px solid #6596FA;
 }
-.form-wrapper input[type=radio]:checked + span::after {
+#contact .form-wrapper input[type=radio]:checked + span::after {
   background: #6596FA;
   opacity: 1;
 }
-.form-wrapper .required {
+#contact .form-wrapper .required {
   position: relative;
 }
-.form-wrapper .required::after {
+#contact .form-wrapper .required::after {
   display: inline-block;
   content: "必須";
   width: 30px;
@@ -1574,13 +1617,24 @@ body {
   #recruit-page .recruit-page-cnt dl dd {
     width: 70%;
   }
-  .form-wrapper {
+  #business-page .business-page-cnt-item {
+    display: flex;
+    height: 200px;
+  }
+  #business-page .business-page-cnt-item-ttl {
+    font-size: 3vw;
+    letter-spacing: 2px;
+  }
+  #contact .section-ttl-page {
+    letter-spacing: 4px;
+  }
+  #contact .form-wrapper {
     max-width: 80vw;
   }
-  .form-wrapper .form-q1 div {
+  #contact .form-wrapper .form-q1 div {
     padding: 10px 0 10px 10px;
   }
-  .form-wrapper .form-q1 div label {
+  #contact .form-wrapper .form-q1 div label {
     display: block;
     margin: 5px 0;
   }
