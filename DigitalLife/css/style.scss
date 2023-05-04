@@ -910,7 +910,6 @@ $strength-item-height-responsive: 250px;
   }
 }
 /* 企業理念（ページ） */
-$slogan-margin-right: calc(50vw - 500px);
 #vision{
   margin-top: 80px;
   overflow: hidden;
@@ -988,14 +987,13 @@ $slogan-margin-right: calc(50vw - 500px);
           font-family: 'Noto Sans JP', sans-serif;
           font-size: 0.9rem;
           font-weight: 300;
-          text-indent: 3px;
           letter-spacing: 3px;
         }
         dt{
-          width: 30%;
+          width: 35%;
         }
         dd{
-          width: 70%;
+          width: 65%;
         }
       }
     }
@@ -1004,10 +1002,107 @@ $slogan-margin-right: calc(50vw - 500px);
 /* 採用情報（ページ） */
 #recruit-page{
   margin-top: 80px;
-  // .recruit-page{
-  //   &-cnt{
-  //   }
-  // }
+  .recruit-page{
+    &-slogan{
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 300;
+      letter-spacing: 2px;
+      line-height: 1.8;
+      margin: 100px 0 120px;
+      position: relative;
+      &::after{
+        display: block;
+        content: "";
+        width: 60vw;
+        height: 200px;
+        background: linear-gradient(90deg, rgba($color:#CBA6AD,$alpha:0.2), rgba($color:#485FA4,$alpha:0.2));
+        position: absolute;
+        right: calc(50% - 50vw);
+        top: -20px;
+        z-index: -1;
+      }
+    }
+    &-cnt{
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 40px;
+      .list-ttl{
+        font-family: 'Noto Sans JP', sans-serif;
+        font-weight: 200;
+        font-size: 2rem;
+        letter-spacing: 2.2px;
+        position: relative;
+        margin-bottom: 40px;
+        &::after{
+          display: block;
+          content: "";
+          width: calc(60vw - 45%);
+          height: 50px;
+          background: linear-gradient(135deg, rgba($color:#485FA4,$alpha:0.2), rgba($color:#CBA6AD,$alpha:0.2));
+          position: absolute;
+          left: calc(50% - 50vw);
+          top: 12px;
+          z-index: -1;
+        }
+      }
+      dl{
+        display: flex;
+        flex-wrap: wrap;
+        dt,dd{
+          border-bottom: solid 1px #aaa;
+          padding: 40px 0;
+          font-family: 'Noto Sans JP', sans-serif;
+          font-size: 0.9rem;
+          font-weight: 300;
+          line-height: 2;
+          letter-spacing: 2px;
+        }
+        dt{
+          width: 30%;
+          font-weight: 500;
+        }
+        dd{
+          width: 70%;
+          a{
+            display: inline-block;
+            vertical-align: -25%;
+            background: linear-gradient(90deg, rgba($color:#CBA6AD,$alpha:0.6), rgba($color:#485FA4,$alpha:0.6));
+            margin-left: 5px;
+            padding: 1px 2px;
+            width: 100px;
+            height: 25px;
+            text-align: center;
+            line-height: 25px;
+            text-indent: 1px;
+            letter-spacing: 1px;
+            font-weight: 500;
+            border-radius: 5px;
+            position: relative;
+            overflow: hidden;
+            &::after{
+              display: block;
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100px;
+              height: 25px;
+              padding: 1px 2px;
+              border-radius: 5px;
+              background-color: rgba(0,0,0,0.5);
+              z-index: -1;
+              transform: translateX(-100%);
+              transition: 0.5s;
+            }
+            &:hover::after{
+              transform: translateX(0);
+            }
+          }
+        }
+      }
+    }
+  }
 }
 /* コンタクトフォーム */
 .form-wrapper{
@@ -1516,6 +1611,44 @@ $slogan-margin-right: calc(50vw - 500px);
           }
           dd{
             width: 75%;
+          }
+        }
+      }
+    }
+  }
+  #recruit-page{
+    .recruit-page{
+      &-slogan{
+        font-size: 1.4rem;
+        font-weight: 300;
+        letter-spacing: 2px;
+        margin: 60px 0 80px;
+        line-height: 1.8;
+        &::after{
+          height: 180px;
+          top: -30px;
+        }
+      }
+      &-cnt{
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 40px;
+        .list-ttl{
+          &::after{
+            width: calc(60vw - 30%);
+          }
+        }
+        dl{
+          dt,dd{
+            padding: 20px 0;
+            font-size: 0.8rem;
+            letter-spacing: 1.4px;
+          }
+          dt{
+            width: 30%;
+          }
+          dd{
+            width: 70%;
           }
         }
       }
