@@ -1,0 +1,46 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-around;
+}
+.header-inner .header-nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+.header-inner .header-nav ul li {
+  margin: 0 10px;
+}
+
+.fv {
+  width: 100%;
+  height: 200px;
+  background-color: lightblue;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  font-size: 1.4rem;
+  font-weight: 300;
+  text-indent: 2px;
+  letter-spacing: 2px;
+  background-color: #ddd;
+}/*# sourceMappingURL=style.css.map */
