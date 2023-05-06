@@ -17,8 +17,13 @@ a {
   color: #333;
 }
 
+.lightup {
+  background: linear-gradient(transparent 60%, #4ae2da 60%);
+  padding: 0 5px;
+}
+
 .display-pc, .br-pc {
-  display: initial;
+  display: block;
 }
 .display-sp, .br-sp {
   display: none;
@@ -30,11 +35,12 @@ a {
 }
 
 .header {
-  position: relative;
+  position: fixed;
   left: 0;
   top: 0;
   bottom: 0;
   height: 100vh;
+  height: 100dvh;
   width: 30vw;
   background-color: rgba(147, 194, 203, 0.8);
 }
@@ -99,6 +105,7 @@ a {
   top: 0;
   bottom: 0;
   height: 100vh;
+  height: 100dvh;
   width: 30vw;
   background: no-repeat left/cover url(../img/fv.jpg);
   opacity: 0.2;
@@ -106,6 +113,7 @@ a {
 
 .main {
   width: 70vw;
+  margin-left: 30vw;
 }
 
 .footer {
@@ -113,13 +121,15 @@ a {
   height: 50px;
   width: 100%;
   line-height: 50px;
-  position: absolute;
-  bottom: 0;
   font-size: 1rem;
   font-weight: 300;
   text-indent: 1.6px;
   letter-spacing: 1.6px;
   z-index: 2;
+}
+.footer.display-pc {
+  position: absolute;
+  bottom: 0;
 }
 
 /* コンテンツ部 */
@@ -157,7 +167,7 @@ a {
   position: absolute;
   height: 300px;
   width: 200px;
-  background: no-repeat center/contain url(../img/photo.png);
+  background: no-repeat center/contain url(../img/photographer.png);
   z-index: 2;
   left: 50%;
   bottom: 0;
@@ -165,14 +175,52 @@ a {
 }
 
 .section {
-  margin-top: 30px;
+  margin: 30px auto 0;
+  padding: 0 40px;
+  max-width: 55vw;
+  width: 100%;
 }
 .section-ttl {
   text-align: center;
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 200;
-  text-indent: 4px;
-  letter-spacing: 4px;
+  text-indent: 8px;
+  letter-spacing: 8px;
+  margin-bottom: 40px;
+}
+
+#skills {
+  margin-top: 100px;
+}
+#skills .skills-cnt-list {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+#skills .skills-cnt-item {
+  width: 32%;
+  margin-bottom: 30px;
+}
+#skills .skills-cnt-item-img {
+  max-width: 40%;
+  margin: 10px auto;
+}
+#skills .skills-cnt-item-img img {
+  width: 100%;
+}
+#skills .skills-cnt-item-ttl {
+  text-align: center;
+  font-size: 1.6rem;
+  text-indent: 2px;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+#skills .skills-cnt-item-txt {
+  font-size: 1.2rem;
+  text-indent: 1px;
+  letter-spacing: 1px;
+  line-height: 1.6;
+  text-align: center;
 }
 
 /* レスポンシブ */
@@ -181,7 +229,7 @@ a {
     display: none;
   }
   .display-sp, .br-sp {
-    display: initial;
+    display: block;
   }
   .body {
     display: block;
@@ -230,6 +278,7 @@ a {
   }
   .main {
     width: initial;
+    margin-left: initial;
   }
   .fv {
     position: relative;
@@ -268,5 +317,18 @@ a {
     background: no-repeat left/cover url(../img/fv.jpg);
     opacity: 0.2;
     z-index: 1;
+  }
+  .section {
+    padding: 0 4vw;
+    max-width: 80vw;
+  }
+  #skills {
+    margin-top: 60px;
+  }
+  #skills .skills-cnt-list {
+    justify-content: space-around;
+  }
+  #skills .skills-cnt-item {
+    width: 45%;
   }
 }/*# sourceMappingURL=style.css.map */
