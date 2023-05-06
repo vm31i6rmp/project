@@ -34,6 +34,7 @@ a{
 .body{
   display: flex;
 }
+$header-width: 35vw;
 .header{
   position: fixed;
   left: 0;
@@ -41,7 +42,8 @@ a{
   bottom: 0;
   height: 100vh;
   height: 100dvh;
-  width: 30vw;
+  width: $header-width;
+  max-width: 400px;
   background-color: rgba($color: #93C2CB, $alpha: 0.8);
   &-inner{
     position: relative;
@@ -105,14 +107,15 @@ a{
     bottom: 0;
     height: 100vh;
     height: 100dvh;
-    width: 30vw;
+    width: $header-width;
+    max-width: 400px;
     background: no-repeat left/cover url(../img/fv.jpg);
     opacity: 0.2;
   }
 }
 .main{
-  width: 70vw;
-  margin-left: 30vw;
+  width: calc(100vw - $header-width);
+  margin-left: $header-width;
 }
 .footer{
   text-align: center;
@@ -147,7 +150,7 @@ a{
       bottom: 10px;
       left: 50%;
       width: 330px;
-      transform: translateX(calc(-50% - 80px));
+      transform: translateX(calc(-50% - 60px));
       z-index: 3;
     }
     .fv-block--blue{
@@ -167,15 +170,15 @@ a{
       z-index: 2;
       left: 50%;
       bottom: 0;
-      transform: translateX(calc(-50% + 130px));
+      transform: translateX(calc(-50% + 150px));
     }
   }
 }
 .section{
   // background-color: tomato; // 仮
-  margin: 30px auto 0;
+  margin: 30px auto 40px;
   max-width: 800px;
-  width: 68vw;
+  width: clac(100vw - $header-width -2vw);
   &-ttl{
     text-align: center;
     font-size: 4rem;
@@ -306,6 +309,12 @@ a{
 
 
 /* レスポンシブ */
+@media screen and (min-width: 1142px)  {
+  .main{
+    width: calc(100vw - 400px);
+    margin-left: 400px;
+  }
+}
 @media screen and (max-width: 800px)  {
   .display, .br{
     &-pc{

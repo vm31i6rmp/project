@@ -41,7 +41,8 @@ a {
   bottom: 0;
   height: 100vh;
   height: 100dvh;
-  width: 30vw;
+  width: 35vw;
+  max-width: 400px;
   background-color: rgba(147, 194, 203, 0.8);
 }
 .header-inner {
@@ -106,14 +107,15 @@ a {
   bottom: 0;
   height: 100vh;
   height: 100dvh;
-  width: 30vw;
+  width: 35vw;
+  max-width: 400px;
   background: no-repeat left/cover url(../img/fv.jpg);
   opacity: 0.2;
 }
 
 .main {
-  width: 70vw;
-  margin-left: 30vw;
+  width: 65vw;
+  margin-left: 35vw;
 }
 
 .footer {
@@ -151,7 +153,7 @@ a {
   bottom: 10px;
   left: 50%;
   width: 330px;
-  transform: translateX(calc(-50% - 80px));
+  transform: translateX(calc(-50% - 60px));
   z-index: 3;
 }
 .fv-inner .fv-block--blue {
@@ -171,13 +173,13 @@ a {
   z-index: 2;
   left: 50%;
   bottom: 0;
-  transform: translateX(calc(-50% + 130px));
+  transform: translateX(calc(-50% + 150px));
 }
 
 .section {
-  margin: 30px auto 0;
+  margin: 30px auto 40px;
   max-width: 800px;
-  width: 68vw;
+  width: clac(65vw -2vw);
 }
 .section-ttl {
   text-align: center;
@@ -298,6 +300,12 @@ a {
 }
 
 /* レスポンシブ */
+@media screen and (min-width: 1142px) {
+  .main {
+    width: calc(100vw - 400px);
+    margin-left: 400px;
+  }
+}
 @media screen and (max-width: 800px) {
   .display-pc, .br-pc {
     display: none;
