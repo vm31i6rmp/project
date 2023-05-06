@@ -189,7 +189,7 @@ a {
 }
 
 #skills {
-  margin-top: 100px;
+  margin-top: 80px;
   padding: 0 40px;
   box-sizing: border-box;
 }
@@ -247,10 +247,48 @@ a {
 #works .works-cnt-item-ttl {
   font-size: 2rem;
   font-weight: 300;
-  line-height: 2.2;
+  line-height: 1.8;
   text-align: center;
   text-indent: 2px;
   letter-spacing: 1.6px;
+  margin-top: 10px;
+}
+#works .works-cnt-item-ttl a {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+#works .works-cnt-item-ttl a:hover::before {
+  left: 0;
+}
+#works .works-cnt-item-ttl a:hover::after {
+  top: 0;
+}
+#works .works-cnt-item-ttl a::before {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 151, 201, 0.8);
+  position: absolute;
+  top: 0;
+  left: -100%;
+  transition: 0.3s;
+  z-index: 3;
+}
+#works .works-cnt-item-ttl a::after {
+  display: block;
+  content: "Click!";
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  font-weight: 900;
+  letter-spacing: 4px;
+  position: absolute;
+  top: -100%;
+  left: 0;
+  transition: 0.3s;
+  z-index: 4;
 }
 #works .works-cnt-item-txt {
   font-size: 1.4rem;

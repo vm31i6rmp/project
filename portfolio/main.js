@@ -7,7 +7,7 @@ var indexLink = document.querySelectorAll('a[href^="#"]');
       let targetElement = document.getElementById(href.replace('#', ''));
       const nowOffset = window.pageYOffset;
       const targetOffset = targetElement.getBoundingClientRect().top;
-      const gap = 10;
+      const gap = 20;
       const offset = nowOffset + targetOffset - gap;
       window.scrollTo({
         top: offset,
