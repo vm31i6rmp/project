@@ -1,3 +1,5 @@
+@charset "UTF-8";
+/* 共通部分 */
 html {
   font-size: 62.5%;
 }
@@ -15,63 +17,241 @@ a {
   color: #333;
 }
 
+.display-pc, .br-pc {
+  display: initial;
+}
+.display-sp, .br-sp {
+  display: none;
+}
+
+/* メイン構造（固定部） */
+.body {
+  display: flex;
+}
+
 .header {
-  height: 160px;
-  max-width: 1000px;
-  width: 100%;
-  margin: 0 auto;
+  position: relative;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: 100dvh;
+  width: 30vw;
+  background-color: rgba(147, 194, 203, 0.8);
 }
 .header-inner {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 40px;
+  position: relative;
+  z-index: 2;
+  padding-left: 40px;
+}
+.header-inner a {
+  color: #fff;
 }
 .header-inner .header-ttl {
   font-family: "Lato", sans-serif;
   font-size: 2.5rem;
   font-weight: 700;
-  letter-spacing: 3px;
-  color: #333;
-  margin-top: 30px;
-  line-height: 1.4;
+  letter-spacing: 4px;
+  margin-top: 40px;
+  line-height: 1.6;
 }
 .header-inner .header-nav {
   margin-top: 120px;
 }
 .header-inner .header-nav ul {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 }
 .header-inner .header-nav ul li {
-  margin: 0 15px;
+  margin: 20px 0;
 }
 .header-inner .header-nav ul li a {
+  position: relative;
   font-family: "Zen Kaku Gothic Antique", sans-serif;
   font-size: 1.6rem;
   font-weight: 400;
-  letter-spacing: 2px;
-  text-indent: 2px;
+  letter-spacing: 4px;
+  transition: 0.5s;
+}
+.header-inner .header-nav ul li a:hover {
+  letter-spacing: 8px;
+}
+.header-inner .header-nav ul li a:hover::after {
+  transform: scale(100%);
+}
+.header-inner .header-nav ul li a::after {
+  display: block;
+  content: "";
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.4);
+  position: absolute;
+  top: -32%;
+  left: -16%;
+  z-index: -1;
+  transform: scale(0);
+  transition: 0.5s;
+}
+.header-background {
+  z-index: 1;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: 100dvh;
+  width: 30vw;
+  background: no-repeat left/cover url(../img/fv.jpg);
+  opacity: 0.2;
 }
 
-.fv {
-  width: 100%;
-  height: 300px;
-  background: no-repeat center/cover url(../img/fv.jpg);
-  opacity: 0.4;
-}
-.fv-inner {
-  background-color: rgba(147, 194, 203, 0.7);
-  height: 300px;
+.main {
+  width: 70vw;
 }
 
 .footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-  font-size: 1.4rem;
+  text-align: center;
+  height: 50px;
+  width: 100%;
+  line-height: 50px;
+  position: absolute;
+  bottom: 0;
+  font-size: 1rem;
   font-weight: 300;
-  text-indent: 2px;
-  letter-spacing: 2px;
-  background-color: #ddd;
+  text-indent: 1.6px;
+  letter-spacing: 1.6px;
+  z-index: 2;
+}
+
+/* コンテンツ部 */
+.fv {
+  height: 300px;
+}
+.fv-inner {
+  position: relative;
+  height: 100%;
+}
+.fv-inner .fv-slogan {
+  color: #333;
+  font-size: 6rem;
+  font-style: italic;
+  font-weight: 900;
+  letter-spacing: 3px;
+  line-height: 1.2;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  width: 330px;
+  transform: translateX(calc(-50% - 80px));
+  z-index: 3;
+}
+.fv-inner .fv-block--blue {
+  height: 300px;
+  width: 200px;
+  background-color: rgba(173, 216, 230, 0.6);
+  position: absolute;
+  left: 50%;
+  transform: translateX(calc(-50% + 80px));
+  z-index: 1;
+}
+
+.section {
+  margin-top: 30px;
+}
+.section-ttl {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 200;
+  text-indent: 4px;
+  letter-spacing: 4px;
+}
+
+/* レスポンシブ */
+@media screen and (max-width: 800px) {
+  .display-pc, .br-pc {
+    display: none;
+  }
+  .display-sp, .br-sp {
+    display: initial;
+  }
+  .body {
+    display: block;
+  }
+  .header {
+    position: relative;
+    height: initial;
+    width: initial;
+    background-color: initial;
+  }
+  .header-inner a {
+    color: #333;
+  }
+  .header-inner .header-ttl {
+    font-size: 2rem;
+    letter-spacing: 6px;
+    margin-top: 40px;
+    line-height: 1.4;
+  }
+  .header-inner .header-nav {
+    margin-top: 25px;
+  }
+  .header-inner .header-nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    padding: 0 30px 20px 40px;
+  }
+  .header-inner .header-nav ul li {
+    margin: 0 10px;
+  }
+  .header-inner .header-nav ul li a {
+    font-size: 1.4rem;
+    letter-spacing: 1.4px;
+    text-indent: 1.4px;
+  }
+  .header-inner .header-nav ul li a:hover {
+    letter-spacing: 4px;
+  }
+  .header-inner .header-nav ul li a::after {
+    background-color: rgba(173, 216, 230, 0.6);
+    top: -50%;
+  }
+  .header-background {
+    display: none;
+  }
+  .main {
+    width: initial;
+  }
+  .fv {
+    position: relative;
+    height: 240px;
+    background-color: rgba(147, 194, 203, 0.7);
+  }
+  .fv-inner {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+  }
+  .fv-inner .fv-slogan {
+    color: #fff;
+    font-size: 3.6rem;
+    bottom: 30px;
+    width: 250px;
+    transform: translateX(-50%);
+    z-index: 3;
+  }
+  .fv-inner .fv-block--blue {
+    width: 160px;
+    height: 240px;
+    transform: translateX(calc(-50% + 60px));
+    background-color: rgba(173, 216, 230, 0.4);
+  }
+  .fv-background {
+    position: absolute;
+    top: 0;
+    height: 240px;
+    width: 100%;
+    background: no-repeat left/cover url(../img/fv.jpg);
+    opacity: 0.2;
+    z-index: 1;
+  }
 }/*# sourceMappingURL=style.css.map */
