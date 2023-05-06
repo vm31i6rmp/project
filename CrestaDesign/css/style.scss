@@ -379,8 +379,10 @@ footer{
     }
     .concept-cnt{
       flex-direction: column;
+      align-items: center;
       &-txt{
         margin-bottom: 30px;
+        width: initial;
       }
     }
   }

@@ -18,7 +18,7 @@ a {
 }
 
 .lightup {
-  background: linear-gradient(transparent 60%, #4ae2da 60%);
+  background: linear-gradient(transparent 60%, rgba(74, 226, 218, 0.6) 60%);
   padding: 0 5px;
 }
 
@@ -176,9 +176,8 @@ a {
 
 .section {
   margin: 30px auto 0;
-  padding: 0 40px;
-  max-width: 55vw;
-  width: 100%;
+  max-width: 800px;
+  width: 68vw;
 }
 .section-ttl {
   text-align: center;
@@ -191,6 +190,8 @@ a {
 
 #skills {
   margin-top: 100px;
+  padding: 0 40px;
+  box-sizing: border-box;
 }
 #skills .skills-cnt-list {
   display: flex;
@@ -221,6 +222,41 @@ a {
   letter-spacing: 1px;
   line-height: 1.6;
   text-align: center;
+}
+
+#works {
+  padding: initial;
+  margin-top: 0;
+}
+#works .works-cnt-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+#works .works-cnt-item {
+  width: 46%;
+  margin-bottom: 30px;
+}
+#works .works-cnt-item-img {
+  max-width: 98%;
+  margin: 0 auto;
+}
+#works .works-cnt-item-img img {
+  width: 100%;
+}
+#works .works-cnt-item-ttl {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 2.2;
+  text-align: center;
+  text-indent: 2px;
+  letter-spacing: 1.6px;
+}
+#works .works-cnt-item-txt {
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.4;
+  letter-spacing: 1px;
 }
 
 /* レスポンシブ */
@@ -320,15 +356,19 @@ a {
   }
   .section {
     padding: 0 4vw;
-    max-width: 80vw;
+    width: initial;
   }
   #skills {
     margin-top: 60px;
+    padding: 0 4vw;
   }
   #skills .skills-cnt-list {
     justify-content: space-around;
   }
   #skills .skills-cnt-item {
     width: 45%;
+  }
+  #works .works-cnt-item {
+    width: 90%;
   }
 }/*# sourceMappingURL=style.css.map */

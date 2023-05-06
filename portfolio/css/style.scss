@@ -18,7 +18,7 @@ a{
   color: #333;
 }
 .lightup{
-  background:linear-gradient(transparent 60%, #4ae2da 60%);
+  background:linear-gradient(transparent 60%, rgba($color: #4ae2da, $alpha: 0.6) 60%);
   padding: 0 5px;
 }
 .display, .br{
@@ -172,10 +172,10 @@ a{
   }
 }
 .section{
+  // background-color: tomato; // 仮
   margin: 30px auto 0;
-  padding: 0 40px;
-  max-width: 55vw;
-  width: 100%;
+  max-width: 800px;
+  width: 68vw;
   &-ttl{
     text-align: center;
     font-size: 4rem;
@@ -187,6 +187,8 @@ a{
 }
 #skills{
   margin-top: 100px;
+  padding: 0 40px;
+  box-sizing: border-box;
   .skills{
     &-cnt{
       &-list{
@@ -217,6 +219,45 @@ a{
           letter-spacing: 1px;
           line-height: 1.6;
           text-align: center;
+        }
+      }
+    }
+  }
+}
+#works{
+  padding: initial;
+  margin-top: 0;
+  .works{
+    &-cnt{
+      &-list{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      &-item{
+        // background-color: #eee; // 仮
+        width: 46%;
+        margin-bottom: 30px;
+        &-img{
+          max-width: 98%;
+          margin: 0 auto;
+          img{
+            width: 100%;
+          }
+        }
+        &-ttl{
+          font-size: 2rem;
+          font-weight: 300;
+          line-height: 2.2;
+          text-align: center;
+          text-indent: 2px;
+          letter-spacing: 1.6px;
+        }
+        &-txt{
+          font-size: 1.4rem;
+          font-weight: 300;
+          line-height: 1.4;
+          letter-spacing: 1px;
         }
       }
     }
@@ -325,10 +366,11 @@ a{
   }
   .section{
     padding: 0 4vw;
-    max-width: 80vw;
+    width: initial;
   }
   #skills{
     margin-top: 60px;
+    padding: 0 4vw;
     .skills{
       &-cnt{
         &-list{
@@ -336,6 +378,15 @@ a{
         }
         &-item{
           width: 45%;
+        }
+      }
+    }
+  }
+  #works{
+    .works{
+      &-cnt{
+        &-item{
+          width: 90%;
         }
       }
     }

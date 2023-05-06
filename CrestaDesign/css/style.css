@@ -373,9 +373,11 @@ footer .copyright {
   }
   #concept .concept-cnt {
     flex-direction: column;
+    align-items: center;
   }
   #concept .concept-cnt-txt {
     margin-bottom: 30px;
+    width: initial;
   }
   #works .works-list {
     flex-direction: column;
