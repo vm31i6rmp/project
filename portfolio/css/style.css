@@ -58,7 +58,7 @@ a {
   font-size: 2.5rem;
   font-weight: 700;
   letter-spacing: 4px;
-  margin-top: 40px;
+  margin-top: 80px;
   line-height: 1.6;
 }
 .header-inner .header-nav {
@@ -251,12 +251,13 @@ a {
   font-weight: 300;
   line-height: 1.8;
   text-align: center;
-  text-indent: 2px;
-  letter-spacing: 1.6px;
+  text-indent: 1.4px;
+  letter-spacing: 1.4px;
   margin-top: 10px;
 }
 #works .works-cnt-item-ttl a {
   display: inline-block;
+  width: 100%;
   position: relative;
   overflow: hidden;
 }
@@ -280,12 +281,15 @@ a {
 }
 #works .works-cnt-item-ttl a::after {
   display: block;
-  content: "Click!";
+  content: "サイトを開く";
   width: 100%;
   height: 100%;
   color: #fff;
-  font-weight: 900;
-  letter-spacing: 4px;
+  font-size: 1.6rem;
+  line-height: 2.2;
+  font-weight: 700;
+  text-indent: 1.4px;
+  letter-spacing: 1.4px;
   position: absolute;
   top: -100%;
   left: 0;
@@ -327,8 +331,8 @@ a {
     color: #333;
   }
   .header-inner .header-ttl {
-    font-size: 2rem;
-    letter-spacing: 6px;
+    font-size: 2.6rem;
+    letter-spacing: 4px;
     margin-top: 40px;
     line-height: 1.4;
   }
