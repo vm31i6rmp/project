@@ -152,14 +152,16 @@ a{
       transform: translateX(calc(-50% + 80px));
       z-index: 1;
     }
-    // .fv-profile{
-    //   position: absolute;
-    //   height: 300px;
-    //   width: 300px;
-    //   background: no-repeat center/contain url(../img/profile.png);
-    //   z-index: 2;
-    //   right: 0%;
-    // }
+    .fv-profile{
+      position: absolute;
+      height: 300px;
+      width: 200px;
+      background: no-repeat center/contain url(../img/photo.png);
+      z-index: 2;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(calc(-50% + 130px));
+    }
   }
 }
 .section{
@@ -243,19 +245,24 @@ a{
       position: relative;
       z-index: 2;
       height: 100%;
+      overflow: hidden;
       .fv-slogan{
         color: #fff;
         font-size: 3.6rem;
-        bottom: 30px;
+        bottom: 50px;
         width: 250px;
-        transform: translateX(calc(-50%));
+        transform: translateX(calc(-60%));
+        line-height: 1.4;
         z-index: 3;
       }
       .fv-block--blue{
-        width: 160px;
+        width: 180px;
         height: 240px;
         transform: translateX(calc(-50% + 60px));
         background-color: rgba($color: lightblue, $alpha: 0.4);
+      }
+      .fv-profile{
+        transform: translateX(calc(-50% + 100px));
       }
     }
     &-background{
