@@ -44,7 +44,7 @@ $header-width: 35vw;
   height: 100dvh;
   width: $header-width;
   max-width: 400px;
-  background-color: rgba($color: #93C2CB, $alpha: 0.8);
+  background-color: rgba($color: #93C2CB, $alpha: 0.9);
   &-inner{
     position: relative;
     z-index: 2;
@@ -331,6 +331,7 @@ $header-width: 35vw;
     position: relative;
     height: initial;
     width: initial;
+    max-width: initial;
     background-color: initial;
     &-inner{
       a{

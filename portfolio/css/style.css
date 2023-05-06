@@ -43,7 +43,7 @@ a {
   height: 100dvh;
   width: 35vw;
   max-width: 400px;
-  background-color: rgba(147, 194, 203, 0.8);
+  background-color: rgba(147, 194, 203, 0.9);
 }
 .header-inner {
   position: relative;
@@ -320,6 +320,7 @@ a {
     position: relative;
     height: initial;
     width: initial;
+    max-width: initial;
     background-color: initial;
   }
   .header-inner a {
