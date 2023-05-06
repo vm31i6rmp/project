@@ -170,7 +170,7 @@ body {
 
 /* ファーストビュー */
 .fv {
-  height: 100vh;
+  height: 100dvh;
   background: no-repeat center/cover url(../img/fv.jpg);
   color: #fff;
   margin-bottom: 80px;
