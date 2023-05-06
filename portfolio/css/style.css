@@ -34,7 +34,7 @@ a {
   left: 0;
   top: 0;
   bottom: 0;
-  height: 100dvh;
+  height: 100vh;
   width: 30vw;
   background-color: rgba(147, 194, 203, 0.8);
 }
@@ -98,7 +98,7 @@ a {
   left: 0;
   top: 0;
   bottom: 0;
-  height: 100dvh;
+  height: 100vh;
   width: 30vw;
   background: no-repeat left/cover url(../img/fv.jpg);
   opacity: 0.2;
