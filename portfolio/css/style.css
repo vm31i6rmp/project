@@ -303,6 +303,67 @@ a {
   letter-spacing: 1px;
 }
 
+#about {
+  margin-top: 80px;
+  padding: 0 40px;
+}
+#about .section-ttl {
+  text-align: left;
+  position: relative;
+}
+#about .section-ttl::after {
+  display: block;
+  content: "";
+  width: 100px;
+  height: 160px;
+  background-color: rgba(173, 216, 230, 0.4);
+  position: absolute;
+  left: 55px;
+  top: -80px;
+  z-index: -1;
+}
+#about .about-cnt {
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+#about .about-cnt-photo {
+  width: 30%;
+  background-color: #ccc;
+}
+#about .about-cnt-photo-inner {
+  width: 100px;
+  height: 120px;
+  background-color: #6c6;
+}
+#about .about-cnt-list {
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  line-height: 2;
+  letter-spacing: 1.4px;
+  background-color: #eee;
+}
+#about .about-cnt-list-ttl, #about .about-cnt-list-txt {
+  height: 40px;
+}
+#about .about-cnt-list-ttl {
+  width: 90px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+#about .about-cnt-list-txt {
+  width: 64%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+
 /* レスポンシブ */
 @media screen and (min-width: 1142px) {
   .main {
@@ -421,5 +482,32 @@ a {
   }
   #works .works-cnt-item {
     width: 90%;
+  }
+  #about {
+    margin-top: 40px;
+  }
+  #about .section-ttl {
+    text-align: left;
+    text-indent: initial;
+  }
+  #about .section-ttl::after {
+    width: 200px;
+    height: 50px;
+    left: -40px;
+    top: 22px;
+    background-color: rgba(173, 216, 230, 0.4);
+    z-index: -1;
+  }
+  #about .section-ttl::before {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    left: -40px;
+    top: 22px;
+    background: center/cover url(../img/fv.jpg);
+    z-index: -1;
+    opacity: 0.4;
   }
 }/*# sourceMappingURL=style.css.map */

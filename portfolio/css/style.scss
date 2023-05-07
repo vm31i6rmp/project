@@ -310,6 +310,66 @@ $header-width: 35vw;
     }
   }
 }
+#about{
+  margin-top: 80px;
+  padding: 0 40px;
+  .section-ttl{
+    text-align: left;
+    position: relative;
+    &::after{
+      display: block;
+      content: "";
+      width: 100px;
+      height: 160px;
+      background-color: rgba($color: lightblue, $alpha: 0.4);
+      position: absolute;
+      left: 55px;
+      top: -80px;
+      z-index: -1;
+    }
+  }
+  .about-cnt{
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    &-photo{
+      width: 30%;
+      background-color: #ccc; // 仮
+      &-inner{
+        width: 100px;
+        height: 120px;
+        background-color: #6c6; // 仮
+      }
+    }
+    &-list{
+      width: 70%;
+      display: flex;
+      flex-wrap: wrap;
+      line-height: 2;
+      letter-spacing: 1.4px;
+      background-color: #eee; // 仮
+      &-ttl, &-txt{
+        height: 40px;
+      }
+      &-ttl{
+        width: 90px;
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+        font-size: 1.4rem;
+        font-weight: 300;
+      }
+      &-txt{
+        width: 64%;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        font-size: 1.4rem;
+        font-weight: 300;
+      }
+    }
+  }
+}
 
 
 /* レスポンシブ */
@@ -442,6 +502,33 @@ $header-width: 35vw;
         &-item{
           width: 90%;
         }
+      }
+    }
+  }
+  #about{
+    margin-top: 40px;
+    .section-ttl{
+      text-align: left;
+      text-indent: initial;
+      &::after{
+        width: 200px;
+        height: 50px;
+        left: -40px;
+        top: 22px;
+        background-color: rgba($color: lightblue, $alpha: 0.4);
+        z-index: -1;
+      }
+      &::before{
+        display: block;
+        content: "";
+        position: absolute;
+        width: 200px;
+        height: 50px;
+        left: -40px;
+        top: 22px;
+        background: center/cover url(../img/fv.jpg);
+        z-index: -1;
+        opacity: 0.4;
       }
     }
   }
