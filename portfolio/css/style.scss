@@ -48,9 +48,12 @@ $header-width: 35vw;
   &-inner{
     position: relative;
     z-index: 2;
-    padding-left: 40px;
+    padding: 0 40px;
     a{
       color: #fff;
+    }
+    .header-ttl-container{
+      display: flex;
     }
     .header-ttl{
       font-family: 'Lato', sans-serif;
@@ -61,7 +64,7 @@ $header-width: 35vw;
       line-height: 1.6;
     }
     .header-nav{
-      margin-top: 120px;
+      margin-top: 80px;
       ul{
         display: flex;
         flex-direction: column;
@@ -94,6 +97,19 @@ $header-width: 35vw;
               transform: scale(0);
               transition: 0.5s;
             }
+          }
+        }
+      }
+    }
+    .header-sns{
+      margin-top: 80px;
+      .header-sns-item{
+        margin-bottom: 20px;
+        a{
+          display: block;
+          max-width: 20px;
+          img{
+            width: 100%;
           }
         }
       }
@@ -242,10 +258,40 @@ $header-width: 35vw;
         width: 46%;
         margin-bottom: 30px;
         &-img{
+          display: block;
           max-width: 98%;
           margin: 0 auto;
+          overflow: hidden;
+          position: relative;
+          &::after{
+            display: block;
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color: #aaa;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: 0.3s;
+          }
+          &:hover{
+            img{
+              transform: scale(105%);
+            }
+            &::after{
+              opacity: 0.4;
+            }
+          }
           img{
             width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            box-shadow: 0 0 4px -1px #aaa;
+            display: block;
+            transform: scale(98%);
+            transition: 0.3s;
           }
         }
         &-ttl{
@@ -311,6 +357,7 @@ $header-width: 35vw;
   }
 }
 #about{
+  max-width: 480px;
   margin-top: 80px;
   padding: 0 40px;
   .section-ttl{
@@ -332,7 +379,6 @@ $header-width: 35vw;
   .about-cnt{
     margin-top: 60px;
     position: relative;
-    // z-index: 1;
     &-photo{
       position: absolute;
       top: -20px;
@@ -375,21 +421,21 @@ $header-width: 35vw;
       line-height: 2;
       letter-spacing: 1.4px;
       // background-color: lightcoral; // 仮
-      margin-left: 190px;
+      margin-left: 180px;
       padding-top: 16px;
-      width: 350px;
+      width: 300px;
       &-ttl, &-txt{
         height: 40px;
       }
       &-ttl{
-        width: 80px;
+        width: 90px;
         display: flex;
         align-items: center;
         font-size: 1.4rem;
         font-weight: 300;
       }
       &-txt{
-        width: 60%;
+        width: 70%;
         display: flex;
         align-items: center;
         flex-wrap: wrap;
@@ -398,6 +444,17 @@ $header-width: 35vw;
         &-skill{
           height: 96px;
         }
+      }
+    }
+    &-txt{
+      margin-top: 24px;
+      font-size: 1.3rem;
+      font-weight: 300;
+      letter-spacing: 1px;
+      margin-left: -20px;
+      p{
+        line-height: 2;
+        margin-bottom: 20px;
       }
     }
   }
@@ -433,6 +490,22 @@ $header-width: 35vw;
       a{
         color: #333;
       }
+      .header-ttl-container{
+        justify-content: space-between;
+        .header-sns{
+          margin: 46px 10px 0 0;
+          ul{
+            display: flex;
+            align-items: center;
+            .header-sns-item{
+              margin-bottom: initial;
+              a{
+                max-width: 20px;
+              }
+            }
+          }
+        }
+      }
       .header-ttl{
         font-size: 2.6rem;
         letter-spacing: 4px;
@@ -445,7 +518,7 @@ $header-width: 35vw;
           display: flex;
           flex-direction: row;
           justify-content: right;
-          padding: 0 30px 20px 40px;
+          padding: 0 0 20px 40px;
           li{
             margin: 0 10px;
             a{
@@ -543,9 +616,9 @@ $header-width: 35vw;
       text-align: left;
       text-indent: initial;
       &::after{
-        width: 200px;
+        width: 360px;
         height: 50px;
-        left: -40px;
+        left: -200px;
         top: 22px;
         background-color: rgba($color: lightblue, $alpha: 0.4);
         z-index: -1;
@@ -554,13 +627,13 @@ $header-width: 35vw;
         display: block;
         content: "";
         position: absolute;
-        width: 200px;
+        width: 360px;
         height: 50px;
-        left: -40px;
+        left: -200px;
         top: 22px;
-        background: center/cover url(../img/fv.jpg);
+        background: top/cover url(../img/fv.jpg);
         z-index: -1;
-        opacity: 0.4;
+        opacity: 0.3;
       }
     }
     .about-cnt{
@@ -584,11 +657,11 @@ $header-width: 35vw;
         }
       }
       &-list{
-        margin-left: 0;
+        margin-left: 30px;
         padding-top: 220px;
         width: initial;
         &-ttl, &-txt{
-          height: 35px;
+          height: 30px;
         }
         &-ttl{
           max-width: 100px;
@@ -602,6 +675,13 @@ $header-width: 35vw;
             height: 84px;
           }
         }
+      }
+      &-txt{
+        font-size: 1rem;
+        padding: 0 30px;
+        line-height: 1.4;
+        letter-spacing: 1px;
+        margin-left: initial;
       }
     }
   }
