@@ -316,11 +316,12 @@ $header-width: 35vw;
   .section-ttl{
     text-align: left;
     position: relative;
+    // z-index: 2;
     &::after{
       display: block;
       content: "";
       width: 100px;
-      height: 160px;
+      height: 200px;
       background-color: rgba($color: lightblue, $alpha: 0.4);
       position: absolute;
       left: 55px;
@@ -330,42 +331,73 @@ $header-width: 35vw;
   }
   .about-cnt{
     margin-top: 60px;
-    display: flex;
-    justify-content: space-between;
+    position: relative;
+    // z-index: 1;
     &-photo{
-      width: 30%;
-      background-color: #ccc; // 仮
+      position: absolute;
+      top: -20px;
+      left: -20px;
       &-inner{
-        width: 100px;
-        height: 120px;
-        background-color: #6c6; // 仮
+        max-width: 160px;
+        img{
+          width: 100%;
+        }
+      }
+      &::before{
+        display: block;
+        content: "";
+        width: 145px;
+        height: 225px;
+        background-color: rgba($color: rgb(46, 189, 255), $alpha: 0.15);
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: 0.5s;
+      }
+      &::after{
+        display: block;
+        content: "";
+        width: 165px;
+        height: 245px;
+        background-color: rgba($color: rgb(46, 189, 255), $alpha: 0.2);
+        position: absolute;
+        left: -20px;
+        top: -20px;
+        z-index: -1;
+      }
+      &:hover::before{
+        opacity: 0;
       }
     }
     &-list{
-      width: 70%;
       display: flex;
       flex-wrap: wrap;
       line-height: 2;
       letter-spacing: 1.4px;
-      background-color: #eee; // 仮
+      // background-color: lightcoral; // 仮
+      margin-left: 190px;
+      padding-top: 16px;
+      width: 350px;
       &-ttl, &-txt{
         height: 40px;
       }
       &-ttl{
-        width: 90px;
+        width: 80px;
         display: flex;
         align-items: center;
-        padding-left: 20px;
         font-size: 1.4rem;
         font-weight: 300;
       }
       &-txt{
-        width: 64%;
+        width: 60%;
         display: flex;
         align-items: center;
         flex-wrap: wrap;
         font-size: 1.4rem;
         font-weight: 300;
+        &-skill{
+          height: 96px;
+        }
       }
     }
   }
@@ -506,7 +538,7 @@ $header-width: 35vw;
     }
   }
   #about{
-    margin-top: 40px;
+    margin-top: 20px;
     .section-ttl{
       text-align: left;
       text-indent: initial;
@@ -529,6 +561,47 @@ $header-width: 35vw;
         background: center/cover url(../img/fv.jpg);
         z-index: -1;
         opacity: 0.4;
+      }
+    }
+    .about-cnt{
+      &-photo{
+        top: -40px;
+        left: 30px;
+        &::before{
+          width: 150px;
+          height: 230px;
+          left: 0;
+          top: 0;
+        }
+        &::after{
+          width: 160px;
+          height: 240px;
+          left: -10px;
+          top: -10px;
+        }
+        &:hover::before{
+          opacity: 0;
+        }
+      }
+      &-list{
+        margin-left: 0;
+        padding-top: 220px;
+        width: initial;
+        &-ttl, &-txt{
+          height: 35px;
+        }
+        &-ttl{
+          max-width: 100px;
+          width: 25%;
+          font-size: 1.2rem;
+        }
+        &-txt{
+          width: 75%;
+          font-size: 1.2rem;
+          &-skill{
+            height: 84px;
+          }
+        }
       }
     }
   }

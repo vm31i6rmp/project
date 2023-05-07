@@ -315,7 +315,7 @@ a {
   display: block;
   content: "";
   width: 100px;
-  height: 160px;
+  height: 200px;
   background-color: rgba(173, 216, 230, 0.4);
   position: absolute;
   left: 55px;
@@ -324,44 +324,73 @@ a {
 }
 #about .about-cnt {
   margin-top: 60px;
-  display: flex;
-  justify-content: space-between;
+  position: relative;
 }
 #about .about-cnt-photo {
-  width: 30%;
-  background-color: #ccc;
+  position: absolute;
+  top: -20px;
+  left: -20px;
 }
 #about .about-cnt-photo-inner {
-  width: 100px;
-  height: 120px;
-  background-color: #6c6;
+  max-width: 160px;
+}
+#about .about-cnt-photo-inner img {
+  width: 100%;
+}
+#about .about-cnt-photo::before {
+  display: block;
+  content: "";
+  width: 145px;
+  height: 225px;
+  background-color: rgba(46, 189, 255, 0.15);
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: 0.5s;
+}
+#about .about-cnt-photo::after {
+  display: block;
+  content: "";
+  width: 165px;
+  height: 245px;
+  background-color: rgba(46, 189, 255, 0.2);
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  z-index: -1;
+}
+#about .about-cnt-photo:hover::before {
+  opacity: 0;
 }
 #about .about-cnt-list {
-  width: 70%;
   display: flex;
   flex-wrap: wrap;
   line-height: 2;
   letter-spacing: 1.4px;
-  background-color: #eee;
+  margin-left: 190px;
+  padding-top: 16px;
+  width: 350px;
 }
 #about .about-cnt-list-ttl, #about .about-cnt-list-txt {
   height: 40px;
 }
 #about .about-cnt-list-ttl {
-  width: 90px;
+  width: 80px;
   display: flex;
   align-items: center;
-  padding-left: 20px;
   font-size: 1.4rem;
   font-weight: 300;
 }
 #about .about-cnt-list-txt {
-  width: 64%;
+  width: 60%;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   font-size: 1.4rem;
   font-weight: 300;
+}
+#about .about-cnt-list-txt-skill {
+  height: 96px;
 }
 
 /* レスポンシブ */
@@ -484,7 +513,7 @@ a {
     width: 90%;
   }
   #about {
-    margin-top: 40px;
+    margin-top: 20px;
   }
   #about .section-ttl {
     text-align: left;
@@ -509,5 +538,44 @@ a {
     background: center/cover url(../img/fv.jpg);
     z-index: -1;
     opacity: 0.4;
+  }
+  #about .about-cnt-photo {
+    top: -40px;
+    left: 30px;
+  }
+  #about .about-cnt-photo::before {
+    width: 150px;
+    height: 230px;
+    left: 0;
+    top: 0;
+  }
+  #about .about-cnt-photo::after {
+    width: 160px;
+    height: 240px;
+    left: -10px;
+    top: -10px;
+  }
+  #about .about-cnt-photo:hover::before {
+    opacity: 0;
+  }
+  #about .about-cnt-list {
+    margin-left: 0;
+    padding-top: 220px;
+    width: initial;
+  }
+  #about .about-cnt-list-ttl, #about .about-cnt-list-txt {
+    height: 35px;
+  }
+  #about .about-cnt-list-ttl {
+    max-width: 100px;
+    width: 25%;
+    font-size: 1.2rem;
+  }
+  #about .about-cnt-list-txt {
+    width: 75%;
+    font-size: 1.2rem;
+  }
+  #about .about-cnt-list-txt-skill {
+    height: 84px;
   }
 }/*# sourceMappingURL=style.css.map */
