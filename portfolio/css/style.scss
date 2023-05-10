@@ -193,7 +193,7 @@ $header-width: 35vw;
 .section{
   // background-color: tomato; // 仮
   margin: 30px auto 40px;
-  max-width: 800px;
+  max-width: 900px;
   width: clac(100vw - $header-width -2vw);
   &-ttl{
     text-align: center;
@@ -223,6 +223,7 @@ $header-width: 35vw;
           margin: 10px auto;
           img{
             width: 100%;
+            border-radius: 10px;
           }
         }
         &-ttl{
@@ -275,14 +276,6 @@ $header-width: 35vw;
             opacity: 0;
             transition: 0.3s;
           }
-          &:hover{
-            img{
-              transform: scale(105%);
-            }
-            &::after{
-              opacity: 0.4;
-            }
-          }
           img{
             width: 100%;
             height: 100%;
@@ -302,55 +295,72 @@ $header-width: 35vw;
           text-indent: 1.4px;
           letter-spacing: 1.4px;
           margin-top: 10px;
-          a{
-            display: inline-block;
+          display: inline-block;
+          width: 100%;
+          position: relative;
+          overflow: hidden;
+          &::before{
+            display: block;
+            content: "";
             width: 100%;
-            position: relative;
-            overflow: hidden;
-            &:hover{
-              &::before{
-                left: 0;
-              }
-              &::after{
-                top: 0;
-              }
-            }
-            &::before{
-              display: block;
-              content: "";
-              width: 100%;
-              height: 100%;
-              background-color: rgba($color: rgb(0, 151, 201), $alpha: 0.8);
-              position: absolute;
-              top: 0;
-              left: -100%;
-              transition: 0.3s;
-              z-index: 3;
-            }
-            &::after{
-              display: block;
-              content: "サイトを開く";
-              width: 100%;
-              height: 100%;
-              color: #fff;
-              font-size: 1.6rem;
-              line-height: 2.2;
-              font-weight: 700;
-              text-indent: 1.4px;
-              letter-spacing: 1.4px;
-              position: absolute;
-              top: -100%;
-              left: 0;
-              transition: 0.3s;
-              z-index: 4;
-            }
+            height: 100%;
+            background-color: rgba($color: rgb(0, 151, 201), $alpha: 0.8);
+            position: absolute;
+            top: 0;
+            left: -100%;
+            transition: 0.3s;
+            z-index: 3;
+          }
+          &::after{
+            display: block;
+            content: "サイトを開く";
+            width: 100%;
+            height: 100%;
+            color: #fff;
+            font-size: 1.6rem;
+            line-height: 2.2;
+            font-weight: 700;
+            text-indent: 1.4px;
+            letter-spacing: 1.4px;
+            position: absolute;
+            top: -100%;
+            left: 0;
+            transition: 0.3s;
+            z-index: 4;
           }
         }
         &-txt{
-          font-size: 1.4rem;
+          font-size: 1rem;
           font-weight: 300;
           line-height: 1.4;
           letter-spacing: 1px;
+          overflow-wrap: break-word;
+        }
+        a{
+          display: block;
+        }
+        a:hover{
+          .works-cnt-item-img{
+            img{
+              transform: scale(105%);
+            }
+            &::after{
+              opacity: 0.4;
+            }
+          }
+          .works-cnt-item-ttl{
+            &::before{
+              left: 0;
+            }
+            &::after{
+              top: 0;
+            }
+          }
+          .works-cnt-item-txt{
+            span{
+              border-bottom: solid 1px #aaa;
+            }
+          }
         }
       }
     }
