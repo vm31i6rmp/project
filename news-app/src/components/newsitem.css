@@ -1,13 +1,18 @@
 .news-list{
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 900px;
+  margin: 0 auto;
 }
 
 .news-item{
-  width: 300px;
+  width: 350px;
   padding: 20px;
-  border: 1px solid #333;
-  margin-bottom: 20px;
+  border: 1px solid #aaa;
+  margin-bottom: 40px;
+  overflow-wrap: break-word;
+  overflow: hidden;
 }
 
 .news-img{

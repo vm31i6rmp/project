@@ -3,7 +3,7 @@ import NewsList from './components/NewsList';
 
 function App() {
   return (
-    <div className="App">
+    <div className="news-app">
       <NewsList />
     </div>
   );
