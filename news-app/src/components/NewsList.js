@@ -7,8 +7,8 @@ const NewsList = () => {
   const [articles, setArticles] = useState([])
   useEffect(() => {
     const getArticles = async () => {
-      const result = "travel"
-      const response = await axios.get(`https://newsapi.org/v2/everything?q=${result}&sortBy=publishedAt&apiKey=30aa2f9de4d04bfba8683100303d1ec6`)
+      const API_KEY = "cddd5402a76846ebc0470103ddd93523"
+      const response = await axios.get(`https://gnews.io/api/v4/top-headlines?country=jp&category=general&apikey=${API_KEY}`)
       console.log(response)
       setArticles(response.data.articles)
     }
@@ -22,7 +22,7 @@ const NewsList = () => {
             title={article.title}
             description={article.description}
             url={article.url}
-            urlToImage={article.urlToImage}
+            image={article.image}
           />
         )
       })}
