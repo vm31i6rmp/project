@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Furniture Design</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="shortcut icon" href="./img/favicon.ico">
+</head>
+<body>
+  <!-- ここからは header です -->
+  <header>
+    <!-- z-indexは同じ階層にのみ有効 -->
+    <!-- .hamと.navと.maskを同じ階層にする -->
+    <div class="hp-title">
+      <a href="index.html">
+        <img src="./img/logo.svg" alt="Furniture Design">
+      </a>
+    </div>
+    <div class="ham">
+      <div class="ham__bar ham__bar-1"></div>
+      <div class="ham__bar ham__bar-2"></div>
+    </div>
+    <nav class="hp-nav">
+      <ul class="hp-nav-list">
+        <li class="hp-nav-item">
+          <a href="products1.html">PRODUCTS</a>
+        </li>
+        <li class="hp-nav-item">
+          <a href="about.html">ABOUT</a>
+        </li>
+        <li class="hp-nav-item">
+          <a href="company.html">COMPANY</a>
+        </li>
+        <li class="hp-nav-item" id="contact">
+          <!-- mailtoでメールアプリを開く -->
+          <a href="mailto:xxxxx@xxx.xxx.com?subject=お問い合わせ">CONTACT</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="mask"></div>
+  </header>
+  <!-- ここからは main です -->
+  <main>
+    <div class="wrapper">
+      <h1 class="section-title">Company</h1>
+      <div class="section-cnt" id="company">
+        <dl>
+          <dt>社名</dt>
+          <dd>株式会社ファニチャーデザイン</dd>
+          <dt>住所</dt>
+          <dd>〒107-0062 東京都港区南青山１丁目××××××</dd>
+          <dt>設立</dt>
+          <dd>XXXX年XX月</dd>
+          <dt>資本金</dt>
+          <dd>XXXX万円</dd>
+          <dt>従業員数</dt>
+          <dd>XX名</dd>
+          <dt>事業内容</dt>
+          <dd>家具、インテリアの企画・生産<br>家具、インテリアの販売<br>店舗の企画・デザイン・設計</dd>
+        </dl>
+        <div class="map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6482.583224704448!2d139.725615!3d35.669821!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c820ac932eb%3A0xc68079dd10afd971!2z44CSMTA3LTAwNjIg5p2x5Lqs6YO95riv5Yy65Y2X6Z2S5bGx77yR5LiB55uu!5e0!3m2!1sja!2sjp!4v1676803110383!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- ここからは footer です -->
+  <footer>
+    <ul class="sns-list">
+      <li class="sns-item"><a href="#">INSTAGRAM</a></li>
+      <li class="sns-item"><a href="#">TWITTER</a></li>
+      <li class="sns-item"><a href="#">FACEBOOK</a></li>
+    </ul>
+    <div class="copyright">&copy; Furniture Design</div>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>
