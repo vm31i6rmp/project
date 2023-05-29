@@ -1,14 +1,14 @@
 .news-list{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
-  width: 900px;
   margin: 0 auto;
 }
 
 .news-item{
-  width: 350px;
-  padding: 20px;
+  width: 300px;
+  padding: 10px;
+  box-sizing: border-box;
   border: 1px solid #aaa;
   margin-bottom: 40px;
   overflow-wrap: break-word;

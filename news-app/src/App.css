@@ -1,3 +1,61 @@
+.news-app{
+  width: 620px;
+  margin: 20px auto;
+}
+
 .logo img{
   width: 500px;
+}
+
+.btn-container{
+  margin: 10px 0 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-container input{
+  height: 30px;
+  border: 1px solid #999;
+  padding-left: 10px;
+  box-sizing: border-box;
+  width: 120px;
+}
+
+.btn-container button{
+  height: 30px;
+  border: 1px solid #999;
+  cursor: pointer;
+  transition: .3s;
+}
+.btn-container button:hover{
+  opacity: 0.7;
+}
+
+.btn-container .btn-research{
+  color: #fff;
+  background-color: #2495FF;
+  border: none;
+  margin-left: -5px;
+  width: 50px;
+}
+
+.btn-category-container{
+  display: flex;
+  justify-content: space-around;
+  background-color: #999;
+  width: 70%;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+
+.btn-container .btn-category{
+  border: none;
+  background-color: #999;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.btn-container .btn-category:hover{
+  background-color: #fff;
+  color: #333;
 }
