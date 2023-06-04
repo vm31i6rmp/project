@@ -27,6 +27,57 @@ body{
 .lightup{
   background:linear-gradient(transparent 60%, #ff6 60%);
 }
+// scroll effect
+.scroll_left{
+  transition: 0.8s ease-in-out;
+  transform: translateX(-30px);
+  opacity: 0;
+}
+.scroll_right{
+  transition: 0.8s ease-in-out;
+  transform: translateX(30px);
+  opacity: 0;
+}
+.scroll_left.on, .scroll_right.on{
+  opacity: 1.0;
+  transform: translateX(0);
+}
+.scroll_up{
+  transition: 0.8s ease-in-out;
+  transform: translateY(-30px);
+  opacity: 0;
+}
+.scroll_up.on{
+  opacity: 1.0;
+  transform: translateY(0);
+}
+.scroll_center{
+  transition: 0.5s ease-in-out;
+  transform: scale(80%);
+  opacity: 0;
+}
+.scroll_center.on{
+  transform: scale(100%);
+  opacity: 1.0;
+}
+.scroll_rotateX_left{
+  transition: 1.5s;
+  opacity: 0;
+  transform: rotateX(0) translateX(-30px);
+}
+.scroll_rotateX_left.on{
+  opacity: 1.0;
+  transform: rotateX(-360deg) translateX(0);
+}
+.scroll_rotateX_right{
+  transition: 1.5s 0.3s;
+  opacity: 0;
+  transform: rotateX(0) translateX(30px);
+}
+.scroll_rotateX_right.on{
+  opacity: 1.0;
+  transform: rotateX(-360deg) translateX(0);
+}
 
 /* ヘッダー */
 $header-height: 80px;
@@ -201,12 +252,12 @@ $header-height: 80px;
   }
   &-slogan{
     padding-top: 18vh;
+    margin-bottom: 20px;
     line-height: 2.2;
     font-size: 3rem;
     letter-spacing: 6px;
   }
   &-txt{
-    margin-top: 15px;
     line-height: 2;
     font-size: 1.8rem;
     letter-spacing: 3px;
@@ -413,6 +464,7 @@ $floatR: 2px;
   width: 100%;
   margin: 0 auto 80px;
   box-sizing: border-box;
+  overflow: hidden;
   &-page{
     max-width: 100%;
     .circle-btn-container{
@@ -638,7 +690,7 @@ $strength-item-height-responsive: 250px;
         z-index: 1;
         display: flex;
         align-items: center;
-        div{
+        &-block{
           display: block;
           content: "";
           position: absolute;
@@ -1524,7 +1576,7 @@ $strength-item-height-responsive: 250px;
           text-indent: 1.3px;
           letter-spacing: 1.3px;
           margin-top: 50px;
-          div{
+          &-block{
             top: 10%;
             right: 0;
             width: 80vw;

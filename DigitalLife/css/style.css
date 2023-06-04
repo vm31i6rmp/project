@@ -28,6 +28,67 @@ body {
   background: linear-gradient(transparent 60%, #ff6 60%);
 }
 
+.scroll_left {
+  transition: 0.8s ease-in-out;
+  transform: translateX(-30px);
+  opacity: 0;
+}
+
+.scroll_right {
+  transition: 0.8s ease-in-out;
+  transform: translateX(30px);
+  opacity: 0;
+}
+
+.scroll_left.on, .scroll_right.on {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll_up {
+  transition: 0.8s ease-in-out;
+  transform: translateY(-30px);
+  opacity: 0;
+}
+
+.scroll_up.on {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll_center {
+  transition: 0.5s ease-in-out;
+  transform: scale(80%);
+  opacity: 0;
+}
+
+.scroll_center.on {
+  transform: scale(100%);
+  opacity: 1;
+}
+
+.scroll_rotateX_left {
+  transition: 1.5s;
+  opacity: 0;
+  transform: rotateX(0) translateX(-30px);
+}
+
+.scroll_rotateX_left.on {
+  opacity: 1;
+  transform: rotateX(-360deg) translateX(0);
+}
+
+.scroll_rotateX_right {
+  transition: 1.5s 0.3s;
+  opacity: 0;
+  transform: rotateX(0) translateX(30px);
+}
+
+.scroll_rotateX_right.on {
+  opacity: 1;
+  transform: rotateX(-360deg) translateX(0);
+}
+
 /* ヘッダー */
 .header {
   position: fixed;
@@ -180,12 +241,12 @@ body {
 }
 .fv-slogan {
   padding-top: 18vh;
+  margin-bottom: 20px;
   line-height: 2.2;
   font-size: 3rem;
   letter-spacing: 6px;
 }
 .fv-txt {
-  margin-top: 15px;
   line-height: 2;
   font-size: 1.8rem;
   letter-spacing: 3px;
@@ -391,6 +452,7 @@ body {
   width: 100%;
   margin: 0 auto 80px;
   box-sizing: border-box;
+  overflow: hidden;
 }
 .section-page {
   max-width: 100%;
@@ -617,7 +679,7 @@ body {
   display: flex;
   align-items: center;
 }
-#strength .strength-item-txt div {
+#strength .strength-item-txt-block {
   display: block;
   content: "";
   position: absolute;
@@ -628,7 +690,7 @@ body {
   background: linear-gradient(90deg, rgba(203, 166, 173, 0.6), rgba(72, 95, 164, 0.6));
   z-index: -1;
 }
-#strength .strength-item-txt div::after {
+#strength .strength-item-txt-block::after {
   display: block;
   content: "";
   position: absolute;
@@ -1465,14 +1527,14 @@ body {
     letter-spacing: 1.3px;
     margin-top: 50px;
   }
-  #strength .strength-item-txt div {
+  #strength .strength-item-txt-block {
     top: 10%;
     right: 0;
     width: 80vw;
     transform: translateY(-20%);
     height: 270px;
   }
-  #strength .strength-item-txt div::after {
+  #strength .strength-item-txt-block::after {
     border-top: none;
     border-right: none;
   }

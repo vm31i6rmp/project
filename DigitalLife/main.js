@@ -62,6 +62,39 @@ var indexLink = document.querySelectorAll('a[href^="#"]');
     });
   }
 
+//scroll_effect
+var scrollAnimationElms = document.querySelectorAll(
+  '.scroll_up, .scroll_left, .scroll_right, .scroll_center, .scroll_rotateX_left, .scroll_rotateX_right');
+
+var scrollAnimationFunc = function () {
+  for (var i = 0; i < scrollAnimationElms.length; i++) {
+    var triggerMargin = 150;
+    if (window.innerHeight > scrollAnimationElms[i].getBoundingClientRect().top + triggerMargin) {
+      scrollAnimationElms[i].classList.add('on');
+    }
+  }
+  var el = document.querySelectorAll(".myText.active");
+  for(i=0; i<el.length; i++) {
+    var triggerMargin = 100;
+    if (window.innerHeight > el[i].getBoundingClientRect().top + triggerMargin) {
+      var text = new ShuffleText(el[i]);
+      text.start();
+      el[i].classList.remove('active');
+    }
+  }
+}
+window.addEventListener('load', scrollAnimationFunc);
+window.addEventListener('scroll', scrollAnimationFunc);
+
+// var el = document.querySelectorAll(".myText");
+// for(i=0; i<el.length; i++) {
+//   var triggerMargin = 150;
+//   if (window.innerHeight > el[i].getBoundingClientRect().top + triggerMargin) {
+//     var text = new ShuffleText(el[i]);
+//     text.start();
+//   }
+// }
+
 // スクロールすると固定メニューが出る
 // const header = document.querySelector(".header");
 // const fv = document.querySelector(".fv");
