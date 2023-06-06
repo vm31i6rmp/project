@@ -92,15 +92,15 @@ $(function() {
   var $video1 = $('.video1').get(0),
       $video2 = $('.video2').get(0),
       $video3 = $('.video3').get(0),
-      videoTime1 = Math.floor($video1.duration * 500),
-      videoTime2 = Math.floor($video2.duration * 500),
+      videoTime1 = Math.floor($video1.duration * 1000),
+      videoTime2 = Math.floor($video2.duration * 1000),
       videoTime3 = Math.floor($video3.duration * 1000);
     $video1.play();
     $('.slider').slick({
       autoplay: true,
       arrows: false,
       fade: true,
-      autoplaySpeed: videoTime1,
+      autoplaySpeed: 1500,
       swipe: false,
       pauseOnHover: false,
       pauseOnFocus: false,

@@ -112,7 +112,7 @@ body {
   right: 0;
   height: 80px;
   line-height: 80px;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.4);
   display: flex;
   justify-content: space-between;
   padding: 0 10px 0 30px;
