@@ -86,26 +86,53 @@ var scrollAnimationFunc = function () {
 window.addEventListener('load', scrollAnimationFunc);
 window.addEventListener('scroll', scrollAnimationFunc);
 
-// var el = document.querySelectorAll(".myText");
-// for(i=0; i<el.length; i++) {
-//   var triggerMargin = 150;
-//   if (window.innerHeight > el[i].getBoundingClientRect().top + triggerMargin) {
-//     var text = new ShuffleText(el[i]);
-//     text.start();
-//   }
-// }
-
-// スクロールすると固定メニューが出る
-// const header = document.querySelector(".header");
-// const fv = document.querySelector(".fv");
-// const targetHeight = fv.getBoundingClientRect().bottom;
-// window.addEventListener("scroll",function(){
-//   if(window.innerWidth > 768){
-//     if(window.pageYOffset > targetHeight){
-//       header.classList.add("fixed");
-//     }
-//     else{
-//       header.classList.remove("fixed");
-//     }
-//   }
-// });
+// スライドショー
+$(function() {
+  $('.video1').on('loadedmetadata', function() {
+  var $video1 = $('.video1').get(0),
+      $video2 = $('.video2').get(0),
+      $video3 = $('.video3').get(0),
+      videoTime1 = Math.floor($video1.duration * 500),
+      videoTime2 = Math.floor($video2.duration * 500),
+      videoTime3 = Math.floor($video3.duration * 1000);
+    $video1.play();
+    $('.slider').slick({
+      autoplay: true,
+      arrows: false,
+      fade: true,
+      autoplaySpeed: videoTime1,
+      swipe: false,
+      pauseOnHover: false,
+      pauseOnFocus: false,
+      dots: true,
+      dotsClass: 'video_dots',
+    }).on('afterChange', function(event, slick, currentSlide, nextSlide) {
+      switch (currentSlide) {
+        case 0:
+          $(this).slick('slickSetOption', 'autoplaySpeed', videoTime1);
+          $video1.play();
+          $video2.pause();
+          $video2.currentTime = 0;
+          $video3.pause();
+          $video3.currentTime = 0;
+          break;
+        case 1:
+          $(this).slick('slickSetOption', 'autoplaySpeed', videoTime2);
+          $video2.play();
+          $video1.pause();
+          $video1.currentTime = 0;
+          $video3.pause();
+          $video3.currentTime = 0;
+          break;
+        case 2:
+          $(this).slick('slickSetOption', 'autoplaySpeed', videoTime3);
+          $video3.play();
+          $video1.pause();
+          $video1.currentTime = 0;
+          $video2.pause();
+          $video2.currentTime = 0;
+          break;
+      }
+    });
+  });
+});

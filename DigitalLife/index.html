@@ -43,10 +43,23 @@
   <main style="z-index: 1;">
     <!-- ここからは first view です -->
     <section class="fv">
-      <div class="fv-inner">
-        <h2 class="fv-slogan myText active">未経験から<br class="br-sp">エンジニアへ</h2>
-        <h3 class="fv-txt myText active"><span style="margin-left: -10px;">「IT」×「想像力」×「個性」</span></h3>
-        <h3 class="fv-txt myText active">クリエイティブなスキルは<br class="br-sp">人の未来を輝かせる。</h3>
+      <div class="slider">
+        <video src="video/bg1.mp4" muted playsinline class="video1"></video>
+        <video src="video/bg2.mp4" muted playsinline class="video2"></video>
+        <video src="video/bg3.mp4" muted playsinline class="video3"></video>
+      </div>
+      <div id="cover"></div>
+      <div class="fv-inner pc">
+        <h2 class="fv-slogan myText active">未経験からエンジニアへ</h2>
+        <h3 class="fv-txt myText active" style="margin-left: -10px;">「IT」×「想像力」×「個性」</h3>
+        <h3 class="fv-txt myText active">クリエイティブなスキルは人の未来を輝かせる。</h3>
+      </div>
+      <div class="fv-inner sp">
+        <h2 class="fv-slogan myText active" style="margin-bottom: initial;">未経験から</h2>
+        <h2 class="fv-slogan myText active" style="padding-top: initial;">エンジニアへ</h2>
+        <h3 class="fv-txt myText active" style="margin-left: -10px;">「IT」×「想像力」×「個性」</h3>
+        <h3 class="fv-txt myText active">クリエイティブなスキルは</h3>
+        <h3 class="fv-txt myText active">人の未来を輝かせる。</h3>
       </div>
       <div class="circle-btn-container">
         <a href="#strength" class="circle-btn circle-btn-strength">
@@ -112,7 +125,7 @@
       </ul>
     </section>
     <section id="business" class="section">
-      <h3 class="section-ttl">事業分野</h3>
+      <h3 class="section-ttl scroll_center">事業分野</h3>
       <ul class="business-list">
         <li class="business-item scroll_rotateX_left">
           <a href="business.html#web_application">
@@ -143,8 +156,8 @@
     <section id="recruit" class="section">
       <h3 class="section-ttl scroll_center">採用情報</h3>
       <div class="recruit-cnt">
-        <div class="recruit-cnt-txt">
-          <div class="recruit-cnt-txt-inner scroll_left">
+        <div class="recruit-cnt-txt scroll_left">
+          <div class="recruit-cnt-txt-inner">
             <span class="lightup myText active">「働く×学ぶ」で</span><br>
             <span class="lightup myText active">人の未来を創造します。</span>
             <div style="margin-top: 20px;">「未経験だから」というハードルを<br class="br-pc">乗り越えられる環境と教育がここにあります。<br></div>
@@ -153,7 +166,7 @@
             <div>私たちは挑戦する人を応援し、<br class="br-pc">一緒に未来を創造していきます。</div>
           </div>
         </div>
-        <div class="recruit-cnt-img"><img src="img/recruit.jpg" alt=""></div>
+        <div class="recruit-cnt-img scroll_right"><img src="img/recruit.jpg" alt=""></div>
         <a href="contact.html" class="circle-btn circle-btn-contact scroll_up">
           <div class="circle-btn-txt">
             <div class="img-mail"></div>
@@ -173,6 +186,11 @@
   <footer class="footer">
     <div class="copyright">&copy; Digital Life 2023</div>
   </footer>
+  <!-- jQueryをインストール -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!-- slick(スライダー)を読み込む -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <!-- タイピング風文字をインストール -->
   <script src="shuffle-text.js"></script>
   <script src="main.js"></script>
 </body>

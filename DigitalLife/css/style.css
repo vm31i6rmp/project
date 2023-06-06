@@ -19,6 +19,14 @@ ul {
   display: none;
 }
 
+.pc {
+  display: block;
+}
+
+.sp {
+  display: none;
+}
+
 body {
   font-family: "Mallanna", sans-serif;
   font-family: "Noto Serif JP", serif;
@@ -46,18 +54,16 @@ body {
 }
 
 .scroll_up {
-  transition: 0.8s ease-in-out;
-  transform: translateY(-30px);
+  transition: 2s 1s ease-in-out;
   opacity: 0;
 }
 
 .scroll_up.on {
   opacity: 1;
-  transform: translateY(0);
 }
 
 .scroll_center {
-  transition: 0.5s ease-in-out;
+  transition: 1s ease-in-out;
   transform: scale(80%);
   opacity: 0;
 }
@@ -232,12 +238,38 @@ body {
 /* ファーストビュー */
 .fv {
   height: 100dvh;
-  background: no-repeat center/cover url(../img/fv.jpg);
   color: #fff;
   margin-bottom: 80px;
+  overflow: hidden;
+}
+.fv .video_dots button {
+  display: none;
+}
+.fv .slider {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+}
+.fv .slick-list {
+  overflow: hidden;
+}
+.fv .slick-track video {
+  height: 100vh !important;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.fv #cover {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(63, 25, 43, 0.3);
 }
 .fv-inner {
   margin-left: 40px;
+  position: relative;
+  z-index: 10;
 }
 .fv-slogan {
   padding-top: 18vh;
@@ -256,6 +288,7 @@ body {
   right: 5vw;
   bottom: 3vw;
   transition: 1s 0.3s;
+  z-index: 10;
 }
 .fv .circle-btn-container.open {
   opacity: 0.5;
@@ -1354,6 +1387,12 @@ body {
     display: none;
   }
   .br-sp {
+    display: block;
+  }
+  .pc {
+    display: none;
+  }
+  .sp {
     display: block;
   }
   .header {

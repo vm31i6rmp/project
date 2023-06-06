@@ -17,6 +17,12 @@ ul{
     display: none;
   }
 }
+.pc{
+  display: block;
+}
+.sp{
+  display: none;
+}
 body{
   // font-family: 'Fugaz One', cursive;
   font-family: 'Mallanna', sans-serif;
@@ -43,16 +49,16 @@ body{
   transform: translateX(0);
 }
 .scroll_up{
-  transition: 0.8s ease-in-out;
-  transform: translateY(-30px);
+  transition: 2s 1s ease-in-out;
+  // transform: translateY(-30px);
   opacity: 0;
 }
 .scroll_up.on{
   opacity: 1.0;
-  transform: translateY(0);
+  // transform: translateY(0);
 }
 .scroll_center{
-  transition: 0.5s ease-in-out;
+  transition: 1s ease-in-out;
   transform: scale(80%);
   opacity: 0;
 }
@@ -243,12 +249,40 @@ $header-height: 80px;
 /* ファーストビュー */
 .fv{
   // height: 100vh;
+  // background: no-repeat center/cover url(../img/fv.jpg);
   height: 100dvh; // dynamic viewport heigh
-  background: no-repeat center/cover url(../img/fv.jpg);
   color: #fff;
   margin-bottom: 80px;
+  overflow: hidden;
+  .video_dots button{
+    display: none;
+  }
+  .slider{
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+  }
+  .slick-list{
+    overflow: hidden;
+  }
+  .slick-track{
+    video{
+      height: 100vh !important;
+      object-fit: cover;
+    }
+  }
+  #cover{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba($color: #3f192b, $alpha: 0.3);
+  }
   &-inner{
     margin-left: 40px;
+    position: relative;
+    z-index: 10;
   }
   &-slogan{
     padding-top: 18vh;
@@ -267,6 +301,7 @@ $header-height: 80px;
     right: 5vw;
     bottom: 3vw;
     transition: 1s .3s;
+    z-index: 10;
     &.open{
       opacity: 0.5;
     }
@@ -1396,6 +1431,12 @@ $strength-item-height-responsive: 250px;
     &-sp{
       display: block;
     }
+  }
+  .pc{
+    display: none;
+  }
+  .sp{
+    display: block;
   }
   .header{
     padding: 0 6vw;
