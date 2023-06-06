@@ -73,6 +73,7 @@ var scrollAnimationFunc = function () {
       scrollAnimationElms[i].classList.add('on');
     }
   }
+  // typing_effect
   var el = document.querySelectorAll(".myText.active");
   for(i=0; i<el.length; i++) {
     var triggerMargin = 100;
