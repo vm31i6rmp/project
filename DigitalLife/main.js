@@ -64,7 +64,7 @@ var indexLink = document.querySelectorAll('a[href^="#"]');
 
 //scroll_effect
 var scrollAnimationElms = document.querySelectorAll(
-  '.scroll_up, .scroll_left, .scroll_right, .scroll_center, .scroll_rotateX_left, .scroll_rotateX_right');
+  '.scroll_up, .scroll_left, .scroll_right, .scroll_center, .scroll_rotateX_left, .scroll_rotateX_right, .flip-scale-2-ver-left, .flip-scale-2-ver-right');
 
 var scrollAnimationFunc = function () {
   for (var i = 0; i < scrollAnimationElms.length; i++) {

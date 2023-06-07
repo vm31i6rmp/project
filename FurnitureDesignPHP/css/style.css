@@ -187,7 +187,7 @@ header {
 }
 .num-container .select-num {
   height: 30px;
-  width: 20%;
+  width: 25%;
   border: none;
   border: 1px solid #ddd;
   padding: 5px;
@@ -417,6 +417,17 @@ footer {
 @media screen and (max-width: 900px) {
   .product-list .product-item {
     width: 47%;
+  }
+  .num-container {
+    flex-direction: column;
+  }
+  .num-container .select-num {
+    width: 100%;
+    padding-left: 10px;
+    margin-bottom: 5px;
+  }
+  .num-container .btn-cart {
+    width: 100%;
   }
   footer {
     flex-direction: column;
