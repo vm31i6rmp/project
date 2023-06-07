@@ -263,9 +263,9 @@ $header-height: 80px;
 }
 /* ファーストビュー */
 .fv{
-  // height: 100vh;
+  height: 100vh;
   // background: no-repeat center/cover url(../img/fv.jpg);
-  height: 100dvh; // dynamic viewport heigh
+  // height: 100dvh; // dynamic viewport heigh
   color: #fff;
   margin-bottom: 80px;
   overflow: hidden;

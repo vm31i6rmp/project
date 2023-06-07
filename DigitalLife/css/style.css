@@ -246,7 +246,7 @@ body {
 
 /* ファーストビュー */
 .fv {
-  height: 100dvh;
+  height: 100vh;
   color: #fff;
   margin-bottom: 80px;
   overflow: hidden;
