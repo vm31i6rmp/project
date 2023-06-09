@@ -37,7 +37,7 @@ ShuffleTextはDOMエレメント用ランダムテキストクラスです。
             @type {number}
             @default 600
             */
-            this.duration = 2500;
+            this.duration = 1000;
             this._isRunning = false;
             this._originalStr = "";
             this._originalLength = 0;
