@@ -30,6 +30,50 @@ a{
   }
 }
 
+/* アニメーション */
+// scroll effect
+.scroll_left{
+  -webkit-transition: 0.5s ease-in-out;
+  -webkit-transform: translateX(-30px);
+  transform: translateX(-30px);
+  transition: 0.5s ease-in-out;
+  opacity: 0;
+}
+.scroll_right{
+  -webkit-transition: 0.5s ease-in-out;
+  -webkit-transform: translateX(30px);
+  transition: 0.5s ease-in-out;
+  transform: translateX(30px);
+  opacity: 0;
+}
+.scroll_left.on, .scroll_right.on{
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  opacity: 1.0;
+}
+.scroll_up{
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  transform: translateY(-30px);
+  opacity: 0;
+}
+.scroll_up.on{
+  opacity: 1.0;
+  transform: translateY(0);
+}
+.scroll_center{
+  -webkit-transition: 0.5s ease-in-out;
+  -webkit-transform: scale(80%);
+  transition: 0.5s ease-in-out;
+  transform: scale(80%);
+  opacity: 0;
+}
+.scroll_center.on{
+  -webkit-transform: scale(100%);
+  transform: scale(100%);
+  opacity: 1.0;
+}
+
 /* メイン構造（固定部） */
 .body{
   display: flex;
