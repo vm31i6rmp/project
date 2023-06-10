@@ -1,7 +1,7 @@
 <?php
   require "component.php";
   session_start();
-  $item = 1;
+  $item = 12;
   $i = $item - 1;
 ?>
 

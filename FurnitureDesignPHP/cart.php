@@ -69,7 +69,7 @@
           $img = $product[$index]["img"];
         }
         echo "<div class='item'>";
-        echo "<div><img src=".$img." style='width: 150px; height: auto;'></div>";
+        echo "<div class='item-img'><img src=".$img."></div>";
         echo "<div>".$value['product_name']."</div>";
         echo "<div>単価：".number_format($price)."円（税込）</div>";
         echo "<div>数量：".$value['num']."</div>";

@@ -147,6 +147,8 @@ header{
 }
 .section-title{
   margin: 40px 0;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
 }
 .section-cnt{
   max-width: 600px;
@@ -280,10 +282,13 @@ header{
     width: 42%;
     .item-cnt-text{
       margin-bottom: 30px;
-      line-height: 1.5;
+      line-height: 2;
+      letter-spacing: 1px;
     }
     .item-cnt-price{
       margin-bottom: 40px;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
     }
     .item-cnt-info{
       display: flex;
@@ -291,12 +296,13 @@ header{
       font-size: 0.875rem;
       line-height: 1.5;
       margin-bottom: 30px;
+      letter-spacing: 1px;
       .item-cnt-info-ttl{
-        width: 30%;
+        width: 25%;
         margin-bottom: 10px;
       }
       .item-cnt-info-cnt{
-        width: 70%;
+        width: 75%;
       }
     }
   }
@@ -314,11 +320,18 @@ header{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 320px;
+    width: 510px;
     line-height: 1.5;
     margin-right: 30px;
     .item{
       margin-bottom: 20px;
+      width: 49%;
+      .item-img{
+        max-width: 100%;
+        img{
+          width: 100%;
+        }
+      }
       form{
         button{
           border: none;
@@ -421,6 +434,19 @@ footer{
     }
     .btn-cart{
       width: 100%;
+    }
+  }
+  #cart{
+    flex-direction: column;
+    .cart{
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+    .sum-container{
+      margin: 0 auto;
+      padding: 10px 0;
     }
   }
   footer{
