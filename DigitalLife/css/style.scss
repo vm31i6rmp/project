@@ -1400,7 +1400,7 @@ $strength-item-height-responsive: 250px;
     }
     textarea{
       width: 100%;
-      height: 150px;
+      height: 200px;
       display: block;
       box-sizing: border-box;
       border: none;
@@ -1410,6 +1410,7 @@ $strength-item-height-responsive: 250px;
       font-weight: 300;
       margin-top: 10px;
       font-family: 'Noto Sans JP', 'Mallanna', sans-serif;
+      resize: none;
       &:focus{
         outline: none;
       }
