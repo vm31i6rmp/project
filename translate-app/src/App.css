@@ -1,0 +1,44 @@
+.container{
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 30px 0 0 0;
+  /* background-color: #eee; */
+}
+
+textarea:focus {
+  outline: none;
+}
+#input{
+  display: block;
+  margin: 0 auto 20px;
+  width: 90%;
+  height: 40%;
+  border: 1px solid #555;
+  resize: none;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+.btn-container{
+  margin: 0 auto;
+  width: 90%;
+  height: 8%;
+  display: flex;
+  justify-content: space-between;
+}
+.btn{
+  width: 48%;
+  border: 1px solid #555;
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  font-weight: 300;
+  color: #333;
+}
+.btn:hover{
+  cursor: pointer;
+}

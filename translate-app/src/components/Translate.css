@@ -1,0 +1,15 @@
+#output{
+  width: 90%;
+  height: 40%;
+  margin: 0 auto 20px;
+  border: 1px solid #555;
+  padding: 10px;
+  box-sizing: border-box;
+  transform: rotate(180deg);
+  font-size: 1.6rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  background-color: #eee;
+  overflow-wrap: break-word;
+}
