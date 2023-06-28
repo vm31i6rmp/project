@@ -383,6 +383,26 @@ a {
 }
 #works .works-cnt-item a {
   display: block;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.4;
+  letter-spacing: 1px;
+  overflow-wrap: break-word;
+  padding-bottom: 3px;
+}
+#works .works-cnt-item a:hover {
+  border-bottom: solid 1px #aaa;
+}
+#works .works-cnt-item .git-link {
+  transition: 0.3s;
+  padding: 3px 0px;
+  letter-spacing: 0.2px;
+}
+#works .works-cnt-item .git-link:hover {
+  background-color: #aaa;
+  color: #fff;
+  border-bottom: none;
+  padding-left: 5px;
 }
 #works .works-cnt-item a:hover .works-cnt-item-img img {
   transform: scale(105%);
@@ -395,9 +415,6 @@ a {
 }
 #works .works-cnt-item a:hover .works-cnt-item-ttl::after {
   top: 0;
-}
-#works .works-cnt-item a:hover .works-cnt-item-txt span {
-  border-bottom: solid 1px #aaa;
 }
 
 #about {

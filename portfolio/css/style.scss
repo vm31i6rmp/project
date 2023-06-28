@@ -382,6 +382,26 @@ $header-width: 35vw;
         }
         a{
           display: block;
+          font-size: 1rem;
+          font-weight: 300;
+          line-height: 1.4;
+          letter-spacing: 1px;
+          overflow-wrap: break-word;
+          padding-bottom: 3px;
+          &:hover{
+            border-bottom: solid 1px #aaa;
+          }
+        }
+        .git-link{
+          transition: 0.3s;
+          padding: 3px 0px;
+          letter-spacing: 0.2px;
+          &:hover{
+            background-color: #aaa;
+            color: #fff;
+            border-bottom: none;
+            padding-left: 5px;
+          }
         }
         a:hover{
           .works-cnt-item-img{
@@ -398,11 +418,6 @@ $header-width: 35vw;
             }
             &::after{
               top: 0;
-            }
-          }
-          .works-cnt-item-txt{
-            span{
-              border-bottom: solid 1px #aaa;
             }
           }
         }
