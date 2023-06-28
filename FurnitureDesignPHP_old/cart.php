@@ -91,7 +91,6 @@
       echo "<div class='sum-price'>".number_format($gokei)."円</div>";
       ?>
       <div class="next-buy"><a href="products1.php">&gt;&gt; 買い物を続ける</a></div>
-      <div class="pay"><a href="https://buy.stripe.com/test_eVag0F0ytfLc5uo8wx">購入する</a></div>
     </div>
   </div>
 </body>

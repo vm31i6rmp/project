@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Furniture Design</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="shortcut icon" href="./img/favicon.ico">
+</head>
+<body>
+  <div class="container">
+    <div class="payment-form-container">
+        <h1>クレジットカード情報の入力</h1>
+        <div class="form-group">
+            <p>商品点数 : 3点</p>
+            <p>お支払い : ¥5,500</p>
+        </div>
+        <div id="card-element"><!-- input要素がここに生成される --></div>
+        <div id="card-errors" role="alert"><!-- エラーメッセージがここに表示される --></div>
+        <button id="payment-form-submit" class="btn btn-outline-info shadow-sm mb-5 rounded btn-lg btn-block">注文を確定する</button>
+        <!-- 決済処理後メッセージ -->
+        <div id="content-payment-message collapse">
+          <div class="contents-payment-error collapse">
+            <p>無効な決済リクエストです。</p>
+            <button class="btn">やり直す</button>
+          </div>
+          <div class="contents-payment-not-yet collapse">
+            <p>クレジットカード、もしくは暗証番号に誤りがあります。</p>
+            <button class="btn">やり直す</button>
+          </div>
+          <div class="contents-payment-result collapse">
+            <p>お支払いを完了しました。</p>
+            <button class="btn">トップへ戻る</button>
+          </div>
+        </div>
+    </div>
+</div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!-- Stripe.jsx -->
+  <script src="https://js.stripe.com/v3/"></script>
+  <!-- 決済関連の処理を記載する -->
+  <script type="text/javascript" src="payment.js"></script>
+</body>
+</html>
