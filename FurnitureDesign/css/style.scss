@@ -1,4 +1,6 @@
-@charset "UTF-8";
+@use 'header.scss';
+@use 'footer.scss';
+
 body {
   color: #333;
   font-size: 0.875rem;
@@ -19,116 +21,6 @@ header, .wrapper, footer{
   box-sizing: border-box;
 }
 
-// ここからは header です
-header{
-  max-width: 1360px;
-  height: 80px;
-  margin: 0 auto;
-  padding: 0 40px;
-  background-color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: fixed;
-  left: 0;
-  right: 0;
-  z-index: 10;
-}
-.hp-title{
-  a{
-    display: block;
-    width: 180px;
-    transition: 0.5s;
-    img{
-      max-width: 100%;
-    }
-    &:hover{
-      opacity: 0.7;
-    }
-  }
-}
-.ham{
-  width: 30px;
-  height: 30px;
-  top: 25px;
-  right: 55px;
-  z-index: 100;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  &:hover{
-    cursor: pointer;
-  }
-  .ham__bar{
-    width: 30px;
-    height: 2px;
-    background-color: #000;
-    border-radius: 1px;
-    transition: 0.5s;
-    &-1{
-      margin-bottom: 3px;
-    }
-    &-2{
-      margin-top: 3px;
-    }
-  }
-  &.active{
-    .ham__bar{
-      background-color: #fff;
-      &-1{
-        margin-bottom: 0;
-        transform: translateY(1px) rotate(-45deg);
-      }
-      &-2{
-        margin-top: 0;
-        transform: translateY(-1px) rotate(45deg);
-      }
-    }
-  }
-}
-.hp-nav{
-  position: fixed;
-  top: 0;
-  left: -100%;
-  width: 300px;
-  z-index: 100;
-  transition: 0.5s;
-  .hp-nav-list{
-    padding: 40px 0 40px 50px;
-    transition: all 0.5s;
-    .hp-nav-item{
-      margin-bottom: 20px;
-      a{
-        color: #fff;
-        transition: 0.5s;
-        &:hover{
-          opacity: 0.7;
-        }
-      }
-    }
-  }
-  &.active{
-    left: 0;
-  }
-}
-.mask{
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba($color: #000, $alpha: 0.8);
-  z-index: 99;
-  transition: 0.5s;
-  &:hover{
-    cursor: pointer;
-  }
-  &.active{
-    display: block;
-  }
-}
-
 // ここからは main です
 .wrapper{
   max-width: 1360px;
@@ -136,8 +28,19 @@ header{
   margin: 0 auto;
   padding: 80px 40px 160px;
 }
+.shopping-cart-now{
+  line-height: 2;
+  margin-bottom: 10px;
+  a{
+    color: #06C5F5;
+    padding: 0 2px 5px 2px;
+    border-bottom: 1px solid #06C5F5;
+  }
+}
 .section-title{
   margin: 40px 0;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
 }
 .section-cnt{
   max-width: 600px;
@@ -146,12 +49,15 @@ header{
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
+  line-height: 1.5;
   .product-item{
     width: 23%;
     margin-bottom: 40px;
     a{
       display: block;
+      margin-bottom: 5px;
+      letter-spacing: 1px;
       img{
         max-width: 100%;
         margin-bottom: 10px;
@@ -160,16 +66,96 @@ header{
           opacity: 0.8;
         }
       }
-      div{
-        line-height: 1.1rem;
+    }
+  }
+}
+.form-container{
+  display: flex;
+  justify-content: space-between;
+  .form-like{
+    width: 40px;
+  }
+  .form-cart{
+    width: calc(100% - 48px);
+  }
+}
+.btn-like, .btn-unlike{
+  color: #fff;
+  background-color: #ccc;
+  border: none;
+  border-radius: 3px;
+  width: 100%;
+  height: 36px;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  display: flex;
+  &-img{
+    width: 20px;
+    margin-top: 3px;
+    img{
+      width: 100%;
+    }
+  }
+  &:hover{
+    cursor: pointer;
+    // background-color: #ff84c5;
+    opacity: 0.7;
+  }
+}
+.btn-unlike{
+  background-color: #ff84c5;
+}
+.num-container{
+  display: flex;
+  justify-content: space-between;
+  .select-num{
+    height: 36px;
+    width: 25%;
+    border: none;
+    border: 1px solid #ddd;
+    padding: 5px;
+  }
+  .btn-cart{
+    color: #fff;
+    background-color: #06C5F5;
+    border: none;
+    border-radius: 3px;
+    width: 100%;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    div{
+      font-weight: bold;
+    }
+    &-img{
+      width: 18px;
+      margin-right: 10px;
+      margin-top: 2px;
+      img{
+        width: 100%;
       }
+    }
+    &:hover{
+      cursor: pointer;
+      opacity: 0.7;
     }
   }
 }
 .view-more{
-  display: block;
   text-align: center;
   line-height: 20px;
+  a{
+    transition: .3s;
+    padding: 5px;
+    border-bottom: 1px solid #777;
+    &:hover{
+      color: #fff;
+      background-color: #777;
+    }
+  }
 }
 .page{
   text-align: center;
@@ -225,27 +211,127 @@ header{
     width: 42%;
     .item-cnt-text{
       margin-bottom: 30px;
-      line-height: 1.5;
+      line-height: 2;
+      letter-spacing: 1px;
     }
     .item-cnt-price{
       margin-bottom: 40px;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
     }
     .item-cnt-info{
       display: flex;
       flex-wrap: wrap;
       font-size: 0.875rem;
-      line-height: 0.8;
+      line-height: 1.5;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
       .item-cnt-info-ttl{
-        width: 30%;
+        width: 25%;
         margin-bottom: 10px;
       }
       .item-cnt-info-cnt{
-        width: 70%;
+        width: 75%;
       }
     }
   }
 }
-@media screen and (max-width: 900px){
+.cart-ttl{
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 200;
+  margin: 30px 0;
+}
+#cart{
+  display: flex;
+  justify-content: center;
+  .cart{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 510px;
+    line-height: 1.5;
+    margin-right: 30px;
+    .item{
+      margin-bottom: 20px;
+      width: 49%;
+      .item-img{
+        max-width: 100%;
+        img{
+          width: 100%;
+        }
+      }
+      form{
+        button{
+          border: none;
+          color: #fff;
+          background-color: #777;
+          margin-top: 5px;
+          padding: 5px 10px;
+          border-radius: 3px;
+          transition: 0.3s;
+          &:hover{
+            cursor: pointer;
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+  }
+  .sum-container{
+    letter-spacing: 1px;
+    line-height: 2;
+    .sum-price{
+      font-size: 1.5rem;
+    }
+    .next-buy{
+      transition: 0.3s;
+      a{
+        color: #06C5F5;
+      }
+      border-bottom: 1px solid #06C5F5;
+      &:hover{
+        background-color: #06C5F5;
+        cursor: pointer;
+        a{
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+// レスポンシブ
+@media screen and (max-width: 900px) {
+  .product-list{
+    .product-item{
+      width: 47%;
+    }
+  }
+  .num-container{
+    flex-direction: column;
+    .select-num{
+      width: 100%;
+      padding-left: 10px;
+      margin-bottom: 5px;
+    }
+    .btn-cart{
+      width: 100%;
+    }
+  }
+  #cart{
+    flex-direction: column;
+    .cart{
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+    .sum-container{
+      margin: 0 auto;
+      padding: 10px 0;
+    }
+  }
   #item{
     flex-wrap: wrap;
     max-width: 100%;
@@ -257,34 +343,15 @@ header{
       width: 100%;
     }
   }
-}
-
-// ここからは footer です
-footer{
-  display: flex;
-  justify-content: space-between;
-  max-width: 1360px;
-  margin: 0 auto;
-  padding: 0 40px;
-  font-size: 0.75rem;
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-}
-.sns-list{
-  display: flex;
-  justify-content: space-between;
-  .sns-item{
-    margin-right: 30px;
-  }
-}
-
-// レスポンシブ
-@media screen and (max-width: 900px) {
-  .product-list{
-    .product-item{
-      width: 47%;
+  .num-container{
+    .select-num{
+      width: 19%;
+      padding: 0;
+    }
+    .btn-cart{
+      width: 80%;
+      font-weight: initial;
+      font-size: 0.4rem;
     }
   }
   footer{

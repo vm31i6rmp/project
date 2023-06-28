@@ -396,7 +396,7 @@ a {
 #works .works-cnt-item .git-link {
   transition: 0.3s;
   padding: 3px 0px;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.5px;
 }
 #works .works-cnt-item .git-link:hover {
   background-color: #aaa;
