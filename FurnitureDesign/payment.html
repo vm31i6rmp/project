@@ -75,7 +75,7 @@
 	</style>
   </head>
   <body>
-	<form action="http://localhost:8888/FurnitureDesignPHP/done.php" method="post" id="payment-form">
+	<form action="http://localhost:8888/sample/phpNote.php" method="post" id="payment-form">
 	  <div class="form-row">
 	    <label for="card-element">
 	      クレジット または デビットカード
@@ -88,66 +88,8 @@
 	  </div>
 	  <button id="btn">支払う</button>
 	</form>
-  <script>
-  	// publishable API keyをセットする
-  	var stripe = Stripe('pk_test_51NNq80JQOTKAi40aVxXahFeU6UkDA0dNq111Ht2Kdq0wsodrrxTgdj4aqw6JsPDKx9NayixCUqiaoXGF2UUVqDTl00EkXzT9sI');
-	var elements = stripe.elements();
-  	var style = {
-	  base: {
-	  	// 入力した文字のサイズ
-	    fontSize: '16px',
-	    // 入力した文字の色
-	    color: "#1847a2",
-	    // プレースホルダーの文字色
-	    '::placeholder': {
-	      color: '#656565'
-	    }
-	  }
-	  // エラー時の入力した文字色と左のカードアイコンの色
-	  ,invalid: {
-	    color: '#ff5f3f',
-	    iconColor: '#ff5f3f'
-	  }
-	};
-	// カード要素のインスタンス生成
-	var card = elements.create('card', {style: style});
-	// id="card-element"の<div>タグにカード要素のインスタンスを紐付ける(mountする)
-	card.mount('#card-element');
-	card.addEventListener('change', function(event) {
-	  var displayError = document.getElementById('card-errors');
-	  if (event.error) {
-	    displayError.textContent = event.error.message;
-	  } else {
-	    displayError.textContent = '';
-	  }
-	});
-	// トークンの生成、またはサブミット時のエラーを表示
-	var form = document.getElementById('payment-form');
-	form.addEventListener('submit', function(event) {
-	  // デフォルトのsubmit動作を止める
-	  event.preventDefault();
-	  stripe.createToken(card).then(function(result) {
-	    if (result.error) {
-	      // エラーがあった場合、エラーを表示
-	      var errorElement = document.getElementById('card-errors');
-	      errorElement.textContent = result.error.message;
-	    } else {
-	      // エラーがない場合、トークン送信
-	      stripeTokenHandler(result.token);
-	    }
-	  });
-	});
-	function stripeTokenHandler(token) {
-	  // トークンIDを付加してフォームデータをサブミット
-	  var form = document.getElementById('payment-form');
-	  var hiddenInput = document.createElement('input');
-	  hiddenInput.setAttribute('type', 'hidden');
-	  hiddenInput.setAttribute('name', 'stripeToken');
-	  hiddenInput.setAttribute('value', token.id);
-	  form.appendChild(hiddenInput);
-	  // フォーム送信
-	  form.submit();
-	}
-   </script>
+
+	<script src="https://js.stripe.com/v3/"></script>
+	<script src="payment.js"></script>
   </body>
 </html>

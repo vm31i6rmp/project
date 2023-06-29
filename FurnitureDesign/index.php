@@ -3,18 +3,18 @@
   session_start();
 
   if(isset($_SESSION["like"])) {
-    $array = $_SESSION["like"];
+    $array_like = $_SESSION["like"];
     // 商品の追加
     // 商品名とお気に入りがPOSTされた時
     if(isset($_POST["product_name"]) && isset($_POST["product_like"])) {
-      $array_product_name = array_column($array, "product_name");
+      $array_like_product_name = array_column($array_like, "product_name");
       // 既にお気に入りリストに入っているのと、同じ商品がカゴに入った時
-      if(in_array($_POST["product_name"], $array_product_name)) {
-        $index = array_search($_POST["product_name"], $array_product_name);
-        $array[$index]["product_like"] = $_POST["product_like"];
+      if(in_array($_POST["product_name"], $array_like_product_name)) {
+        $index = array_search($_POST["product_name"], $array_like_product_name);
+        $array_like[$index]["product_like"] = $_POST["product_like"];
       //異なる商品がお気に入りリストに入った時
       } else {
-        $array[] = [
+        $array_like[] = [
           "product_name" => $_POST["product_name"],
           "product_like" => $_POST["product_like"]
         ];
@@ -22,22 +22,34 @@
     }
   // 買い物カゴに初めて商品を入れる時
   } else {
-    $array[] = [
-      "product_name" => $_POST["product_name"],
-      "product_like" => $_POST["product_like"]
-    ];
+    if(isset($_POST["product_name"]) && isset($_POST["product_like"])) {
+      $array_like[] = [
+        "product_name" => $_POST["product_name"],
+        "product_like" => $_POST["product_like"]
+      ];
+    } else {
+      $array_like[] = [
+        "product_name" => null,
+        "product_like" => '0'
+      ];
+    }
   }
   // product_like = 1 の元素のみ配列に保存
-  $array = array_filter(
-    $array, function($element) {
-      return $element['product_like'] == 1;
-    }
-  );
-  // 配列をセッションに格納
-  $_SESSION["like"] = $array;
+  // $array_like = array_filter(
+  //   $array_like, function($element) {
+  //     return $element['product_like'] == 1;
+  //   }
+  // );
 
-  // foreach($array as $row) {
-  //   echo $row['product_name'] . $row['product_like'] . '<br>';
+  // 配列をセッションに格納
+  $_SESSION["like"] = $array_like;
+
+  // if(isset($_SESSION['like'])) {
+  //   echo '存在'. '<br>';
+  //   var_dump($_SESSION['like']);
+  // }
+  // foreach($array_like as $row) {
+  //   echo '<br>' . $row['product_name'] . $row['product_like'] . '<br>';
   // }
   // $_SESSION["like"] = [];
 
@@ -74,8 +86,8 @@
           <a href="like.php">
             お気に入り
             <?php
-            if(isset($_SESSION["like"]) && count($_SESSION["like"]) > 0) {
-              echo '<sapn>' . count($_SESSION["like"]) . '</span>';
+            if(array_count_values(array_column($array_like, 'product_like'))[1] > 0) {
+              echo '<sapn>' . array_count_values(array_column($array_like, 'product_like'))[1] . '</span>';
             }
             ?>
           </a>
@@ -160,10 +172,11 @@
             </a>
             <div class="form-container">
               <?php
-              $array_product_name = array_column($array, "product_name");
-              if(in_array($product[$i]["product_name"], $array_product_name)) {
-                $index = array_search($product[$i]["product_name"], $array_product_name);
-                if($array[$index]["product_like"] == 1) {?>
+              $array_like_product_name = array_column($array_like, "product_name");
+              if(in_array($product[$i]["product_name"], $array_like_product_name)) {
+                $index = array_search($product[$i]["product_name"], $array_like_product_name);
+                if($array_like[$index]["product_like"] == '1') {
+              ?>
                   <form class="form-like" action="index.php" method="post">
                     <input type="hidden" name="product_name" value="<?= $product[$i]["product_name"] ?>">
                     <input type="hidden" name="product_like" value=0>
@@ -174,7 +187,7 @@
                     </button>
                   </form>
                 <?php
-                } else {
+                } else if($array_like[$index]["product_like"] == '0') {
                 ?>
                   <form class="form-like" action="index.php" method="post">
                     <input type="hidden" name="product_name" value="<?= $product[$i]["product_name"] ?>">

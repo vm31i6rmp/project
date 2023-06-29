@@ -3,6 +3,19 @@
   session_start();
   $item = 1;
   $i = $item - 1;
+
+  $array = $_SESSION['like'];
+  $array = array_filter(
+    $array, function($element) {
+      return $element['product_like'] == 1;
+    }
+  );
+
+  $isUser = 0;
+  if(isset($_SESSION['user_name'])) {
+    $userName = $_SESSION['user_name'];
+    $isUser = 1;
+  }
 ?>
 
 <!DOCTYPE html>
@@ -25,6 +38,56 @@
         <img src="./img/logo.svg" alt="Furniture Design">
       </a>
     </div>
+    <nav class="menu">
+      <ul class="menu-list">
+        <li class="menu-item">
+          <a href="like.php">
+            お気に入り
+            <?php
+            if(array_count_values(array_column($array, 'product_like'))[1] > 0) {
+              echo '<sapn>' . array_count_values(array_column($array, 'product_like'))[1] . '</span>';
+            }
+            ?>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="cart.php">
+            カート
+            <?php
+            if(isset($_SESSION["cart"]) && count($_SESSION["cart"]) > 0) {
+              echo '<sapn>' . count($_SESSION["cart"]) . '</span>';
+            }
+            ?>
+          </a>
+        </li>
+        <?php
+        if($isUser == 1) {
+        ?>
+        <li class="menu-item" id="menu-item-user">
+          <a href=""><?php echo $userName ?> 様</a>
+          <ul class="user-info-list">
+            <li class="user-info-item">
+              <a href="">登録情報</a>
+            </li>
+            <li class="user-info-item">
+              <a href="logout.php">ログアウト</a>
+            </li>
+          </ul>
+        </li>
+        <?php
+        } else {
+        ?>
+        <li class="menu-item">
+          <a href="login.html">ログイン</a>
+        </li>
+        <?php
+        }
+        ?>
+        <li class="menu-item">
+          <a href="register.html">新規会員登録</a>
+        </li>
+      </ul>
+    </nav>
     <div class="ham">
       <div class="ham__bar ham__bar-1"></div>
       <div class="ham__bar ham__bar-2"></div>
@@ -50,16 +113,6 @@
   <!-- ここからは main です -->
   <main>
     <div class="wrapper">
-      <div class="shopping-cart-now"><a href="cart.php">買い物カート</a>は、
-        <?php
-          if(isset($_SESSION["cart"]) && count($_SESSION["cart"])>0) {
-            echo count($_SESSION["cart"]);
-            echo "商品が入っています。";
-          } else {
-            echo "空です。";
-          }
-        ?>
-      </div>
       <section class="item">
         <?php
         echo "<h1 class='section-title'>".$product[$i]["product_name"]."</h1>";
@@ -93,7 +146,7 @@
                   <option value=2>2</option>
                   <option value=3>3</option>
                 </select>
-                <button class="btn-cart" type="submit">
+                <button class="btn-cart btn-cart-page" type="submit">
                   <div class="btn-cart-img">
                     <img src="img/cart-white.png">
                   </div>
@@ -118,6 +171,7 @@
     </ul>
     <div class="copyright">&copy; Furniture Design</div>
   </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   <script src="main.js"></script>
 </body>
 </html>

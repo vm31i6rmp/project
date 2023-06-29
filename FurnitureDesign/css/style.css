@@ -342,6 +342,9 @@ header, .wrapper, footer {
   cursor: pointer;
   opacity: 0.7;
 }
+.num-container .btn-cart-page {
+  width: 72%;
+}
 
 .view-more {
   text-align: center;

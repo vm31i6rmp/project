@@ -62,7 +62,7 @@ header {
 .user-info-list {
   display: none;
   position: absolute;
-  top: 100%;
+  top: 70%;
   left: 50%;
   transform: translateX(-50%);
   margin-top: 10px;
@@ -76,7 +76,6 @@ header {
   display: block;
   box-sizing: border-box;
   width: 100%;
-  padding: 10px;
   transition: 0.5s;
 }
 .user-info-list .user-info-item a:hover {

@@ -266,7 +266,7 @@ a {
   margin-bottom: 30px;
 }
 #skills .skills-cnt-item-img {
-  max-width: 40%;
+  max-width: 55%;
   margin: 10px auto;
 }
 #skills .skills-cnt-item-img img {
@@ -327,9 +327,9 @@ a {
      object-fit: contain;
   -o-object-position: center;
      object-position: center;
-  box-shadow: 0 0 4px -1px #aaa;
+  box-shadow: 0 0 6px -3px #aaa;
   display: block;
-  transform: scale(98%);
+  transform: scale(95%);
   transition: 0.3s;
 }
 #works .works-cnt-item-ttl {
@@ -405,7 +405,7 @@ a {
   padding-left: 5px;
 }
 #works .works-cnt-item a:hover .works-cnt-item-img img {
-  transform: scale(105%);
+  transform: scale(100%);
 }
 #works .works-cnt-item a:hover .works-cnt-item-img::after {
   opacity: 0.4;

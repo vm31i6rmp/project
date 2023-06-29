@@ -1,4 +1,13 @@
+// const Stripe = require('stripe');
 var stripe = Stripe('pk_test_51NNq80JQOTKAi40aVxXahFeU6UkDA0dNq111Ht2Kdq0wsodrrxTgdj4aqw6JsPDKx9NayixCUqiaoXGF2UUVqDTl00EkXzT9sI');
+// var customer = await stripe.customers.retrieve(
+//   'cu_1NO1sIJQOTKAi40as1wFuvuC',
+//   {
+//     apiKey: 'pk_test_51NNq80JQOTKAi40aVxXahFeU6UkDA0dNq111Ht2Kdq0wsodrrxTgdj4aqw6JsPDKx9NayixCUqiaoXGF2UUVqDTl00EkXzT9sI'
+//   }
+// );
+
+
 var elements = stripe.elements();
 
 // Element作成時に options から スタイルを調整できます.

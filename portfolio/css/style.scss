@@ -263,7 +263,7 @@ $header-width: 35vw;
         width: 32%;
         margin-bottom: 30px;
         &-img{
-          max-width: 40%;
+          max-width: 55%;
           margin: 10px auto;
           img{
             width: 100%;
@@ -325,9 +325,9 @@ $header-width: 35vw;
             height: 100%;
             object-fit: contain;
             object-position: center;
-            box-shadow: 0 0 4px -1px #aaa;
+            box-shadow: 0 0 6px -3px #aaa;
             display: block;
-            transform: scale(98%);
+            transform: scale(95%);
             transition: 0.3s;
           }
         }
@@ -406,7 +406,7 @@ $header-width: 35vw;
         a:hover{
           .works-cnt-item-img{
             img{
-              transform: scale(105%);
+              transform: scale(100%);
             }
             &::after{
               opacity: 0.4;
