@@ -7,7 +7,7 @@
   try {
     $db = new PDO($dsn, $user, $password); // PDO = PHP Data Object
     // echo '接続成功', '<br>';
-    $tb_project = $db->query('SELECT * FROM product ORDER BY ID DESC');
+    $tb_product = $db->query('SELECT * FROM product ORDER BY ID');
     $tb_user = $db->query('SELECT * FROM user');
     // foreach ($tb_user as $row) {
     //   $array_user[] = [

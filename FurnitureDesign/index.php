@@ -1,6 +1,17 @@
 <?php
-  require "component.php";
+  require "db.php";
   session_start();
+  foreach ($tb_product as $row) {
+    $product[] = [
+      "ID" => $row['ID'],
+      "product_name" => $row['name'],
+      "price" => $row['price'],
+      "img" => $row['img'],
+      "des" => $row['des'],
+      "size" => $row['size'],
+      "color" => $row['color']
+    ];
+  }
 
   if(isset($_SESSION["like"])) {
     $array_like = $_SESSION["like"];
@@ -87,7 +98,7 @@
             お気に入り
             <?php
             if(array_count_values(array_column($array_like, 'product_like'))[1] > 0) {
-              echo '<sapn>' . array_count_values(array_column($array_like, 'product_like'))[1] . '</span>';
+              echo '<sapn class="menu-item-num">' . array_count_values(array_column($array_like, 'product_like'))[1] . '</span>';
             }
             ?>
           </a>
@@ -97,7 +108,7 @@
             カート
             <?php
             if(isset($_SESSION["cart"]) && count($_SESSION["cart"]) > 0) {
-              echo '<sapn>' . count($_SESSION["cart"]) . '</span>';
+              echo '<sapn class="menu-item-num">' . count($_SESSION["cart"]) . '</span>';
             }
             ?>
           </a>
@@ -106,7 +117,7 @@
         if($isUser == 1) {
         ?>
         <li class="menu-item" id="menu-item-user">
-          <a href=""><?php echo $userName ?> 様</a>
+          <a class="menu-item-user" href=""><?php echo $userName ?> 様</a>
           <ul class="user-info-list">
             <li class="user-info-item">
               <a href="">登録情報</a>
@@ -120,13 +131,13 @@
         } else {
         ?>
         <li class="menu-item">
-          <a href="login.html">ログイン</a>
+          <a class="menu-item-login" href="login.html">ログイン</a>
         </li>
         <?php
         }
         ?>
         <li class="menu-item">
-          <a href="register.html">新規会員登録</a>
+          <a class="menu-item-register" href="register.html">新規会員登録</a>
         </li>
       </ul>
     </nav>

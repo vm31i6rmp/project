@@ -6,6 +6,10 @@ body {
   font-size: 0.875rem;
   min-height: 100vh;
   position: relative;
+  // font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  // font-family: 'Lato', sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
+  // font-family: 'Noto Serif JP', serif;
 }
 a{
   text-decoration: none;
@@ -24,7 +28,6 @@ header, .wrapper, footer{
 // ここからは main です
 .wrapper{
   max-width: 1360px;
-  margin: 0 auto;
   margin: 0 auto;
   padding: 80px 40px 160px;
 }
@@ -239,65 +242,343 @@ header, .wrapper, footer{
     }
   }
 }
-.cart-ttl{
-  text-align: center;
-  font-size: 1.3rem;
-  font-weight: 200;
-  margin: 30px 0;
-}
-#cart{
-  display: flex;
-  justify-content: center;
-  .cart{
+#like{
+  max-width: 600px;
+  margin: 0 auto;
+  .like{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 510px;
     line-height: 1.5;
-    margin-right: 30px;
+    &-ttl{
+      font-size: 1.3rem;
+      font-weight: 200;
+      margin: 30px 0 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px #669667 solid;
+      color: #669667;
+      letter-spacing: 3px;
+    }
     .item{
-      margin-bottom: 20px;
-      width: 49%;
-      .item-img{
-        max-width: 100%;
+      padding: 15px 0;
+      display: flex;
+      border-bottom: 1px solid #ccc;
+      transition: 0.3s;
+      &-img{
+        max-width: 30%;
+        margin-right: 20px;
         img{
           width: 100%;
         }
       }
-      form{
-        button{
-          border: none;
-          color: #fff;
-          background-color: #777;
-          margin-top: 5px;
-          padding: 5px 10px;
-          border-radius: 3px;
-          transition: 0.3s;
-          &:hover{
-            cursor: pointer;
-            opacity: 0.7;
+      &-cnt{
+        &-ttl{
+          font-size: 1.2rem;
+          font-weight: 700;
+        }
+        &-des{
+          font-weight: 300;
+          letter-spacing: 1px;
+          height: 95px;
+          overflow: auto;
+          font-size: 0.8rem;
+          border: 1px solid #eee;
+          padding: 5px;
+          box-sizing: border-box;
+          margin: 10px 0;
+          display: flex;
+          align-items: center;
+        }
+        .price-container{
+          display: flex;
+          justify-content: space-between;
+        }
+        &-price{
+          font-size: 1.6rem;
+          color: tomato;
+          letter-spacing: 2px;
+        }
+        .btn-container{
+          display: flex;
+          justify-content: right;
+          .btn-buy{
+            color: #fff;
+            background-color: #669667;
+            border: none;
+            margin: 5px 15px 0 0;
+            padding: 5px 20px;
+            border-radius: 3px;
+            transition: 0.3s;
+            display: block;
+            height: 25px;
+            line-height: 25px;
+            font-size: 1rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-indent: 1px;
+            &:hover{
+              cursor: pointer;
+              opacity: 0.7;
+            }
+          }
+          form{
+            button{
+              border: none;
+              color: #fff;
+              background-color: #777;
+              margin-top: 5px;
+              padding: 5px 10px;
+              border-radius: 3px;
+              transition: 0.3s;
+              line-height: 35px;
+              width: 40px;
+              height: 35px;
+              display: block;
+              .delete-img{
+                max-width: 100%;
+                img{
+                  width: 100%;
+                }
+              }
+              &:hover{
+                cursor: pointer;
+                opacity: 0.7;
+              }
+            }
           }
         }
       }
     }
   }
-  .sum-container{
-    letter-spacing: 1px;
-    line-height: 2;
-    .sum-price{
-      font-size: 1.5rem;
+  .empty-txt1{
+    color: #669667;
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: 4px;
+    text-indent: -4px;
+    margin-bottom: 20px;
+  }
+  .empty-txt2{
+    color: #fff;
+    background-color: #669667;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    padding: 10px;
+  }
+  .next-buy{
+    color: #669667;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    letter-spacing: 3px;
+    font-size: 1.8rem;
+    border: 1px solid #669667;
+    transition: 0.3s;
+    a{
+      color: #669667;
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 20px 0;
     }
-    .next-buy{
-      transition: 0.3s;
+    &:hover{
+      background-color: #669667;
+      cursor: pointer;
       a{
-        color: #06C5F5;
+        color: #fff;
       }
-      border-bottom: 1px solid #06C5F5;
-      &:hover{
-        background-color: #06C5F5;
-        cursor: pointer;
+    }
+  }
+}
+#cart{
+  max-width: 650px;
+  margin: 0 auto;
+  .cart-ttl{
+    font-size: 1.3rem;
+    font-weight: 200;
+    margin: 30px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px #669667 solid;
+    color: #669667;
+    letter-spacing: 3px;
+  }
+  .cart-container{
+    display: flex;
+    justify-content: space-between;
+    .cart{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      line-height: 1.5;
+      width: 450px;
+      .item{
+        padding: 15px 0;
+        display: flex;
+        border-bottom: 1px solid #ccc;
+        transition: 0.3s;
+        &-img{
+          max-width: 30%;
+          margin-right: 20px;
+          img{
+            width: 100%;
+          }
+        }
+        &-cnt{
+          &-ttl{
+            font-size: 1rem;
+          }
+          &-price{
+            font-size: 1.2rem;
+            color: tomato;
+            letter-spacing: 2px;
+            margin: 5px 0;
+          }
+          &-num{
+            font-size: 1rem;
+            letter-spacing: 2px;
+            margin-top: 3px;
+          }
+          .btn-container{
+            display: flex;
+            margin-top: 8px;
+            .btn-buy{
+              color: #fff;
+              background-color: #669667;
+              border: none;
+              margin: 5px 15px 0 0;
+              padding: 5px 20px;
+              border-radius: 3px;
+              transition: 0.3s;
+              display: block;
+              height: 25px;
+              font-size: 0.9rem;
+              font-weight: 300;
+              letter-spacing: 2px;
+              text-indent: -2px;
+              &:hover{
+                cursor: pointer;
+                opacity: 0.7;
+              }
+            }
+            form{
+              button{
+                border: none;
+                color: #fff;
+                background-color: #777;
+                margin-top: 5px;
+                padding: 5px 10px;
+                border-radius: 3px;
+                transition: 0.3s;
+                line-height: 35px;
+                width: 40px;
+                height: 35px;
+                display: block;
+                .delete-img{
+                  max-width: 100%;
+                  img{
+                    width: 100%;
+                  }
+                }
+                &:hover{
+                  cursor: pointer;
+                  opacity: 0.7;
+                }
+              }
+            }
+          }
+        }
+      }
+      .empty-txt{
+        color: #669667;
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-indent: -2px;
+        &-2{
+          color: #fff;
+          background-color: #669667;
+          margin-top: 10px;
+          font-size: 1.3rem;
+          font-weight: 500;
+          padding: 10px;
+          text-indent: 0;
+        }
+        .next-buy{
+          color: #669667;
+          display: block;
+          text-align: center;
+          margin-top: 20px;
+          letter-spacing: 3px;
+          font-size: 1.8rem;
+          border: 1px solid #669667;
+          transition: 0.3s;
+          a{
+            color: #669667;
+            display: block;
+            width: 100%;
+            height: 100%;
+            padding: 20px 0;
+          }
+          &:hover{
+            background-color: #669667;
+            cursor: pointer;
+            a{
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+    .sum-container{
+      letter-spacing: 1px;
+      line-height: 2;
+      width: 180px;
+      .sum-price{
+        font-size: 1.6rem;
+        letter-spacing: 2px;
+        margin-top: -10px;
+      }
+      .pay{
+        background-color: tomato;
+        font-size: 1.4rem;
+        border-radius: 10px;
+        margin-top: 5px;
+        transition: 0.3s;
         a{
           color: #fff;
+          display: block;
+          width: 100%;
+          height: 100%;
+          text-align: center;
+        }
+        &:hover{
+          opacity: 0.7;
+          cursor: pointer;
+        }
+      }
+      .next-buy{
+        color: #669667;
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        font-size: 1rem;
+        border: 1px solid #669667;
+        transition: 0.3s;
+        a{
+          color: #669667;
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+        &:hover{
+          background-color: #669667;
+          cursor: pointer;
+          a{
+            color: #fff;
+          }
         }
       }
     }

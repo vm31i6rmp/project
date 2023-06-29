@@ -1,6 +1,17 @@
 <?php
-  require "component.php";
+  require "db.php";
   session_start();
+  foreach ($tb_product as $row) {
+    $product[] = [
+      "ID" => $row['ID'],
+      "product_name" => $row['name'],
+      "price" => $row['price'],
+      "img" => $row['img'],
+      "des" => $row['des'],
+      "size" => $row['size'],
+      "color" => $row['color']
+    ];
+  }
   $array_like = $_SESSION['like'];
   // $array_like = array_filter(
   //   $array_like, function($element) {
@@ -44,10 +55,15 @@
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="shortcut icon" href="./img/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+JP:wght@100;200;300;400&family=Noto+Serif+JP:wght@300;400;500;600;700&family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- ここからは header です -->
   <header>
+    <!-- z-indexは同じ階層にのみ有効 -->
+    <!-- .hamと.navと.maskを同じ階層にする -->
     <div class="hp-title">
       <a href="index.php">
         <img src="./img/logo.svg" alt="Furniture Design">
@@ -59,8 +75,8 @@
           <a href="like.php">
             お気に入り
             <?php
-            if(array_count_values(array_column($array_like, 'product_like'))['1'] > 0) {
-              echo '<sapn>' . array_count_values(array_column($array_like, 'product_like'))[1] . '</span>';
+            if(array_count_values(array_column($array_like, 'product_like'))[1] > 0) {
+              echo '<sapn class="menu-item-num">' . array_count_values(array_column($array_like, 'product_like'))[1] . '</span>';
             }
             ?>
           </a>
@@ -70,7 +86,7 @@
             カート
             <?php
             if(isset($_SESSION["cart"]) && count($_SESSION["cart"]) > 0) {
-              echo '<sapn>' . count($_SESSION["cart"]) . '</span>';
+              echo '<sapn class="menu-item-num">' . count($_SESSION["cart"]) . '</span>';
             }
             ?>
           </a>
@@ -79,7 +95,7 @@
         if($isUser == 1) {
         ?>
         <li class="menu-item" id="menu-item-user">
-          <a href=""><?php echo $userName ?> 様</a>
+          <a class="menu-item-user" href=""><?php echo $userName ?> 様</a>
           <ul class="user-info-list">
             <li class="user-info-item">
               <a href="">登録情報</a>
@@ -93,13 +109,13 @@
         } else {
         ?>
         <li class="menu-item">
-          <a href="login.html">ログイン</a>
+          <a class="menu-item-login" href="login.html">ログイン</a>
         </li>
         <?php
         }
         ?>
         <li class="menu-item">
-          <a href="register.html">新規会員登録</a>
+          <a class="menu-item-register" href="register.html">新規会員登録</a>
         </li>
       </ul>
     </nav>
@@ -128,9 +144,9 @@
   <!-- ここからは main です -->
   <main>
     <div class="wrapper">
-      <div class="cart-ttl">お気に入りリスト</div>
-      <div id="cart" class="container">
-        <div class="cart">
+      <div id="like" class="container">
+        <div class="like-ttl">お気に入り商品</div>
+        <div class="like">
           <?php
           foreach($array_like as $key => $value) {
             // 商品名のカラムのみを検索
@@ -142,25 +158,42 @@
               $index = array_search($value['product_name'], $array_product_name);
               $price = $product[$index]["price"];
               $img = $product[$index]["img"];
+              $des = $product[$index]["des"];
+              $id = $product[$index]["ID"];
             }
-            echo "<div class='item'>";
-            echo "<div class='item-img'><img src=".$img."></div>";
-            echo "<div>".$value['product_name']."</div>";
-            echo "<div>単価：".number_format($price)."円（税込）</div>";
             ?>
-            <form action="like.php" method="post">
-              <input type="hidden" name="product_name" value="<?= $value['product_name'] ?>">
-              <button type="submit">お気に入りリストから削除</button>
-            </form>
-          <?php
-            echo "</div>";
-            //商品を削除するボタン
-        }
+          <div class='item'>
+            <?php echo "<div class='item-img'><img src=".$img."></div>"; ?>
+            <div class="item-cnt">
+              <?php echo "<div class='item-cnt-ttl'>".$value['product_name']."</div>"; ?>
+              <?php echo "<div class='item-cnt-des'>".$des."</div>"; ?>
+              <div class="price-container">
+                <?php echo "<div class='item-cnt-price'>".number_format($price)."円<span style='font-size: 1rem;'>（税込）</sapn></div>"; ?>
+                <div class="btn-container">
+                  <a class="btn-buy" href="item<?php $id ?>.php">購入する</a>
+                  <form action="like.php" method="post">
+                    <input type="hidden" name="product_name" value="<?= $value['product_name'] ?>">
+                    <button type="submit">
+                      <div class="delete-img"><img src="img/trash.png" alt=""></div>
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+            <?php
+            }
+            ?>
+        </div>
+        <?php
+          if(array_count_values(array_column($array_like, 'product_like'))[1] == 0) {
         ?>
-        </div>
-        <div class="sum-container">
-          <div class="next-buy"><a href="products1.php">&gt;&gt; 買い物を続ける</a></div>
-        </div>
+        <div class="empty-txt1">お気に入り商品がありません。</div>
+        <div class="empty-txt2">お気に入り商品の登録で<br>いつものお買い物がもっと便利に！</div>
+        <?php
+          }
+        ?>
+        <div class="next-buy"><a href="products1.php">&gt;&gt; 買い物を続ける</a></div>
       </div>
     </div>
   </main>

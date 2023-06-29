@@ -1,6 +1,7 @@
 <?php
 
   require('db.php');
+  session_start();
   foreach ($tb_user as $row) {
     $array_user[] = [
       "name" => $row['name'],
@@ -20,7 +21,8 @@
     exit;
   } else {
     if(in_array($userId, $array_user_id)) {
-      echo 'ユーザーIDが既に登録されています。<br />';
+      echo 'ユーザーID（'.$userId.'）が既に登録されています。<br />';
+      echo '他のユーザーIDをご利用ください。<br />';
       echo '<a href="register.html">戻る</a>';
       exit;
     } else {
@@ -34,7 +36,9 @@
       $stmt->execute($params);
       // HTTPヘッダを送信する関数（クライアントからのリクエスト >> サーバーからのレスポンス）
       // header('Location: 遷移先のURL')
-      header('Location: register_done.html');
+      $_SESSION['register_done_user_name'] = $userName;
+      $_SESSION['register_done_user_id'] = $userId;
+      header('Location: register_done.php');
     }
   }
 
