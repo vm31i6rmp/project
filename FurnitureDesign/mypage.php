@@ -1,83 +1,29 @@
 <?php
   require "db.php";
   session_start();
-  foreach ($tb_product as $row) {
-    $product[] = [
-      "ID" => $row['ID'],
-      "product_name" => $row['name'],
-      "price" => $row['price'],
-      "img" => $row['img'],
-      "des" => $row['des'],
-      "size" => $row['size'],
-      "color" => $row['color']
+  foreach ($tb_user as $row) {
+    $array_user[] = [
+      "name" => $row['name'],
+      "id" => $row['id'],
+      "password" => $row['password']
     ];
   }
-  // 買い物カゴが空ではない時
-  if(isset($_SESSION["cart"])) {
-    $array_cart = $_SESSION["cart"];
-    // 商品の追加
-    // 商品名と数量がPOSTされた時
-    if(isset($_POST["product_name"]) && isset($_POST["num"])) {
-      $array_cart_product_name = array_column($array_cart, "product_name");
-      // 既に買い物カゴに入っているのと、同じ商品がカゴに入った時
-      if(in_array($_POST["product_name"], $array_cart_product_name)) {
-        $index = array_search($_POST["product_name"], $array_cart_product_name);
-        $array_cart[$index]["num"] += $_POST["num"];
-      //異なる商品がカゴに入った時
-      } else {
-        $array_cart[] = [
-          "product_name" => $_POST["product_name"],
-          "num" => $_POST["num"]
-        ];
-      }
-    }
-    // 商品の削除
-    // 商品名だけがPOSTされた時
-    if(isset($_POST["product_name"]) && !isset($_POST["num"])) {
-      $array_cart_product_name = array_column($array_cart, "product_name");
-      // 商品を削除する
-      if(in_array($_POST["product_name"], $array_cart_product_name)) {
-        $index = array_search($_POST["product_name"], $array_cart_product_name);
-        unset($array_cart[$index]);
-        $array_cart = array_values($array_cart);
-      }
-    }
-  // 買い物カゴに初めて商品を入れる時
-  } else {
-    if(isset($_POST["product_name"]) && isset($_POST["num"])) {
-      $array_cart[] = [
-        "product_name" => $_POST["product_name"],
-        "num" => $_POST["num"]
-      ];
-    } else {
-      $array_cart[] = [
-        "product_name" => null,
-        "num" => '0'
-      ];
-    }
-  }
-  // 配列をセッションに格納
-  // $_SESSION["cart"] = $array_cart;
-  $array_cart = array_filter(
-    $array_cart, function($element) {
-      return $element['num'] > 0 ;
-    }
-  );
-  $_SESSION['cart'] = $array_cart;
 
-  $array_like = $_SESSION['like'];
-  // $array_like = array_filter(
-  //   $array_like, function($element) {
-  //     return $element['product_like'] == 1;
-  //   }
-  // );
-  // $_SESSION['like'] = $array_like;
+  if(isset($_SESSION["like"])) {
+    $array_like = $_SESSION["like"];
+  }
+
+  // 配列をセッションに格納
+  $_SESSION["like"] = $array_like;
 
   $isUser = 0;
   if(isset($_SESSION['user_name'])) {
     $userName = $_SESSION['user_name'];
     $isUser = 1;
   }
+  $array_user_name = array_column($array_user, 'name');
+  $index = array_search($userName, $array_user_name);
+  $userId = $array_user[$index]['id'];
 ?>
 
 <!DOCTYPE html>
@@ -87,7 +33,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Furniture Design</title>
   <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/login_logout.css">
   <link rel="shortcut icon" href="./img/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -234,73 +180,18 @@
   <!-- ここからは main です -->
   <main>
     <div class="wrapper">
-      <div id="cart" class="container">
-        <div class="cart-ttl">ショッピングカート</div>
-        <div class="cart-container">
-          <div class="cart">
-            <?php
-            $gokei = 0;
-            foreach($array_cart as $key => $value) {
-              // 商品名のカラムのみを検索
-              $array_product_name = array_column($product, "product_name");
-              if(in_array($value['product_name'], $array_product_name)) {
-                $index = array_search($value['product_name'], $array_product_name);
-                $price = $product[$index]["price"];
-                $img = $product[$index]["img"];
-                $des = $product[$index]["des"];
-                $id = $product[$index]["ID"];
-              }
-              ?>
-              <div class='item'>
-                <?php echo "<div class='item-img'><img src=".$img."></div>"; ?>
-                <div class="item-cnt">
-                  <?php echo "<div class='item-cnt-ttl'>".$value['product_name']."</div>"; ?>
-                  <?php echo "<div class='item-cnt-price'>".number_format($price)."円<span style='font-size: 1rem;'>（税込）</sapn></div>"; ?>
-                  <?php echo "<div class='item-cnt-num'>数量：".$value['num']."</div>"; ?>
-                  <div class="btn-container">
-                    <a class="btn-buy" href="item<?php $id ?>.php">商品ページ</a>
-                    <form action="cart.php" method="post">
-                      <input type="hidden" name="product_name" value="<?= $value['product_name'] ?>">
-                      <button type="submit">
-                        <div class="delete-img"><img src="img/trash.png" alt=""></div>
-                      </button>
-                    </form>
-                  </div>
-                </div>
-            </div>
-            <?php
-            $gokei += $value['num'] * $price;
-            }
-            ?>
-          </div>
-          <div class="sum-container">
-            <?php
-            if(count($array_cart) > 0) {
-            ?>
-              <div class="price-container-sp">
-                <div>
-                  <div>合計金額（税込）</div>
-                  <?php echo "<div class='sum-price'>".number_format($gokei)."円</div>"; ?>
-                </div>
-                <div class="pay"><a href="payment.php">ご購入手続き</a></div>
-              </div>
-              <div class="next-buy"><a href="products1.php">&gt;&gt; 買い物を続ける</a></div>
-            <?php
-            }
-            ?>
-          </div>
+      <div class="container-mypage">
+        <div class="mypage-ttl">会員情報</div>
+        <div class="mypage-info-container">
+          <div class="mypage-info">お名前：<?php echo $userName; ?></div>
+          <div class="mypage-info">ユーザーID：<?php echo $userId; ?></div>
         </div>
-        <?php
-        if(count($array_cart) == 0) {
-        ?>
-          <div class="empty-txt">
-            <div class="empty-txt-1">カートには商品が入っていません。</div>
-            <div class="empty-txt-2">ぜひお買い物をお楽しみください。<br class="pc">ご利用をお待ちしております。</div>
-            <div class="next-buy"><a href="products1.php">&gt;&gt; 商品ページ</a></div>
-          </div>
-        <?php
-        }
-        ?>
+        <div class="btn-container">
+          <div class="btn-container-like"><a href="like.php">お気に入り商品</a></div>
+          <div class="btn-container-cart"><a href="cart.php">買物カート</a></div>
+        </div>
+
+        <div class="btn-logout"><a href="logout.php">ログアウト</a></div>
       </div>
     </div>
   </main>

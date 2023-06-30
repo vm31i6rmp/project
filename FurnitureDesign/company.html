@@ -1,45 +1,47 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Furniture Design</title>
-  <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <link rel="shortcut icon" href="./img/favicon.ico">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture Design</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./img/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+JP:wght@100;200;300;400&family=Noto+Serif+JP:wght@300;400;500;600;700&family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  </head>
 <body>
   <!-- ここからは header です -->
-  <header>
-    <!-- z-indexは同じ階層にのみ有効 -->
-    <!-- .hamと.navと.maskを同じ階層にする -->
-    <div class="hp-title">
-      <a href="index.html">
-        <img src="./img/logo.svg" alt="Furniture Design">
-      </a>
+  <header class="header">
+    <div class="header-inner">
+      <div class="hp-title">
+        <a href="index.php">
+          <img src="./img/logo.svg" alt="Furniture Design">
+        </a>
+      </div>
+      <div class="ham">
+        <div class="ham__bar ham__bar-1"></div>
+        <div class="ham__bar ham__bar-2"></div>
+      </div>
+      <nav class="hp-nav">
+        <ul class="hp-nav-list">
+          <li class="hp-nav-item">
+            <a href="products1.php">PRODUCTS</a>
+          </li>
+          <li class="hp-nav-item">
+            <a href="about.html">ABOUT</a>
+          </li>
+          <li class="hp-nav-item">
+            <a href="company.html">COMPANY</a>
+          </li>
+          <li class="hp-nav-item" id="contact">
+            <a href="mailto:xxxxx@xxx.xxx.com?subject=お問い合わせ">CONTACT</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="mask"></div>
     </div>
-    <div class="ham">
-      <div class="ham__bar ham__bar-1"></div>
-      <div class="ham__bar ham__bar-2"></div>
-    </div>
-    <nav class="hp-nav">
-      <ul class="hp-nav-list">
-        <li class="hp-nav-item">
-          <a href="products1.html">PRODUCTS</a>
-        </li>
-        <li class="hp-nav-item">
-          <a href="about.html">ABOUT</a>
-        </li>
-        <li class="hp-nav-item">
-          <a href="company.html">COMPANY</a>
-        </li>
-        <li class="hp-nav-item" id="contact">
-          <!-- mailtoでメールアプリを開く -->
-          <a href="mailto:xxxxx@xxx.xxx.com?subject=お問い合わせ">CONTACT</a>
-        </li>
-      </ul>
-    </nav>
-    <div class="mask"></div>
   </header>
   <!-- ここからは main です -->
   <main>

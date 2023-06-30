@@ -41,4 +41,10 @@ $(function(){
   $("#menu-item-user").mouseout(function(){
     $(".user-info-list").stop().slideUp();
   });
+  $("#menu-item-user-sp").click(function(){
+    $(this).children(".user-info-list").stop().slideDown();
+  });
+  $("#menu-item-user-sp").click(function(){
+    $(".user-info-list").stop().slideUp();
+  });
 });

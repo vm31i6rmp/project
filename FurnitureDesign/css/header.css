@@ -1,16 +1,18 @@
-header {
+.header {
   max-width: 1360px;
-  height: 80px;
-  margin: 0 auto;
-  padding: 0 40px;
   background-color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   position: fixed;
   left: 0;
   right: 0;
   z-index: 10;
+  padding: 0 40px;
+  margin: 0 auto;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
 }
 
 .hp-title {
@@ -49,27 +51,40 @@ header {
   align-items: center;
   margin: 0 5px;
 }
+.menu-item:nth-child(2) {
+  margin-right: 15px;
+}
 .menu-item a {
-  display: block;
+  display: flex;
   height: 40px;
   line-height: 40px;
   padding: 0 5px;
   transition: 0.3s;
+  font-weight: 700;
 }
 .menu-item a:hover {
   background-color: #eee;
 }
-.menu-item-num {
-  color: #fff;
-  background-color: tomato;
-  display: inline-flex;
+.menu-item-like-img, .menu-item-cart-img {
+  max-width: 20px;
+  position: relative;
+  margin: 5px 5px 0 5px;
+}
+.menu-item-like-img img, .menu-item-cart-img img {
+  width: 100%;
+}
+.menu-item-like-img .menu-item-num, .menu-item-cart-img .menu-item-num {
+  display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  top: -4px;
+  right: -14px;
+  color: #fff;
+  background-color: tomato;
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  transform: translateY(-8px);
-  transform: translate(-4px, -8px);
   font-size: 10px;
   letter-spacing: -2px;
   text-indent: -2px;
@@ -86,6 +101,9 @@ header {
 }
 .menu-item-register {
   background-color: #ccc;
+}
+.menu #menu-item-user {
+  margin-left: 15px;
 }
 
 .user-info-list {
@@ -195,4 +213,40 @@ header {
 }
 .mask.active {
   display: block;
+}
+
+@media screen and (max-width: 900px) {
+  .header {
+    padding: 0 20px;
+    max-width: 600px;
+  }
+  .menu {
+    width: initial;
+    height: 60px;
+  }
+  .menu-list {
+    position: initial;
+    right: initial;
+    top: initial;
+    transform: none;
+    height: initial;
+  }
+  .menu-item {
+    margin: 0;
+    font-size: 13px;
+  }
+  .menu-item-like-img, .menu-item-cart-img {
+    max-width: 30px;
+    position: relative;
+  }
+  .menu-item-like-img img, .menu-item-cart-img img {
+    width: 100%;
+  }
+  .menu-item-like-img .menu-item-num, .menu-item-cart-img .menu-item-num {
+    top: -5px;
+    right: -13px;
+    width: 22px;
+    height: 22px;
+    font-size: 13px;
+  }
 }/*# sourceMappingURL=header.css.map */

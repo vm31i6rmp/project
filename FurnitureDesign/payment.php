@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <html lang="ja">
   <head>
     <meta charset="UTF-8">
@@ -45,15 +49,8 @@
     <!-- ここからは main です -->
     <main>
       <div class="wrapper">
-        <div class="container-register">
-          <form action="register.php" class="form-register" method="post">
-            <!-- 送信された値は $_POST['name属性'] に配列で入る -->
-            <div class="form-register-txt">会員登録</div>
-            <input type="text" name="user_name" placeholder="お名前">
-            <input type="text" name="user_id" placeholder="ユーザーID">
-            <input type="password" name="password" placeholder="パスワード">
-            <button type="submit" class="btn btn-login">入力情報を確認し、登録</button>
-          </form>
+        <div class="container">
+          <? // ログイン必須 ?>
         </div>
       </div>
     </main>

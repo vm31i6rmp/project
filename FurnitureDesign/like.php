@@ -61,54 +61,131 @@
 </head>
 <body>
   <!-- ここからは header です -->
-  <header>
-    <!-- z-indexは同じ階層にのみ有効 -->
-    <!-- .hamと.navと.maskを同じ階層にする -->
-    <div class="hp-title">
-      <a href="index.php">
-        <img src="./img/logo.svg" alt="Furniture Design">
-      </a>
+  <header class="header">
+    <div class="header-inner">
+      <!-- z-indexは同じ階層にのみ有効のため .hamと.navと.maskは同じ階層にする -->
+      <div class="hp-title">
+        <a href="index.php">
+          <img src="./img/logo.svg" alt="Furniture Design">
+        </a>
+      </div>
+      <!-- PCメニュー -->
+      <nav class="menu pc">
+        <ul class="menu-list">
+          <li class="menu-item">
+            <a href="like.php">
+              お気に入り
+              <div class="menu-item-like-img">
+                <img src="img/heart.png" alt="LIKE">
+                <?php
+                if(array_count_values(array_column($array_like, 'product_like'))[1] > 0) {
+                  echo '<sapn class="menu-item-num">' . array_count_values(array_column($array_like, 'product_like'))[1] . '</span>';
+                }
+                ?>
+              </div>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="cart.php">
+              カート
+              <div class="menu-item-cart-img">
+                <img src="img/cart.png" alt="CART">
+                <?php
+                if(isset($_SESSION["cart"]) && count($_SESSION["cart"]) > 0) {
+                  echo '<sapn class="menu-item-num">' . count($_SESSION["cart"]) . '</span>';
+                }
+                ?>
+              </div>
+            </a>
+          </li>
+          <?php
+          if($isUser == 1) {
+          ?>
+          <li class="menu-item" id="menu-item-user">
+            <a class="menu-item-user" href="mypage.php"><?php echo $userName ?> 様</a>
+            <ul class="user-info-list">
+              <li class="user-info-item">
+                <a href="mypage.php">登録情報</a>
+              </li>
+              <li class="user-info-item">
+                <a href="logout.php">ログアウト</a>
+              </li>
+            </ul>
+          </li>
+          <?php
+          } else {
+          ?>
+          <li class="menu-item">
+            <a class="menu-item-login" href="login.html">ログイン</a>
+          </li>
+          <?php
+          }
+          ?>
+          <li class="menu-item">
+            <a class="menu-item-register" href="register.html">新規会員登録</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- ハンバーグメニュー -->
+      <div class="ham">
+        <div class="ham__bar ham__bar-1"></div>
+        <div class="ham__bar ham__bar-2"></div>
+      </div>
+      <nav class="hp-nav">
+        <ul class="hp-nav-list">
+          <li class="hp-nav-item">
+            <a href="products1.php">PRODUCTS</a>
+          </li>
+          <li class="hp-nav-item">
+            <a href="about.html">ABOUT</a>
+          </li>
+          <li class="hp-nav-item">
+            <a href="company.html">COMPANY</a>
+          </li>
+          <li class="hp-nav-item" id="contact">
+            <a href="mailto:xxxxx@xxx.xxx.com?subject=お問い合わせ">CONTACT</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="mask"></div>
     </div>
-    <nav class="menu">
+    <!-- SPメニュー -->
+    <nav class="menu sp">
       <ul class="menu-list">
         <li class="menu-item">
-          <a href="like.php">
-            お気に入り
-            <?php
-            if(array_count_values(array_column($array_like, 'product_like'))[1] > 0) {
-              echo '<sapn class="menu-item-num">' . array_count_values(array_column($array_like, 'product_like'))[1] . '</span>';
-            }
-            ?>
+          <a href="like.php" style="margin-top: 5px;">
+            <div class="menu-item-like-img">
+              <img src="img/heart.png" alt="LIKE">
+              <?php
+              if(array_count_values(array_column($array_like, 'product_like'))[1] > 0) {
+                echo '<sapn class="menu-item-num">' . array_count_values(array_column($array_like, 'product_like'))[1] . '</span>';
+              }
+              ?>
+            </div>
           </a>
         </li>
-        <li class="menu-item">
-          <a href="cart.php">
-            カート
-            <?php
-            if(isset($_SESSION["cart"]) && count($_SESSION["cart"]) > 0) {
-              echo '<sapn class="menu-item-num">' . count($_SESSION["cart"]) . '</span>';
-            }
-            ?>
+        <li class="menu-item" style="margin-left: -40px;">
+          <a href="cart.php" style="margin-top: 5px;">
+            <div class="menu-item-cart-img">
+              <img src="img/cart.png" alt="CART">
+              <?php
+              if(isset($_SESSION["cart"]) && count($_SESSION["cart"]) > 0) {
+                echo '<sapn class="menu-item-num">' . count($_SESSION["cart"]) . '</span>';
+              }
+              ?>
+            </div>
           </a>
         </li>
         <?php
         if($isUser == 1) {
         ?>
-        <li class="menu-item" id="menu-item-user">
-          <a class="menu-item-user" href=""><?php echo $userName ?> 様</a>
-          <ul class="user-info-list">
-            <li class="user-info-item">
-              <a href="">登録情報</a>
-            </li>
-            <li class="user-info-item">
-              <a href="logout.php">ログアウト</a>
-            </li>
-          </ul>
+        <li class="menu-item" style="margin-right: -50px;">
+          <a class="menu-item-user" href="mypage.php"><?php echo $userName ?> 様</a>
         </li>
         <?php
         } else {
         ?>
-        <li class="menu-item">
+        <li class="menu-item" style="margin-right: -50px;">
           <a class="menu-item-login" href="login.html">ログイン</a>
         </li>
         <?php
@@ -119,27 +196,6 @@
         </li>
       </ul>
     </nav>
-    <div class="ham">
-      <div class="ham__bar ham__bar-1"></div>
-      <div class="ham__bar ham__bar-2"></div>
-    </div>
-    <nav class="hp-nav">
-      <ul class="hp-nav-list">
-        <li class="hp-nav-item">
-          <a href="products1.php">PRODUCTS</a>
-        </li>
-        <li class="hp-nav-item">
-          <a href="about.html">ABOUT</a>
-        </li>
-        <li class="hp-nav-item">
-          <a href="company.html">COMPANY</a>
-        </li>
-        <li class="hp-nav-item" id="contact">
-          <a href="mailto:xxxxx@xxx.xxx.com?subject=お問い合わせ">CONTACT</a>
-        </li>
-      </ul>
-    </nav>
-    <div class="mask"></div>
   </header>
   <!-- ここからは main です -->
   <main>
@@ -188,8 +244,8 @@
         <?php
           if(array_count_values(array_column($array_like, 'product_like'))[1] == 0) {
         ?>
-        <div class="empty-txt1">お気に入り商品がありません。</div>
-        <div class="empty-txt2">お気に入り商品の登録で<br>いつものお買い物がもっと便利に！</div>
+        <div class="empty-txt1">現在、お気に入り商品がありません。</div>
+        <div class="empty-txt2">お気に入り商品の登録で<br class="pc">いつものお買い物がもっと便利に！</div>
         <?php
           }
         ?>

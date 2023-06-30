@@ -1,6 +1,17 @@
 <?php
-  require "component.php";
+  require "db.php";
   session_start();
+  foreach ($tb_product as $row) {
+    $product[] = [
+      "ID" => $row['ID'],
+      "product_name" => $row['name'],
+      "price" => $row['price'],
+      "img" => $row['img'],
+      "des" => $row['des'],
+      "size" => $row['size'],
+      "color" => $row['color']
+    ];
+  }
   $item = 1;
   $i = $item - 1;
 
