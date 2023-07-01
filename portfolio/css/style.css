@@ -156,6 +156,10 @@ a {
 .header-inner .header-sns .header-sns-item a {
   display: block;
   max-width: 20px;
+  transition: 0.3s;
+}
+.header-inner .header-sns .header-sns-item a:hover {
+  opacity: 0.7;
 }
 .header-inner .header-sns .header-sns-item a img {
   width: 100%;
@@ -550,7 +554,7 @@ a {
     justify-content: space-between;
   }
   .header-inner .header-ttl-container .header-sns {
-    margin: 46px 10px 0 0;
+    margin: 46px 0 0 0;
   }
   .header-inner .header-ttl-container .header-sns ul {
     display: flex;
@@ -558,9 +562,10 @@ a {
   }
   .header-inner .header-ttl-container .header-sns ul .header-sns-item {
     margin-bottom: initial;
+    margin-left: 10px;
   }
   .header-inner .header-ttl-container .header-sns ul .header-sns-item a {
-    max-width: 20px;
+    max-width: 16px;
   }
   .header-inner .header-ttl {
     font-size: 2.6rem;
@@ -579,6 +584,9 @@ a {
   }
   .header-inner .header-nav ul li {
     margin: 0 10px;
+  }
+  .header-inner .header-nav ul li:nth-child(4) {
+    margin-right: 0;
   }
   .header-inner .header-nav ul li a {
     font-size: 1.4rem;

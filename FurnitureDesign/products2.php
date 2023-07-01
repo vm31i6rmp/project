@@ -226,7 +226,7 @@
   <main>
     <div class="wrapper">
       <section class="product">
-        <h1 class="section-title">Products</h1>
+        <!-- <h1 class="section-title">Products</h1> -->
         <ul class="product-list">
         <?php
         for($i=12; $i<16; $i++) {
