@@ -53,9 +53,9 @@
         <div class="container">
           <div class="container-sm">
             <div class="payment-form-container">
-              <h1> クレジットカード情報の入力 </h1>
+              <h1 class="payment-ttl">クレジットカード情報の入力</h1>
               <div class="form-group">
-                  <p>お支払い：</p>
+                  <p class="price">お支払い：<?php echo number_format($_POST['price']) ?>円（税込）</p>
                 </div>
               <div id="card-element"><!-- input要素がここに生成される --></div>
               <div id="card-errors" role="alert"><!-- エラーメッセージがここに表示される --></div>
@@ -84,10 +84,7 @@
               <!-- その他、細かいレイアウトなど -->
               <div class="other-actions-container">
                 <button class="btn btn-outline-secondary" id="return-button-default">
-                  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
-                  </svg>
-                  戻る
+                  <a href="cart.php">戻る</a>
                 </button>
               </div>
             </div>

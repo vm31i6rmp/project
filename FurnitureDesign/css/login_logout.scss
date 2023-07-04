@@ -128,12 +128,12 @@ input{
   }
 }
 
-// 会員情報ページ、登録完了ページ
+// 会員情報ページ、登録完了ページ、支払いページ
 .container-mypage{
   max-width: 400px;
   margin: 20px auto 0;
 }
-.mypage-ttl, .register-done-ttl{
+.mypage-ttl, .register-done-ttl, .payment-ttl{
     font-size: 1.3rem;
     font-weight: 200;
     margin: 30px 0 20px;
@@ -213,6 +213,30 @@ input{
     }
   }
 }
+.form-group{
+  .price{
+    font-size: 1.1rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+}
+#card-element{
+  margin-bottom: 15px;
+}
+#payment-form-submit{
+  margin-bottom: 0 !important;
+}
+.btn-outline-secondary{
+  padding: 0;
+  margin-top: 15px;
+  a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 6px 12px;
+    box-sizing: border-box;
+  }
+}
 
 // レスポンシブ
 @media screen and (max-width: 900px) {
@@ -237,5 +261,8 @@ input{
         font-size: 1rem;
       }
     }
+  }
+  .payment-ttl{
+    letter-spacing: 1px;
   }
 }

@@ -534,11 +534,15 @@ header, .wrapper, footer{
         margin-top: -10px;
       }
       .pay{
+        border: none;
         background-color: tomato;
+        color: #fff;
         font-size: 1.4rem;
         border-radius: 10px;
         margin-top: 5px;
         transition: 0.3s;
+        width: 100%;
+        height: 45px;
         a{
           color: #fff;
           display: block;
@@ -744,11 +748,13 @@ header, .wrapper, footer{
           display: flex;
           justify-content: space-between;
         }
-        .pay{
+        form{
           width: 50%;
-          height: 55px;
-          a{
-            line-height: 55px;
+          .pay{
+            height: 55px;
+            a{
+              line-height: 55px;
+            }
           }
         }
         .next-buy{

@@ -282,7 +282,10 @@
                   <div>合計金額（税込）</div>
                   <?php echo "<div class='sum-price'>".number_format($gokei)."円</div>"; ?>
                 </div>
-                <div class="pay"><a href="payment.php">ご購入手続き</a></div>
+                <form action="payment.php" method="post">
+                  <input type="hidden" name="price" value="<?php echo $gokei ?>">
+                  <button type="submit" class="pay">ご購入手続き</button>
+                </form>
               </div>
               <div class="next-buy"><a href="products1.php">&gt;&gt; 買い物を続ける</a></div>
             <?php
