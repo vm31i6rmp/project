@@ -271,6 +271,15 @@ footer {
   margin-right: 30px;
 }
 
+@media screen and (max-width: 900px) {
+  footer {
+    flex-direction: column;
+  }
+  footer .sns-list {
+    justify-content: start;
+    margin-bottom: 10px;
+  }
+}
 body {
   color: #333;
   font-size: 0.875rem;
@@ -377,6 +386,18 @@ header, .wrapper, footer {
 .form-container .form-cart {
   width: calc(100% - 48px);
 }
+.form-container-column {
+  flex-direction: column;
+}
+.form-container-column .form-like {
+  margin-bottom: 10px;
+}
+.form-container-column .btn-like, .form-container-column .btn-unlike {
+  font-weight: bold;
+}
+.form-container-column .btn-like-img, .form-container-column .btn-unlike-img {
+  margin-right: 6px;
+}
 
 .btn-like, .btn-unlike {
   color: #fff;
@@ -455,11 +476,13 @@ header, .wrapper, footer {
 .view-more a {
   transition: 0.3s;
   padding: 5px;
-  border-bottom: 1px solid #777;
+  color: #669667;
+  border-bottom: 1px solid #669667;
+  letter-spacing: 2px;
 }
 .view-more a:hover {
   color: #fff;
-  background-color: #777;
+  background-color: #669667;
 }
 
 .page {
@@ -521,21 +544,22 @@ header, .wrapper, footer {
   width: 42%;
 }
 #item .item-cnt .item-cnt-text {
-  margin-bottom: 30px;
+  margin-bottom: 28px;
   line-height: 2;
   letter-spacing: 1px;
 }
 #item .item-cnt .item-cnt-price {
-  margin-bottom: 40px;
+  margin-bottom: 28px;
   font-size: 1.5rem;
   letter-spacing: 1px;
+  color: tomato;
 }
 #item .item-cnt .item-cnt-info {
   display: flex;
   flex-wrap: wrap;
   font-size: 0.875rem;
   line-height: 1.5;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   letter-spacing: 1px;
 }
 #item .item-cnt .item-cnt-info .item-cnt-info-ttl {
@@ -1036,9 +1060,6 @@ header, .wrapper, footer {
     font-weight: bold;
     font-size: 1rem;
   }
-  .num-container {
-    flex-direction: column;
-  }
   .num-container .select-num {
     width: 19%;
     padding: 0;
@@ -1056,11 +1077,17 @@ header, .wrapper, footer {
   .num-container .btn-cart-img img {
     max-width: 100% !important;
   }
-  footer {
-    flex-direction: column;
+  .form-container-column .btn-like-img, .form-container-column .btn-unlike-img {
+    margin: 0 6px 0 0;
   }
-  footer .sns-list {
-    justify-content: start;
-    margin-bottom: 10px;
+  .form-container-column .select-num {
+    width: 30%;
+    margin-right: 10px;
+  }
+  .form-container-column .btn-cart {
+    margin-top: 0;
+  }
+  .form-container-column .btn-cart-img {
+    margin-top: 2px;
   }
 }/*# sourceMappingURL=style.css.map */

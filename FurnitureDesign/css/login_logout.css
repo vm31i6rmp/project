@@ -271,6 +271,15 @@ footer {
   margin-right: 30px;
 }
 
+@media screen and (max-width: 900px) {
+  footer {
+    flex-direction: column;
+  }
+  footer .sns-list {
+    justify-content: start;
+    margin-bottom: 10px;
+  }
+}
 body {
   color: #333;
   font-size: 0.875rem;
@@ -372,6 +381,13 @@ input:focus {
   line-height: 40px;
 }
 
+.error-ms {
+  color: tomato;
+  margin: 5px 0 15px 5px;
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+
 .container-register {
   display: flex;
   justify-content: center;
@@ -400,7 +416,7 @@ input:focus {
   margin: 20px auto 0;
 }
 
-.mypage-ttl {
+.mypage-ttl, .register-done-ttl {
   font-size: 1.3rem;
   font-weight: 200;
   margin: 30px 0 20px;
@@ -410,13 +426,13 @@ input:focus {
   letter-spacing: 3px;
 }
 
-.mypage-info-container {
+.mypage-info-container, .register-done-info-container {
   border: 1px #669667 solid;
   box-sizing: border-box;
   padding: 5px 15px;
 }
 
-.mypage-info {
+.mypage-info, .register-done-info {
   line-height: 2;
   font-size: 1.1rem;
   font-weight: 300;
@@ -428,13 +444,13 @@ input:focus {
   justify-content: space-between;
   margin-top: 20px;
 }
-.btn-container-like, .btn-container-cart {
+.btn-container-like, .btn-container-cart, .btn-container-hp, .btn-container-login {
   font-size: 1.2rem;
   font-weight: 700;
   width: 48%;
   text-align: center;
 }
-.btn-container-like a, .btn-container-cart a {
+.btn-container-like a, .btn-container-cart a, .btn-container-hp a, .btn-container-login a {
   color: #fff;
   display: block;
   padding: 15px 20px;
@@ -444,7 +460,7 @@ input:focus {
   height: 100%;
   transition: 0.3s;
 }
-.btn-container-like a:hover, .btn-container-cart a:hover {
+.btn-container-like a:hover, .btn-container-cart a:hover, .btn-container-hp a:hover, .btn-container-login a:hover {
   opacity: 0.7;
 }
 .btn-container-like a {
@@ -452,6 +468,9 @@ input:focus {
 }
 .btn-container-cart a {
   background-color: #06C5F5;
+}
+.btn-container-hp a, .btn-container-login a {
+  background-color: #669667;
 }
 
 .btn-logout {
@@ -489,5 +508,8 @@ input:focus {
   }
   .container-register .form-register {
     width: 100%;
+  }
+  .btn-container-like a, .btn-container-cart a, .btn-container-hp a, .btn-container-login a {
+    font-size: 1rem;
   }
 }/*# sourceMappingURL=login_logout.css.map */

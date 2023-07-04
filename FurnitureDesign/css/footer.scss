@@ -17,3 +17,13 @@ footer{
     margin-right: 30px;
   }
 }
+
+@media screen and (max-width: 900px) {
+  footer{
+    flex-direction: column;
+    .sns-list{
+      justify-content: start;
+      margin-bottom: 10px;
+    }
+  }
+}

@@ -5,7 +5,7 @@
   $_SESSION = [];    // $_SESSION変数を空
   session_destroy(); // セッションを破棄
 
-  header('Location: ./login.html');
+  header('Location: ./login.php');
   exit;
 
 ?>

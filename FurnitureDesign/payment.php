@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Furniture Design</title>
     <link rel="stylesheet" href="./css/reset.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/login_logout.css">
     <link rel="shortcut icon" href="./img/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,7 +51,47 @@
     <main>
       <div class="wrapper">
         <div class="container">
-          <? // ログイン必須 ?>
+          <div class="container-sm">
+            <div class="payment-form-container">
+              <h1> クレジットカード情報の入力 </h1>
+              <div class="form-group">
+                  <p>お支払い：</p>
+                </div>
+              <div id="card-element"><!-- input要素がここに生成される --></div>
+              <div id="card-errors" role="alert"><!-- エラーメッセージがここに表示される --></div>
+              <!-- サーバサイドの処理を待機中に表示するスピナー -->
+              <div id="payment-form-spinner" class="d-flex justify-content-center">
+                  <div class="spinner-border text-info collapse" role="status">
+                      <span class="sr-only">Loading...</span>
+                  </div>
+              </div>
+              <button id="payment-form-submit" class="btn btn-outline-info shadow-sm mb-5 rounded btn-lg btn-block"> 注文を確定する </button>
+              <!-- 決済処理後メッセージ -->
+              <div id="content-payment-message collapse">
+                  <div class="contents-payment-error collapse">
+                      <p> 無効な決済リクエストです。 </p>
+                      <button class="btn btn-outline-warning" id="return-button-error"> やり直す </button>
+                  </div>
+                  <div class="contents-payment-not-yet collapse">
+                      <p> クレジットカード、もしくは暗証番号に誤りがあります。 </p>
+                      <button class="btn btn-outline-warning" id="return-button-not-yet"> やり直す </button>
+                  </div>
+                  <div class="contents-payment-result collapse">
+                      <p> お支払いを完了しました。 </p>
+                      <button class="btn btn-outline-success" id="return-button-normal"> トップへ戻る </button>
+                  </div>
+              </div>
+              <!-- その他、細かいレイアウトなど -->
+              <div class="other-actions-container">
+                <button class="btn btn-outline-secondary" id="return-button-default">
+                  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                  </svg>
+                  戻る
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
@@ -65,5 +106,8 @@
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="payment.js"></script>
   </body>
 </html>

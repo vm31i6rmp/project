@@ -99,6 +99,18 @@ header, .wrapper, footer{
   .form-cart{
     width: calc(100% - 48px);
   }
+  &-column{
+    flex-direction: column;
+    .form-like{
+      margin-bottom: 10px;
+    }
+    .btn-like, .btn-unlike{
+      font-weight: bold;
+      &-img{
+        margin-right: 6px;
+      }
+    }
+  }
 }
 .btn-like, .btn-unlike{
   color: #fff;
@@ -174,10 +186,12 @@ header, .wrapper, footer{
   a{
     transition: .3s;
     padding: 5px;
-    border-bottom: 1px solid #777;
+    color: #669667;
+    border-bottom: 1px solid #669667;
+    letter-spacing: 2px;
     &:hover{
       color: #fff;
-      background-color: #777;
+      background-color: #669667;
     }
   }
 }
@@ -234,21 +248,22 @@ header, .wrapper, footer{
   .item-cnt{
     width: 42%;
     .item-cnt-text{
-      margin-bottom: 30px;
+      margin-bottom: 28px;
       line-height: 2;
       letter-spacing: 1px;
     }
     .item-cnt-price{
-      margin-bottom: 40px;
+      margin-bottom: 28px;
       font-size: 1.5rem;
       letter-spacing: 1px;
+      color: tomato;
     }
     .item-cnt-info{
       display: flex;
       flex-wrap: wrap;
       font-size: 0.875rem;
       line-height: 1.5;
-      margin-bottom: 30px;
+      margin-bottom: 10px;
       letter-spacing: 1px;
       .item-cnt-info-ttl{
         width: 25%;
@@ -779,7 +794,6 @@ header, .wrapper, footer{
     }
   }
   .num-container{
-    flex-direction: column;
     .select-num{
       width: 19%;
       padding: 0;
@@ -798,11 +812,21 @@ header, .wrapper, footer{
       }
     }
   }
-  footer{
-    flex-direction: column;
-    .sns-list{
-      justify-content: start;
-      margin-bottom: 10px;
+  .form-container-column{
+    .btn-like, .btn-unlike{
+      &-img{
+        margin: 0 6px 0 0;
+      }
+    }
+    .select-num{
+      width: 30%;
+      margin-right: 10px;
+    }
+    .btn-cart{
+      margin-top: 0;
+      &-img{
+        margin-top: 2px;
+      }
     }
   }
 }

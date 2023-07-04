@@ -1,5 +1,5 @@
 <?php
-  $item = 1;
+  $item = 13;
   $i = $item - 1;
 
   require "db.php";

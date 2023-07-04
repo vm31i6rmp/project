@@ -150,13 +150,13 @@
           } else {
           ?>
           <li class="menu-item">
-            <a class="menu-item-login" href="login.html">ログイン</a>
+            <a class="menu-item-login" href="login.php">ログイン</a>
           </li>
           <?php
           }
           ?>
           <li class="menu-item">
-            <a class="menu-item-register" href="register.html">新規会員登録</a>
+            <a class="menu-item-register" href="register.php">新規会員登録</a>
           </li>
         </ul>
       </nav>
@@ -220,13 +220,13 @@
         } else {
         ?>
         <li class="menu-item" style="margin-right: -50px;">
-          <a class="menu-item-login" href="login.html">ログイン</a>
+          <a class="menu-item-login" href="login.php">ログイン</a>
         </li>
         <?php
         }
         ?>
         <li class="menu-item">
-          <a class="menu-item-register" href="register.html">新規会員登録</a>
+          <a class="menu-item-register" href="register.php">新規会員登録</a>
         </li>
       </ul>
     </nav>
@@ -258,7 +258,7 @@
                   <?php echo "<div class='item-cnt-price'>".number_format($price)."円<span style='font-size: 1rem;'>（税込）</sapn></div>"; ?>
                   <?php echo "<div class='item-cnt-num'>数量：".$value['num']."</div>"; ?>
                   <div class="btn-container">
-                    <a class="btn-buy" href="item<?php $id ?>.php">商品ページ</a>
+                    <a class="btn-buy" href="item<?php echo $id ?>.php">商品ページ</a>
                     <form action="cart.php" method="post">
                       <input type="hidden" name="product_name" value="<?= $value['product_name'] ?>">
                       <button type="submit">

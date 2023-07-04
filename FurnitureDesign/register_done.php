@@ -50,13 +50,15 @@
     <main>
       <div class="wrapper">
         <div class="container">
-          <div class="register-done-txt">登録が完了しました。</div>
-          <div class="register-done-info">
-            <div>お名前：<?php echo $_SESSION['register_done_user_name'];?></div>
-            <div>ユーザーID：<?php echo $_SESSION['register_done_user_id'];?></div>
+          <div class="register-done-ttl">登録が完了しました。</div>
+          <div class="register-done-info-container">
+            <div class="register-done-info">お名前：<?php echo $_SESSION['register_done_user_name'];?></div>
+            <div class="register-done-info">ユーザーID：<?php echo $_SESSION['register_done_user_id'];?></div>
           </div>
-          <div class="btn-hp"><a href="index.php">トップページ</a></div>
-          <div class="btn-login"><a href="login.html">ログイン</a></div>
+          <div class="btn-container">
+            <div class="btn-container-hp"><a href="index.php">トップページ</a></div>
+            <div class="btn-container-login"><a href="login.php">ログイン</a></div>
+          </div>
         </div>
       </div>
     </main>

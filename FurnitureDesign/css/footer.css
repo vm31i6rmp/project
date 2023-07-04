@@ -17,4 +17,14 @@ footer {
 }
 .sns-list .sns-item {
   margin-right: 30px;
+}
+
+@media screen and (max-width: 900px) {
+  footer {
+    flex-direction: column;
+  }
+  footer .sns-list {
+    justify-content: start;
+    margin-bottom: 10px;
+  }
 }/*# sourceMappingURL=footer.css.map */

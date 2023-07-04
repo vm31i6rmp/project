@@ -96,13 +96,13 @@
           } else {
           ?>
           <li class="menu-item">
-            <a class="menu-item-login" href="login.html">ログイン</a>
+            <a class="menu-item-login" href="login.php">ログイン</a>
           </li>
           <?php
           }
           ?>
           <li class="menu-item">
-            <a class="menu-item-register" href="register.html">新規会員登録</a>
+            <a class="menu-item-register" href="register.php">新規会員登録</a>
           </li>
         </ul>
       </nav>
@@ -166,13 +166,13 @@
         } else {
         ?>
         <li class="menu-item" style="margin-right: -50px;">
-          <a class="menu-item-login" href="login.html">ログイン</a>
+          <a class="menu-item-login" href="login.php">ログイン</a>
         </li>
         <?php
         }
         ?>
         <li class="menu-item">
-          <a class="menu-item-register" href="register.html">新規会員登録</a>
+          <a class="menu-item-register" href="register.php">新規会員登録</a>
         </li>
       </ul>
     </nav>
@@ -190,7 +190,6 @@
           <div class="btn-container-like"><a href="like.php">お気に入り商品</a></div>
           <div class="btn-container-cart"><a href="cart.php">買物カート</a></div>
         </div>
-
         <div class="btn-logout"><a href="logout.php">ログアウト</a></div>
       </div>
     </div>

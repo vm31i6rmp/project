@@ -141,13 +141,13 @@
           } else {
           ?>
           <li class="menu-item">
-            <a class="menu-item-login" href="login.html">ログイン</a>
+            <a class="menu-item-login" href="login.php">ログイン</a>
           </li>
           <?php
           }
           ?>
           <li class="menu-item">
-            <a class="menu-item-register" href="register.html">新規会員登録</a>
+            <a class="menu-item-register" href="register.php">新規会員登録</a>
           </li>
         </ul>
       </nav>
@@ -211,13 +211,13 @@
         } else {
         ?>
         <li class="menu-item" style="margin-right: -50px;">
-          <a class="menu-item-login" href="login.html">ログイン</a>
+          <a class="menu-item-login" href="login.php">ログイン</a>
         </li>
         <?php
         }
         ?>
         <li class="menu-item">
-          <a class="menu-item-register" href="register.html">新規会員登録</a>
+          <a class="menu-item-register" href="register.php">新規会員登録</a>
         </li>
       </ul>
     </nav>
@@ -233,7 +233,7 @@
           $j = $i + 1;
         ?>
           <li class="product-item pc">
-            <a href="item.<?php echo $j ?>.php">
+            <a href="item<?php echo $j ?>.php">
               <?php
                 echo "<img src='".$product[$i]["img"]."'>";
                 echo "<div class='product-name'>".$product[$i]["product_name"]."</div>";
@@ -247,7 +247,7 @@
                 $index = array_search($product[$i]["product_name"], $array_like_product_name);
                 if($array_like[$index]["product_like"] == '1') {
               ?>
-                  <form class="form-like" action="products1.php" method="post">
+                  <form class="form-like" action="index.php" method="post">
                     <input type="hidden" name="product_name" value="<?= $product[$i]["product_name"] ?>">
                     <input type="hidden" name="product_like" value=0>
                     <button class="btn-unlike" type="submit">
@@ -259,7 +259,7 @@
                 <?php
                 } else if($array_like[$index]["product_like"] == '0') {
                 ?>
-                  <form class="form-like" action="products1.php" method="post">
+                  <form class="form-like" action="index.php" method="post">
                     <input type="hidden" name="product_name" value="<?= $product[$i]["product_name"] ?>">
                     <input type="hidden" name="product_like" value=1>
                     <button class="btn-like" type="submit">
@@ -272,7 +272,7 @@
                 }
               } else {
               ?>
-                <form class="form-like" action="products1.php" method="post">
+                <form class="form-like" action="index.php" method="post">
                   <input type="hidden" name="product_name" value="<?= $product[$i]["product_name"] ?>">
                   <input type="hidden" name="product_like" value=1>
                   <button class="btn-like" type="submit">
@@ -304,7 +304,7 @@
             </div>
           </li>
           <li class="product-item sp">
-            <a href="item.<?php echo $j ?>.php">
+            <a href="item<?php echo $j ?>.php">
               <?php echo "<img src='".$product[$i]["img"]."'>"; ?>
               <div class="product-cnt">
                 <?php
@@ -318,7 +318,7 @@
                     $index = array_search($product[$i]["product_name"], $array_like_product_name);
                     if($array_like[$index]["product_like"] == '1') {
                   ?>
-                    <form class="form-like" action="products1.php" method="post">
+                    <form class="form-like" action="index.php" method="post">
                       <input type="hidden" name="product_name" value="<?= $product[$i]["product_name"] ?>">
                       <input type="hidden" name="product_like" value=0>
                       <button class="btn-unlike" type="submit">
@@ -331,7 +331,7 @@
                   <?php
                   } else if($array_like[$index]["product_like"] == '0') {
                   ?>
-                    <form class="form-like" action="products1.php" method="post">
+                    <form class="form-like" action="index.php" method="post">
                       <input type="hidden" name="product_name" value="<?= $product[$i]["product_name"] ?>">
                       <input type="hidden" name="product_like" value=1>
                       <button class="btn-like" type="submit">
@@ -345,7 +345,7 @@
                   }
                   } else {
                   ?>
-                  <form class="form-like" action="products1.php" method="post">
+                  <form class="form-like" action="index.php" method="post">
                     <input type="hidden" name="product_name" value="<?= $product[$i]["product_name"] ?>">
                     <input type="hidden" name="product_like" value=1>
                     <button class="btn-like" type="submit">

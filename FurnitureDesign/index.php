@@ -141,13 +141,13 @@
           } else {
           ?>
           <li class="menu-item">
-            <a class="menu-item-login" href="login.html">ログイン</a>
+            <a class="menu-item-login" href="login.php">ログイン</a>
           </li>
           <?php
           }
           ?>
           <li class="menu-item">
-            <a class="menu-item-register" href="register.html">新規会員登録</a>
+            <a class="menu-item-register" href="register.php">新規会員登録</a>
           </li>
         </ul>
       </nav>
@@ -211,13 +211,13 @@
         } else {
         ?>
         <li class="menu-item" style="margin-right: -50px;">
-          <a class="menu-item-login" href="login.html">ログイン</a>
+          <a class="menu-item-login" href="login.php">ログイン</a>
         </li>
         <?php
         }
         ?>
         <li class="menu-item">
-          <a class="menu-item-register" href="register.html">新規会員登録</a>
+          <a class="menu-item-register" href="register.php">新規会員登録</a>
         </li>
       </ul>
     </nav>
@@ -233,7 +233,7 @@
             $j = $i + 1;
           ?>
           <li class="product-item pc">
-            <a href="item.<?php echo $j ?>.php">
+            <a href="item<?php echo $j ?>.php">
               <?php
                 echo "<img src='".$product[$i]["img"]."'>";
                 echo "<div class='product-name'>".$product[$i]["product_name"]."</div>";
@@ -304,7 +304,7 @@
             </div>
           </li>
           <li class="product-item sp">
-            <a href="item.<?php echo $j ?>.php">
+            <a href="item<?php echo $j ?>.php">
               <?php echo "<img src='".$product[$i]["img"]."'>"; ?>
               <div class="product-cnt">
                 <?php

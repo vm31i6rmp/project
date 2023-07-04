@@ -1,45 +1,89 @@
 <?php
-
-  require('db.php');
   session_start();
-  foreach ($tb_user as $row) {
-    $array_user[] = [
-      "name" => $row['name'],
-      "id" => $row['id'],
-      "password" => $row['password']
-    ];
-  }
-  $array_user_name = array_column($array_user, "name");
-  $array_user_id = array_column($array_user, "id");
-
-  $userName = isset($_POST['user_name']) ? $_POST['user_name'] : '';
-  $userId = isset($_POST['user_id']) ? $_POST['user_id'] : '';
-  $password = isset($_POST['password']) ? $_POST['password'] : '';
-  if (empty($userName) || empty($userId) || empty($password)) {
-    echo 'お名前とユーザーIDとパスワードを入力してください。<br />';
-    echo '<a href="register.html">戻る</a>';
-    exit;
-  } else {
-    if(in_array($userId, $array_user_id)) {
-      echo 'ユーザーID（'.$userId.'）が既に登録されています。<br />';
-      echo '他のユーザーIDをご利用ください。<br />';
-      echo '<a href="register.html">戻る</a>';
-      exit;
-    } else {
-      // テーブルに登録するINSERT INTO文を変数に格納　VALUESはプレースフォルダーで空の値を入れとく
-      $sql = "INSERT INTO user (name, id, password) VALUES (:userName, :userId, :password)";
-      //値が空のままSQL文をセット
-      $stmt = $db->prepare($sql);
-      // 挿入する値を配列に格納
-      $params = array(':userName' => $userName, ':userId' => $userId, ':password' => $password);
-      //挿入する値が入った変数をexecuteにセットしてSQLを実行
-      $stmt->execute($params);
-      // HTTPヘッダを送信する関数（クライアントからのリクエスト >> サーバーからのレスポンス）
-      // header('Location: 遷移先のURL')
-      $_SESSION['register_done_user_name'] = $userName;
-      $_SESSION['register_done_user_id'] = $userId;
-      header('Location: register_done.php');
-    }
-  }
-
 ?>
+
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture Design</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/login_logout.css">
+    <link rel="shortcut icon" href="./img/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+JP:wght@100;200;300;400&family=Noto+Serif+JP:wght@300;400;500;600;700&family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- ここからは header です -->
+    <header class="header">
+      <div class="header-inner">
+        <div class="hp-title">
+          <a href="index.php">
+            <img src="./img/logo.svg" alt="Furniture Design">
+          </a>
+        </div>
+        <div class="ham">
+          <div class="ham__bar ham__bar-1"></div>
+          <div class="ham__bar ham__bar-2"></div>
+        </div>
+        <nav class="hp-nav">
+          <ul class="hp-nav-list">
+            <li class="hp-nav-item">
+              <a href="products1.php">PRODUCTS</a>
+            </li>
+            <li class="hp-nav-item">
+              <a href="about.html">ABOUT</a>
+            </li>
+            <li class="hp-nav-item">
+              <a href="company.html">COMPANY</a>
+            </li>
+            <li class="hp-nav-item" id="contact">
+              <a href="mailto:xxxxx@xxx.xxx.com?subject=お問い合わせ">CONTACT</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="mask"></div>
+      </div>
+    </header>
+    <!-- ここからは main です -->
+    <main>
+      <div class="wrapper">
+        <div class="container-register">
+          <form action="register_process.php" class="form-register" method="post">
+            <!-- 送信された値は $_POST['name属性'] に配列で入る -->
+            <div class="form-register-txt">会員登録</div>
+            <input type="text" name="user_name" placeholder="お名前">
+            <input type="text" name="user_id" placeholder="ユーザーID">
+            <input type="password" name="password" placeholder="パスワード">
+            <?php
+            switch($_SESSION['register-error']) {
+              case 1:
+                echo '<div class="error-ms">お名前とユーザーIDとパスワードを入力してください。</div>';
+                $_SESSION['register-error'] = 0;
+                break;
+              case 2:
+                echo '<div class="error-ms">ユーザーID（'.$_SESSION['user-id'].'）が既に登録されています。</div>';
+                $_SESSION['register-error'] = 0;
+                $_SESSION['user-id'] = null;
+                break;
+            }
+            ?>
+            <button type="submit" class="btn btn-login">入力情報を確認し、登録</button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <!-- ここからは footer です -->
+    <footer>
+      <ul class="sns-list">
+        <li class="sns-item"><a href="#">INSTAGRAM</a></li>
+        <li class="sns-item"><a href="#">TWITTER</a></li>
+        <li class="sns-item"><a href="#">FACEBOOK</a></li>
+      </ul>
+      <div class="copyright">&copy; Furniture Design</div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

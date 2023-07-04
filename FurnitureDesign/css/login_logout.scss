@@ -61,6 +61,7 @@ input{
   margin: 0 auto;
   padding: 80px 40px 160px;
 }
+// ログインページ
 .container{
   display: flex;
   flex-direction: column;
@@ -96,6 +97,12 @@ input{
     }
   }
 }
+.error-ms{
+  color: tomato;
+  margin: 5px 0 15px 5px;
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
 
 // 会員登録ページ
 .container-register{
@@ -121,12 +128,12 @@ input{
   }
 }
 
-// 会員情報ページ
+// 会員情報ページ、登録完了ページ
 .container-mypage{
   max-width: 400px;
   margin: 20px auto 0;
 }
-.mypage-ttl{
+.mypage-ttl, .register-done-ttl{
     font-size: 1.3rem;
     font-weight: 200;
     margin: 30px 0 20px;
@@ -135,12 +142,12 @@ input{
     color: #669667;
     letter-spacing: 3px;
 }
-.mypage-info-container{
+.mypage-info-container, .register-done-info-container{
   border: 1px #669667 solid;
   box-sizing: border-box;
   padding: 5px 15px;
 }
-.mypage-info{
+.mypage-info, .register-done-info{
   line-height: 2;
   font-size: 1.1rem;
   font-weight: 300;
@@ -150,7 +157,7 @@ input{
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
-  &-like, &-cart{
+  &-like, &-cart, &-hp, &-login{
     font-size: 1.2rem;
     font-weight: 700;
     width: 48%;
@@ -179,7 +186,11 @@ input{
       background-color: #06C5F5;
     }
   }
-
+  &-hp, &-login{
+    a{
+      background-color: #669667;
+    }
+  }
 }
 .btn-logout{
   font-size: 1.2rem;
@@ -218,6 +229,13 @@ input{
   .container-register{
     .form-register{
       width:100%;
+    }
+  }
+  .btn-container{
+    &-like, &-cart, &-hp, &-login{
+      a{
+        font-size: 1rem;
+      }
     }
   }
 }
