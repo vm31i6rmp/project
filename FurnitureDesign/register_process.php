@@ -29,11 +29,11 @@
       /* 登録成功の場合 */
       // テーブルに登録するINSERT INTO文を変数に格納　VALUESはプレースフォルダーで空の値を入れとく
       $sql = "INSERT INTO user (name, id, password) VALUES (:userName, :userId, :password)";
-      //値が空のままSQL文をセット
+      // 値が空のままSQL文をセット
       $stmt = $db->prepare($sql);
       // 挿入する値を配列に格納
       $params = array(':userName' => $userName, ':userId' => $userId, ':password' => $password);
-      //挿入する値が入った変数をexecuteにセットしてSQLを実行
+      // 挿入する値が入った変数をexecuteにセットしてSQLを実行
       $stmt->execute($params);
       // HTTPヘッダを送信する関数（クライアントからのリクエスト >> サーバーからのレスポンス）
       // header('Location: 遷移先のURL')
